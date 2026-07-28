@@ -750,7 +750,7 @@
         }
 
         /* ============================================================
-           9. PORTFOLIO
+           9. PORTFOLIO with CLICKABLE CARDS
            ============================================================ */
         .portfolio-section {
             padding: 80px 0;
@@ -767,6 +767,7 @@
             background: var(--light);
             transition: var(--transition);
             border: 1px solid rgba(0, 0, 0, 0.03);
+            cursor: pointer;
         }
         .portfolio-card:hover {
             transform: translateY(-6px);
@@ -800,6 +801,25 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+        .portfolio-card .img-wrap .view-detail {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .portfolio-card:hover .img-wrap .view-detail {
+            opacity: 1;
+        }
         .portfolio-card .body {
             padding: 18px 20px 20px;
         }
@@ -822,29 +842,316 @@
             margin-right: 4px;
             width: 14px;
         }
-        .portfolio-card .body .details {
-            font-size: 0.78rem;
-            color: var(--gray);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2px 12px;
-            margin: 6px 0 8px;
-            padding: 8px 12px;
-            background: rgba(0, 0, 0, 0.02);
-            border-radius: var(--radius-sm);
-        }
-        .portfolio-card .body .details strong {
-            color: var(--dark);
-            font-weight: 600;
-        }
         .portfolio-card .body p {
             font-size: 0.82rem;
             color: var(--gray);
             margin: 0;
         }
+        .portfolio-card .body .click-hint {
+            margin-top: 8px;
+            font-size: 0.7rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        .portfolio-card .body .click-hint i {
+            color: var(--accent);
+        }
 
         /* ============================================================
-           10. CASE STUDIES
+           10. PORTFOLIO MODAL
+           ============================================================ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 3000;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(12px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: modalFadeIn 0.3s ease;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-container {
+            background: var(--bg);
+            border-radius: var(--radius);
+            max-width: 1200px;
+            width: 100%;
+            max-height: 92vh;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 0;
+            overflow: hidden;
+            animation: modalSlideUp 0.4s ease;
+            position: relative;
+        }
+        @keyframes modalSlideUp {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            border: none;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-close:hover {
+            background: rgba(220, 53, 69, 0.8);
+            transform: rotate(90deg);
+        }
+
+        /* Gallery Side */
+        .modal-gallery {
+            padding: 20px 20px 20px 24px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 400px;
+        }
+
+        .modal-main-image {
+            position: relative;
+            flex: 1;
+            min-height: 320px;
+            max-height: 450px;
+            background: var(--light);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: var(--transition);
+            background: var(--light);
+        }
+        .modal-main-image .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            border: none;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+        }
+        .modal-main-image .nav-arrow:hover {
+            background: rgba(212, 160, 43, 0.8);
+        }
+        .modal-main-image .nav-arrow.prev {
+            left: 12px;
+        }
+        .modal-main-image .nav-arrow.next {
+            right: 12px;
+        }
+        .modal-main-image .image-counter {
+            position: absolute;
+            bottom: 12px;
+            right: 14px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-weight: 500;
+            z-index: 5;
+        }
+        .modal-main-image .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+            padding: 20px 16px 12px;
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 5;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .modal-thumbnails {
+            display: flex;
+            gap: 8px;
+            padding: 12px 0 0;
+            overflow-x: auto;
+            flex-shrink: 0;
+            scrollbar-width: thin;
+        }
+        .modal-thumbnails::-webkit-scrollbar {
+            height: 4px;
+        }
+        .modal-thumbnails::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 4px;
+        }
+        .modal-thumbnails .thumb {
+            flex-shrink: 0;
+            width: 70px;
+            height: 50px;
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            opacity: 0.5;
+        }
+        .modal-thumbnails .thumb.active {
+            border-color: var(--accent);
+            opacity: 1;
+        }
+        .modal-thumbnails .thumb:hover {
+            opacity: 0.8;
+        }
+        .modal-thumbnails .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Info Side */
+        .modal-info {
+            padding: 24px 24px 20px 16px;
+            overflow-y: auto;
+            background: var(--light);
+            border-left: 1px solid rgba(0, 0, 0, 0.04);
+            max-height: 92vh;
+        }
+        .modal-info::-webkit-scrollbar {
+            width: 4px;
+        }
+        .modal-info::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 4px;
+        }
+        [data-theme="dark"] .modal-info {
+            background: var(--light);
+            border-left-color: rgba(255, 255, 255, 0.04);
+        }
+
+        .modal-info .project-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 2px;
+        }
+        .modal-info .project-subtitle {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .modal-info .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 12px;
+            background: var(--bg);
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 12px;
+            font-size: 0.78rem;
+        }
+        .modal-info .data-grid .label {
+            color: var(--gray);
+            font-weight: 500;
+        }
+        .modal-info .data-grid .value {
+            color: var(--dark);
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .modal-info .weight-breakdown {
+            background: var(--bg);
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 12px;
+            font-size: 0.78rem;
+        }
+        .modal-info .weight-breakdown .wb-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 2px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        .modal-info .weight-breakdown .wb-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        .modal-info .weight-breakdown .wb-row .wb-label {
+            color: var(--gray);
+        }
+        .modal-info .weight-breakdown .wb-row .wb-value {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .modal-info .project-description {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .modal-info .action-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .modal-info .action-buttons .btn-sm {
+            font-size: 0.75rem;
+            padding: 6px 16px;
+        }
+
+        /* ============================================================
+           11. CASE STUDIES
            ============================================================ */
         .casestudies-section {
             padding: 80px 0;
@@ -939,7 +1246,7 @@
         }
 
         /* ============================================================
-           11. TEAM
+           12. TEAM
            ============================================================ */
         .team-section {
             padding: 80px 0;
@@ -1025,7 +1332,7 @@
         }
 
         /* ============================================================
-           12. CONTACT (WITH FORMPREE AJAX)
+           13. CONTACT (with enhanced fields)
            ============================================================ */
         .contact-section {
             padding: 80px 0;
@@ -1094,6 +1401,7 @@
             transform: translateY(-4px);
             border-color: var(--accent);
         }
+
         .contact-form {
             background: rgba(255, 255, 255, 0.04);
             backdrop-filter: blur(8px);
@@ -1117,18 +1425,21 @@
         }
         .contact-form label {
             display: block;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.5);
-            margin-bottom: 4px;
+            margin-bottom: 3px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+        .contact-form label .required {
+            color: #dc3545;
         }
         .contact-form input,
         .contact-form select,
         .contact-form textarea {
             width: 100%;
-            padding: 12px 16px;
+            padding: 10px 14px;
             border-radius: var(--radius-sm);
             border: 1px solid rgba(255, 255, 255, 0.08);
             background: rgba(255, 255, 255, 0.04);
@@ -1154,12 +1465,17 @@
             background: rgba(255, 255, 255, 0.06);
         }
         .contact-form textarea {
-            min-height: 100px;
+            min-height: 80px;
             resize: vertical;
         }
         .contact-form .btn {
             width: 100%;
             justify-content: center;
+        }
+        .contact-form .form-hint {
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.3);
+            margin-top: 2px;
         }
 
         /* Formspree success/error styling */
@@ -1189,7 +1505,7 @@
         }
 
         /* ============================================================
-           13. FOOTER
+           14. FOOTER
            ============================================================ */
         .footer {
             background: var(--dark);
@@ -1275,7 +1591,7 @@
         }
 
         /* ============================================================
-           14. STICKY CTA & FLOATING BADGES
+           15. STICKY CTA & FLOATING BADGES
            ============================================================ */
         .sticky-cta {
             position: fixed;
@@ -1353,7 +1669,7 @@
         }
 
         /* ============================================================
-           15. RESPONSIVE
+           16. RESPONSIVE
            ============================================================ */
         @media (max-width: 1024px) {
             .hero .container {
@@ -1395,6 +1711,29 @@
             }
             .hero-image-container .floating-tag {
                 display: none;
+            }
+
+            .modal-container {
+                grid-template-columns: 1fr;
+                max-height: 95vh;
+            }
+            .modal-info {
+                border-left: none;
+                border-top: 1px solid rgba(0, 0, 0, 0.04);
+                max-height: 300px;
+                padding: 16px 20px;
+            }
+            .modal-gallery {
+                padding: 16px;
+                min-height: 300px;
+            }
+            .modal-main-image {
+                min-height: 220px;
+                max-height: 350px;
+            }
+            .modal-thumbnails .thumb {
+                width: 56px;
+                height: 40px;
             }
         }
 
@@ -1485,6 +1824,51 @@
             .hero-image-container .floating-tag {
                 display: none;
             }
+
+            .modal-container {
+                max-height: 98vh;
+                border-radius: var(--radius-sm);
+            }
+            .modal-gallery {
+                padding: 12px;
+                min-height: 200px;
+            }
+            .modal-main-image {
+                min-height: 160px;
+                max-height: 280px;
+            }
+            .modal-main-image .nav-arrow {
+                width: 32px;
+                height: 32px;
+                font-size: 0.7rem;
+            }
+            .modal-thumbnails .thumb {
+                width: 44px;
+                height: 32px;
+            }
+            .modal-info {
+                max-height: 250px;
+                padding: 12px 16px;
+            }
+            .modal-info .data-grid {
+                grid-template-columns: 1fr 1fr;
+                font-size: 0.7rem;
+                padding: 6px 10px;
+            }
+            .modal-info .project-title {
+                font-size: 1rem;
+            }
+            .modal-info .weight-breakdown {
+                font-size: 0.7rem;
+                padding: 6px 10px;
+            }
+            .modal-close {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
+                top: 8px;
+                right: 10px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1519,10 +1903,21 @@
                 gap: 6px;
                 align-items: flex-start;
             }
+            .modal-info .data-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .modal-info .data-grid .value {
+                text-align: left;
+            }
+            .modal-main-image .image-caption {
+                font-size: 0.7rem;
+                padding: 12px 10px 8px;
+            }
         }
 
         /* ============================================================
-           16. ANIMATIONS
+           17. ANIMATIONS
            ============================================================ */
         .animate-on-scroll {
             opacity: 0;
@@ -1562,6 +1957,25 @@
         }
         [data-theme="dark"] .contact-form {
             background: rgba(255, 255, 255, 0.02);
+        }
+        [data-theme="dark"] .modal-container {
+            background: var(--bg);
+        }
+        [data-theme="dark"] .modal-info {
+            background: var(--light);
+        }
+        [data-theme="dark"] .modal-info .data-grid,
+        [data-theme="dark"] .modal-info .weight-breakdown {
+            background: var(--bg);
+        }
+        [data-theme="dark"] .modal-main-image {
+            background: var(--light);
+        }
+        [data-theme="dark"] .modal-main-image img {
+            background: var(--light);
+        }
+        [data-theme="dark"] .modal-thumbnails .thumb {
+            border-color: rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
@@ -1743,75 +2157,16 @@
             </div>
         </section>
 
-        <!-- ===== PORTFOLIO ===== -->
+        <!-- ===== PORTFOLIO (Clickable Cards) ===== -->
         <section class="portfolio-section" id="portfolio" aria-label="Featured engineering projects">
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <div class="tag">Our Work</div>
                     <h2>Featured <span>Projects</span></h2>
-                    <p>Real projects with real metrics — showing our engineering capability.</p>
+                    <p>Click on any project to view detailed images and specifications.</p>
                 </div>
-                <div class="portfolio-grid">
-                    <div class="portfolio-card animate-on-scroll zoom">
-                        <div class="img-wrap">
-                            <img src="pic/projects/project-1.png" alt="638 MT PEB Warehouse" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=600&h=450&fit=crop'" />
-                            <span class="badge">PEB</span>
-                        </div>
-                        <div class="body">
-                            <h4>638 MT PEB Warehouse</h4>
-                            <div class="meta">
-                                <span><i class="fas fa-weight-hanging"></i> 638.5 MT Total</span>
-                                <span><i class="fas fa-cogs"></i> Tekla + STAAD</span>
-                            </div>
-                            <div class="details">
-                                <span><strong>Main Frame:</strong> 553 MT</span>
-                                <span><strong>Forming:</strong> 84.5 MT</span>
-                                <span><strong>Phases:</strong> 5+ releases</span>
-                                <span><strong>Duration:</strong> 25 Days</span>
-                            </div>
-                            <p>Complete estimation + Tekla detailing. Provided cutting plans to factory, reducing wastage significantly.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-card animate-on-scroll zoom" style="transition-delay:0.08s;">
-                        <div class="img-wrap">
-                            <img src="pic/projects/project-4.jpg" alt="30,000 SFT Factory" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=600&h=450&fit=crop&sat=-10'" />
-                            <span class="badge">Steel</span>
-                        </div>
-                        <div class="body">
-                            <h4>30,000 SFT Factory</h4>
-                            <div class="meta">
-                                <span><i class="fas fa-weight-hanging"></i> 180 MT Steel</span>
-                                <span><i class="fas fa-map-marker-alt"></i> Gazipur</span>
-                            </div>
-                            <div class="details">
-                                <span><strong>Original:</strong> 210 MT</span>
-                                <span><strong>Saved:</strong> 30 MT (14%)</span>
-                                <span><strong>Duration:</strong> 20 Days</span>
-                                <span><strong>Client:</strong> BBS PLC</span>
-                            </div>
-                            <p>Optimized frame spacing and tapered sections reduced steel cost by BDT 4.5 Lakh.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-card animate-on-scroll zoom" style="transition-delay:0.16s;">
-                        <div class="img-wrap">
-                            <img src="pic/projects/project-5.jpg" alt="Steel Mezzanine" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=600&h=450&fit=crop&sat=-20'" />
-                            <span class="badge">Design</span>
-                        </div>
-                        <div class="body">
-                            <h4>Mezzanine + Shed Combo</h4>
-                            <div class="meta">
-                                <span><i class="fas fa-weight-hanging"></i> 9,935 SFT</span>
-                                <span><i class="fas fa-cubes"></i> 495 SFT Mezzanine</span>
-                            </div>
-                            <div class="details">
-                                <span><strong>Software:</strong> STAAD + Tekla</span>
-                                <span><strong>Duration:</strong> 22 Days</span>
-                                <span><strong>Client:</strong> Confidential</span>
-                                <span><strong>Year:</strong> 2025</span>
-                            </div>
-                            <p>Combined warehouse + mezzanine structure with full design, detailing, and BOQ.</p>
-                        </div>
-                    </div>
+                <div class="portfolio-grid" id="portfolioGrid">
+                    <!-- Portfolio cards will be rendered by JavaScript -->
                 </div>
             </div>
         </section>
@@ -1869,7 +2224,7 @@
                 </div>
                 <div class="team-grid">
                     <div class="team-card animate-on-scroll">
-                        <div class="avatar"><img src="pic/team/engr-munna.jpg" alt="Engr. Md Munna Hossain" onerror="this.style.display='none';this.parentElement.textContent='MH'" /></div>
+                        <div class="avatar"><img src="pic/team/engr-munna.png" alt="Engr. Md Munna Hossain" onerror="this.style.display='none';this.parentElement.textContent='MH'" /></div>
                         <h4>Engr. Md Munna Hossain</h4>
                         <div class="role">Senior Structural Detailer &amp; Tekla Expert</div>
                         <div class="exp"><i class="fas fa-calendar-alt" style="color:var(--accent);"></i> 15+ Years Experience</div>
@@ -1877,7 +2232,7 @@
                         <div class="badges"><span>Tekla Expert</span><span>Steel Detailing</span><span>15+ Years</span></div>
                     </div>
                     <div class="team-card animate-on-scroll" style="transition-delay:0.12s;">
-                        <div class="avatar"><img src="pic/team/engr-hossen.jpg" alt="Engr. Md S Hossen" onerror="this.style.display='none';this.parentElement.textContent='SH'" /></div>
+                        <div class="avatar"><img src="pic/team/engr-hossen.png" alt="Engr. Md S Hossen" onerror="this.style.display='none';this.parentElement.textContent='SH'" /></div>
                         <h4>Engr. Md S Hossen</h4>
                         <div class="role">Structural Design &amp; Estimation Expert</div>
                         <div class="exp"><i class="fas fa-calendar-alt" style="color:var(--accent);"></i> 7+ Years Experience</div>
@@ -1888,7 +2243,7 @@
             </div>
         </section>
 
-        <!-- ===== CONTACT (WITH FORMPREE AJAX) ===== -->
+        <!-- ===== CONTACT (Enhanced Form) ===== -->
         <section class="contact-section" id="contact" aria-label="Contact us">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -1933,14 +2288,15 @@
                         </div>
 
                         <form id="contactForm">
+                            <!-- Personal Info -->
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="contactName">Full Name *</label>
+                                    <label for="contactName">Full Name <span class="required">*</span></label>
                                     <input type="text" id="contactName" name="name" placeholder="Your full name" data-fs-field required />
                                     <span data-fs-error="name"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="contactEmail">Email Address *</label>
+                                    <label for="contactEmail">Email Address <span class="required">*</span></label>
                                     <input type="email" id="contactEmail" name="email" placeholder="your@email.com" data-fs-field required />
                                     <span data-fs-error="email"></span>
                                 </div>
@@ -1961,15 +2317,95 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="contactProject">Project Details</label>
-                                <textarea id="contactProject" name="project_details" placeholder="Building type, area (SFT/MT), location, timeline, etc." data-fs-field></textarea>
+
+                            <!-- Project Details -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactRegion">Region / Country</label>
+                                    <select id="contactRegion" name="region" data-fs-field>
+                                        <option value="">Select...</option>
+                                        <option value="USA">USA</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="UK">United Kingdom</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="UAE">UAE</option>
+                                        <option value="Saudi Arabia">Saudi Arabia</option>
+                                        <option value="India">India</option>
+                                        <option value="Bangladesh">Bangladesh</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactBuildingType">Building Type</label>
+                                    <select id="contactBuildingType" name="building_type" data-fs-field>
+                                        <option value="">Select...</option>
+                                        <option value="Warehouse">Warehouse</option>
+                                        <option value="Factory">Factory</option>
+                                        <option value="Shed">Shed</option>
+                                        <option value="Mezzanine">Mezzanine</option>
+                                        <option value="RCC Building">RCC Building</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
                             </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactLength">Length</label>
+                                    <input type="text" id="contactLength" name="length" placeholder="e.g., 100 ft / 30 m" data-fs-field />
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactWidth">Width / Clear Span</label>
+                                    <input type="text" id="contactWidth" name="width" placeholder="e.g., 60 ft / 18 m" data-fs-field />
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactHeight">Clear Height</label>
+                                    <input type="text" id="contactHeight" name="height" placeholder="e.g., 30 ft / 9 m" data-fs-field />
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactSlope">Slope</label>
+                                    <input type="text" id="contactSlope" name="slope" placeholder="e.g., 5°, 10%, 1:12" data-fs-field />
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactGable">Gable Type</label>
+                                    <select id="contactGable" name="gable_type" data-fs-field>
+                                        <option value="">Select...</option>
+                                        <option value="Symmetrical">Symmetrical</option>
+                                        <option value="Asymmetrical">Asymmetrical</option>
+                                        <option value="Lean-to">Lean-to</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactProjectType">Project Type</label>
+                                    <select id="contactProjectType" name="project_type" data-fs-field>
+                                        <option value="">Select...</option>
+                                        <option value="New Construction">New Construction</option>
+                                        <option value="Expansion">Expansion</option>
+                                        <option value="Retrofit">Retrofit</option>
+                                        <option value="Feasibility Study">Feasibility Study</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
                             <div class="form-group">
-                                <label for="contactMessage">Message *</label>
+                                <label for="contactProjectDetails">Additional Details</label>
+                                <textarea id="contactProjectDetails" name="project_details" placeholder="Any other specifications, load requirements, timeline, budget constraints, etc." data-fs-field></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactMessage">Message <span class="required">*</span></label>
                                 <textarea id="contactMessage" name="message" placeholder="Tell us about your project requirements..." data-fs-field required></textarea>
                                 <span data-fs-error="message"></span>
                             </div>
+
                             <button type="submit" data-fs-submit-btn class="btn btn-secondary">
                                 <i class="fas fa-paper-plane"></i> Send Inquiry
                             </button>
@@ -2030,6 +2466,53 @@
         </div>
     </footer>
 
+    <!-- ============================================================
+    PORTFOLIO MODAL (Hidden by default)
+    ============================================================ -->
+    <div class="modal-overlay" id="portfolioModal">
+        <div class="modal-container" id="modalContainer">
+            <button class="modal-close" id="modalClose" aria-label="Close portfolio"><i class="fas fa-times"></i></button>
+
+            <!-- Gallery Side -->
+            <div class="modal-gallery">
+                <div class="modal-main-image" id="modalMainImage">
+                    <button class="nav-arrow prev" id="modalPrev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-arrow next" id="modalNext"><i class="fas fa-chevron-right"></i></button>
+                    <img id="modalImage" src="" alt="" />
+                    <div class="image-counter" id="modalCounter">1 / 1</div>
+                    <div class="image-caption" id="modalCaption"></div>
+                </div>
+                <div class="modal-thumbnails" id="modalThumbnails"></div>
+            </div>
+
+            <!-- Info Side -->
+            <div class="modal-info" id="modalInfo">
+                <h3 class="project-title" id="modalTitle">Project Title</h3>
+                <div class="project-subtitle" id="modalSubtitle">Subtitle</div>
+
+                <div class="data-grid" id="modalData">
+                    <span class="label">Software</span><span class="value" id="mSoftware">—</span>
+                    <span class="label">Duration</span><span class="value" id="mDuration">—</span>
+                    <span class="label">Total Weight</span><span class="value" id="mWeight">—</span>
+                    <span class="label">Phases</span><span class="value" id="mPhases">—</span>
+                </div>
+
+                <div class="weight-breakdown" id="modalWeight">
+                    <div class="wb-row"><span class="wb-label">Main Frame</span><span class="wb-value" id="wMain">—</span></div>
+                    <div class="wb-row"><span class="wb-label">Forming Items</span><span class="wb-value" id="wForming">—</span></div>
+                    <div class="wb-row"><span class="wb-label">Total</span><span class="wb-value" id="wTotal">—</span></div>
+                </div>
+
+                <div class="project-description" id="modalDescription">Project description goes here.</div>
+
+                <div class="action-buttons">
+                    <a href="#contact" class="btn btn-sm btn-secondary" id="modalContactBtn"><i class="fas fa-paper-plane"></i> Request Similar Quote</a>
+                    <button class="btn btn-sm btn-ghost" id="modalDownloadBtn" style="background:transparent;border:1px solid var(--secondary);color:var(--secondary);"><i class="fas fa-download"></i> Download PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ===== FLOATING BUTTONS ===== -->
     <a href="https://www.facebook.com/UnityStructuralSolution" target="_blank" rel="noopener" class="floating-badge messenger" aria-label="Message on Messenger">
         <i class="fab fa-facebook-messenger"></i>
@@ -2039,27 +2522,264 @@
     </a>
 
     <!-- ============================================================
-    FORMPREE AJAX SCRIPT
-    ============================================================ -->
-    <script>
-        window.formspree = window.formspree || function() {
-            (formspree.q = formspree.q || []).push(arguments);
-        };
-        formspree('initForm', {
-            formElement: '#contactForm',
-            formId: 'mdaqball'
-        });
-    </script>
-    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
-
-    <!-- ============================================================
-    ADDITIONAL SCRIPTS (Theme, Nav, Animations, Counters)
+    JAVASCRIPT
     ============================================================ -->
     <script>
         (function() {
             'use strict';
 
-            // Theme
+            // ============================================================
+            // 1. PORTFOLIO DATA
+            // ============================================================
+            const portfolioData = [{
+                id: 1,
+                title: '638 MT PEB Warehouse',
+                subtitle: 'Complete Estimation & Tekla Detailing',
+                thumbnail: 'pic/projects/project-1.png',
+                badge: 'PEB',
+                description: 'Complete structural estimation and Tekla detailing for a large-scale PEB industrial warehouse. We handled the full material take-off (MTO), BOQ preparation, and phased drawing releases. The project included estimating all forming items (Roof Sheets, Wall Sheets, Valley Gutters, Canopy, and Decking) totaling 84.5 MT, while cross-verifying the main frame assembly weight of 553 MT.',
+                software: 'STAAD.Pro + Tekla',
+                duration: '25 Days',
+                totalWeight: '638.5 MT',
+                phases: '5+ Releases',
+                weightMain: '553 MT',
+                weightForming: '84.5 MT',
+                weightTotal: '638.5 MT',
+                images: [
+                    { src: 'pic/portfolio/warehouse-3d.png', caption: '3D BIM Model — Complete Tekla model showing the full warehouse structure with main frames, bracing, and cladding.' },
+                    { src: 'pic/portfolio/warehouse-layout.png', caption: 'Column Layout Plan — Grid spacing and foundation positions for the 638 MT warehouse.' },
+                    { src: 'pic/portfolio/warehouse-section.png', caption: 'Cross Section — Typical frame section showing rafter and column profiles with connection details.' },
+                    { src: 'pic/portfolio/warehouse-roof.png', caption: 'Roof Bracing & Rafter Layout — Roof bracing layout combined with rafter section details for lateral stability.' },
+                    { src: 'pic/portfolio/warehouse-rafter.png', caption: 'Rafter Detail with BOM — Detailed rafter connection drawing with Bill of Materials for fabrication.' },
+                    { src: 'pic/portfolio/warehouse-assembly.png', caption: 'Assembly List — Column and rafter assembly list tracking precise weights for 50+ positions across 5 phased releases.' },
+                    { src: 'pic/portfolio/warehouse-weight.png', caption: 'Total Weight Breakdown — Complete project weight breakdown showing Main Frame (553 MT) + Forming Items (84.5 MT).' },
+                    { src: 'pic/portfolio/warehouse-cutting.png', caption: 'Cutting Plan — Nesting/cutting plan provided to the factory for optimizing steel usage and minimizing fabrication wastage.' }
+                ]
+            }, {
+                id: 2,
+                title: '30,000 SFT Factory',
+                subtitle: 'Steel Weight Optimization & Design',
+                thumbnail: 'pic/projects/project-4.png',
+                badge: 'Steel',
+                description: 'We performed structural analysis using STAAD.Pro for a 30,000 sq. ft. factory. By optimizing frame spacing and using tapered sections per AISC 360, we reduced steel weight from 210 MT to 180 MT (14% reduction), saving the client $4,200+ in material costs. Delivered full Tekla models and fabrication drawings.',
+                software: 'STAAD.Pro + Tekla',
+                duration: '20 Days',
+                totalWeight: '180 MT',
+                phases: '3 Releases',
+                weightMain: '155 MT',
+                weightForming: '25 MT',
+                weightTotal: '180 MT',
+                images: [
+                    { src: 'pic/portfolio/factory-3d.png', caption: '3D Model — Complete STAAD.Pro model showing the optimized frame design.' },
+                    { src: 'pic/portfolio/factory-layout.png', caption: 'Factory Layout Plan — Column grid and foundation layout.' },
+                    { src: 'pic/portfolio/factory-section.png', caption: 'Frame Section — Optimized tapered sections reducing steel weight by 14%.' },
+                    { src: 'pic/portfolio/factory-roof.png', caption: 'Roof Layout — Roof purlin and bracing layout for the factory building.' },
+                    { src: 'pic/portfolio/factory-rafter.png', caption: 'Rafter Detailing — Connection detail with optimized member sizes.' },
+                    { src: 'pic/portfolio/factory-assembly.png', caption: 'Assembly List — Complete assembly list with weights and quantities.' },
+                    { src: 'pic/portfolio/factory-weight.png', caption: 'Weight Comparison — Original: 210 MT vs Optimized: 180 MT — 14% savings.' },
+                    { src: 'pic/portfolio/factory-cutting.png', caption: 'Cutting Plan — Optimized nesting plan for fabrication.' }
+                ]
+            }, {
+                id: 3,
+                title: 'Mezzanine + Shed Combo',
+                subtitle: '9,935 SFT Warehouse with 495 SFT Mezzanine',
+                thumbnail: 'pic/projects/project-5.png',
+                badge: 'Design',
+                description: 'Combined warehouse + mezzanine structure with full design, detailing, and BOQ. The structure had a dual purpose — a high-bay warehouse with a dedicated office/mezzanine area. We performed full STAAD.Pro analysis and created the complete Tekla model showing the integration between the main frame and the mezzanine columns.',
+                software: 'STAAD.Pro + Tekla',
+                duration: '22 Days',
+                totalWeight: '285 MT',
+                phases: '4 Releases',
+                weightMain: '240 MT',
+                weightForming: '45 MT',
+                weightTotal: '285 MT',
+                images: [
+                    { src: 'pic/portfolio/mezzanine-3d.png', caption: '3D BIM Model — Complete Tekla model showing warehouse + mezzanine integration.' },
+                    { src: 'pic/portfolio/mezzanine-layout.png', caption: 'Layout Plan — Combined layout showing the warehouse and mezzanine footprint.' },
+                    { src: 'pic/portfolio/mezzanine-section.png', caption: 'Cross Section — Showing the mezzanine integration with the main warehouse frame.' },
+                    { src: 'pic/portfolio/mezzanine-roof.png', caption: 'Roof & Mezzanine Layout — Roof layout and mezzanine framing plan.' },
+                    { src: 'pic/portfolio/mezzanine-rafter.png', caption: 'Rafter & Mezzanine Beam Detail — Connection details for both structures.' },
+                    { src: 'pic/portfolio/mezzanine-assembly.png', caption: 'Assembly List — Combined assembly list for warehouse and mezzanine.' },
+                    { src: 'pic/portfolio/mezzanine-weight.png', caption: 'Weight Breakdown — Main Frame: 240 MT, Forming: 45 MT, Total: 285 MT.' },
+                    { src: 'pic/portfolio/mezzanine-cutting.png', caption: 'Cutting Plan — Optimized cutting plan for combined steel structures.' }
+                ]
+            }];
+
+            // ============================================================
+            // 2. RENDER PORTFOLIO CARDS
+            // ============================================================
+            const grid = document.getElementById('portfolioGrid');
+
+            function renderCards() {
+                grid.innerHTML = portfolioData.map(project => `
+                        <div class="portfolio-card animate-on-scroll zoom" data-id="${project.id}">
+                            <div class="img-wrap">
+                                <img src="${project.thumbnail}" alt="${project.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=600&h=450&fit=crop'" />
+                                <span class="badge">${project.badge}</span>
+                                <span class="view-detail"><i class="fas fa-expand"></i> View Details</span>
+                            </div>
+                            <div class="body">
+                                <h4>${project.title}</h4>
+                                <div class="meta">
+                                    <span><i class="fas fa-weight-hanging"></i> ${project.totalWeight}</span>
+                                    <span><i class="fas fa-cogs"></i> ${project.software}</span>
+                                </div>
+                                <p>${project.description.substring(0, 100)}...</p>
+                                <div class="click-hint"><i class="fas fa-mouse-pointer"></i> Click to view full project</div>
+                            </div>
+                        </div>
+                    `).join('');
+
+                // Add click listeners
+                document.querySelectorAll('.portfolio-card').forEach(card => {
+                    card.addEventListener('click', function() {
+                        const id = parseInt(this.dataset.id);
+                        openModal(id);
+                    });
+                });
+
+                // Re-run scroll animations
+                const newEls = grid.querySelectorAll('.animate-on-scroll');
+                const obs = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) entry.target.classList.add('visible');
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+                newEls.forEach(el => obs.observe(el));
+            }
+
+            // ============================================================
+            // 3. MODAL LOGIC
+            // ============================================================
+            let currentProject = null;
+            let currentIndex = 0;
+
+            const modal = document.getElementById('portfolioModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            const modalCounter = document.getElementById('modalCounter');
+            const modalThumbnails = document.getElementById('modalThumbnails');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalSubtitle = document.getElementById('modalSubtitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const mSoftware = document.getElementById('mSoftware');
+            const mDuration = document.getElementById('mDuration');
+            const mWeight = document.getElementById('mWeight');
+            const mPhases = document.getElementById('mPhases');
+            const wMain = document.getElementById('wMain');
+            const wForming = document.getElementById('wForming');
+            const wTotal = document.getElementById('wTotal');
+            const modalClose = document.getElementById('modalClose');
+            const modalPrev = document.getElementById('modalPrev');
+            const modalNext = document.getElementById('modalNext');
+
+            function openModal(id) {
+                const project = portfolioData.find(p => p.id === id);
+                if (!project) return;
+                currentProject = project;
+                currentIndex = 0;
+                updateModal();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            function updateModal() {
+                if (!currentProject) return;
+                const project = currentProject;
+                const images = project.images || [{ src: project.thumbnail, caption: 'Project Overview' }];
+                const image = images[currentIndex] || images[0];
+
+                // Main image
+                modalImage.src = image.src;
+                modalImage.alt = image.caption;
+                modalCaption.textContent = image.caption;
+                modalCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+
+                // Info
+                modalTitle.textContent = project.title;
+                modalSubtitle.textContent = project.subtitle || '';
+                modalDescription.textContent = project.description || '';
+                mSoftware.textContent = project.software || '—';
+                mDuration.textContent = project.duration || '—';
+                mWeight.textContent = project.totalWeight || '—';
+                mPhases.textContent = project.phases || '—';
+                wMain.textContent = project.weightMain || '—';
+                wForming.textContent = project.weightForming || '—';
+                wTotal.textContent = project.weightTotal || '—';
+
+                // Thumbnails
+                modalThumbnails.innerHTML = images.map((img, idx) => `
+                        <div class="thumb ${idx === currentIndex ? 'active' : ''}" data-index="${idx}">
+                            <img src="${img.src}" alt="${img.caption}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=70&h=50&fit=crop'" />
+                        </div>
+                    `).join('');
+
+                // Thumbnail click
+                modalThumbnails.querySelectorAll('.thumb').forEach(thumb => {
+                    thumb.addEventListener('click', function() {
+                        currentIndex = parseInt(this.dataset.index);
+                        updateModal();
+                    });
+                });
+
+                // Update contact button link
+                const contactBtn = document.getElementById('modalContactBtn');
+                if (contactBtn) {
+                    contactBtn.href = '#contact';
+                }
+
+                // Update download button
+                const downloadBtn = document.getElementById('modalDownloadBtn');
+                if (downloadBtn) {
+                    downloadBtn.onclick = function() {
+                        // In production, this would download a PDF
+                        alert('📄 PDF download would start here.\n\nIn production, this would download a detailed project report for: ' + project.title);
+                    };
+                }
+            }
+
+            // Navigation
+            modalPrev.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (!currentProject) return;
+                const images = currentProject.images || [{ src: currentProject.thumbnail, caption: 'Project Overview' }];
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateModal();
+            });
+
+            modalNext.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (!currentProject) return;
+                const images = currentProject.images || [{ src: currentProject.thumbnail, caption: 'Project Overview' }];
+                currentIndex = (currentIndex + 1) % images.length;
+                updateModal();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!modal.classList.contains('active')) return;
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'ArrowLeft') { modalPrev.click();
+                    e.preventDefault(); }
+                if (e.key === 'ArrowRight') { modalNext.click();
+                    e.preventDefault(); }
+            });
+
+            // Close on overlay click
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+
+            modalClose.addEventListener('click', closeModal);
+
+            // ============================================================
+            // 4. THEME
+            // ============================================================
             const themeToggle = document.getElementById('themeToggle');
             const themeIcon = document.getElementById('themeIcon');
 
@@ -2086,7 +2806,9 @@
                 });
             }
 
-            // Navigation
+            // ============================================================
+            // 5. NAVIGATION
+            // ============================================================
             const navToggle = document.getElementById('navToggle');
             const navLinks = document.getElementById('navLinks');
 
@@ -2105,9 +2827,12 @@
                 });
             }
 
-            // Navbar scroll effect
+            // ============================================================
+            // 6. NAVBAR SCROLL
+            // ============================================================
             const navbar = document.getElementById('navbar');
             const stickyCta = document.getElementById('stickyCta');
+
             window.addEventListener('scroll', function() {
                 if (navbar) {
                     navbar.classList.toggle('scrolled', window.scrollY > 60);
@@ -2117,7 +2842,9 @@
                 }
             });
 
-            // Scroll animations
+            // ============================================================
+            // 7. SCROLL ANIMATIONS
+            // ============================================================
             const animElements = document.querySelectorAll('.animate-on-scroll');
             const animObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -2128,7 +2855,9 @@
             }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
             animElements.forEach(el => animObserver.observe(el));
 
-            // Counters
+            // ============================================================
+            // 8. COUNTERS
+            // ============================================================
             const counters = document.querySelectorAll('.stats-grid .number span[data-count]');
             const counterObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -2151,15 +2880,35 @@
             }, { threshold: 0.4 });
             counters.forEach(el => counterObserver.observe(el));
 
-            // Sticky CTA scroll to contact
+            // ============================================================
+            // 9. STICKY CTA
+            // ============================================================
             if (stickyCta) {
                 stickyCta.addEventListener('click', function() {
                     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 });
             }
 
-            console.log('🏗️ Unity Structural Solution v5.0 — International Edition loaded');
+            // ============================================================
+            // 10. FORMPREE AJAX
+            // ============================================================
+            window.formspree = window.formspree || function() {
+                (formspree.q = formspree.q || []).push(arguments);
+            };
+            formspree('initForm', {
+                formElement: '#contactForm',
+                formId: 'mdaqball'
+            });
+
+            // ============================================================
+            // 11. INIT
+            // ============================================================
+            renderCards();
+
+            console.log('🏗️ Unity Structural Solution v6.0 — International Edition loaded');
             console.log('📧 Formspree endpoint: https://formspree.io/f/mdaqball');
+            console.log('📂 Portfolio projects loaded:', portfolioData.length);
+
         })();
     </script>
 
