@@ -45,6 +45,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
+    <!-- ===== FORMSPREE JS LIBRARY ===== -->
+    <script src="https://formspree.io/js/formspree.js">
+    </script>
+
     <style>
         /* ============================================================
            1. ROOT VARIABLES
@@ -2287,7 +2291,14 @@
                             ⚠️ Something went wrong. Please try again.
                         </div>
 
-                        <form id="contactForm">
+                        <!--
+                        FORMSPREE INTEGRATION
+                        form ID: mdaqball
+                        The library is loaded from: https://formspree.io/js/formspree.js
+                        Fields are mapped via data-fs-field attributes.
+                        -->
+                        <form id="contactForm" data-formspree="mdaqball">
+
                             <!-- Personal Info -->
                             <div class="form-row">
                                 <div class="form-group">
@@ -2546,14 +2557,22 @@
                 weightForming: '84.5 MT',
                 weightTotal: '638.5 MT',
                 images: [
-                    { src: 'pic/portfolio/warehouse-3d.png', caption: '3D BIM Model — Complete Tekla model showing the full warehouse structure with main frames, bracing, and cladding.' },
-                    { src: 'pic/portfolio/warehouse-layout.png', caption: 'Column Layout Plan — Grid spacing and foundation positions for the 638 MT warehouse.' },
-                    { src: 'pic/portfolio/warehouse-section.png', caption: 'Cross Section — Typical frame section showing rafter and column profiles with connection details.' },
-                    { src: 'pic/portfolio/warehouse-roof.png', caption: 'Roof Bracing & Rafter Layout — Roof bracing layout combined with rafter section details for lateral stability.' },
-                    { src: 'pic/portfolio/warehouse-rafter.png', caption: 'Rafter Detail with BOM — Detailed rafter connection drawing with Bill of Materials for fabrication.' },
-                    { src: 'pic/portfolio/warehouse-assembly.png', caption: 'Assembly List — Column and rafter assembly list tracking precise weights for 50+ positions across 5 phased releases.' },
-                    { src: 'pic/portfolio/warehouse-weight.png', caption: 'Total Weight Breakdown — Complete project weight breakdown showing Main Frame (553 MT) + Forming Items (84.5 MT).' },
-                    { src: 'pic/portfolio/warehouse-cutting.png', caption: 'Cutting Plan — Nesting/cutting plan provided to the factory for optimizing steel usage and minimizing fabrication wastage.' }
+                    { src: 'pic/portfolio/warehouse-3d.png',
+                        caption: '3D BIM Model — Complete Tekla model showing the full warehouse structure with main frames, bracing, and cladding.' },
+                    { src: 'pic/portfolio/warehouse-layout.png',
+                        caption: 'Column Layout Plan — Grid spacing and foundation positions for the 638 MT warehouse.' },
+                    { src: 'pic/portfolio/warehouse-section.png',
+                        caption: 'Cross Section — Typical frame section showing rafter and column profiles with connection details.' },
+                    { src: 'pic/portfolio/warehouse-roof.png',
+                        caption: 'Roof Bracing & Rafter Layout — Roof bracing layout combined with rafter section details for lateral stability.' },
+                    { src: 'pic/portfolio/warehouse-rafter.png',
+                        caption: 'Rafter Detail with BOM — Detailed rafter connection drawing with Bill of Materials for fabrication.' },
+                    { src: 'pic/portfolio/warehouse-assembly.png',
+                        caption: 'Assembly List — Column and rafter assembly list tracking precise weights for 50+ positions across 5 phased releases.' },
+                    { src: 'pic/portfolio/warehouse-weight.png',
+                        caption: 'Total Weight Breakdown — Complete project weight breakdown showing Main Frame (553 MT) + Forming Items (84.5 MT).' },
+                    { src: 'pic/portfolio/warehouse-cutting.png',
+                        caption: 'Cutting Plan — Nesting/cutting plan provided to the factory for optimizing steel usage and minimizing fabrication wastage.' }
                 ]
             }, {
                 id: 2,
@@ -2570,13 +2589,18 @@
                 weightForming: '25 MT',
                 weightTotal: '180 MT',
                 images: [
-                    { src: 'pic/portfolio/factory-3d.png', caption: '3D Model — Complete STAAD.Pro model showing the optimized frame design.' },
+                    { src: 'pic/portfolio/factory-3d.png',
+                        caption: '3D Model — Complete STAAD.Pro model showing the optimized frame design.' },
                     { src: 'pic/portfolio/factory-layout.png', caption: 'Factory Layout Plan — Column grid and foundation layout.' },
-                    { src: 'pic/portfolio/factory-section.png', caption: 'Frame Section — Optimized tapered sections reducing steel weight by 14%.' },
+                    { src: 'pic/portfolio/factory-section.png',
+                        caption: 'Frame Section — Optimized tapered sections reducing steel weight by 14%.' },
                     { src: 'pic/portfolio/factory-roof.png', caption: 'Roof Layout — Roof purlin and bracing layout for the factory building.' },
-                    { src: 'pic/portfolio/factory-rafter.png', caption: 'Rafter Detailing — Connection detail with optimized member sizes.' },
-                    { src: 'pic/portfolio/factory-assembly.png', caption: 'Assembly List — Complete assembly list with weights and quantities.' },
-                    { src: 'pic/portfolio/factory-weight.png', caption: 'Weight Comparison — Original: 210 MT vs Optimized: 180 MT — 14% savings.' },
+                    { src: 'pic/portfolio/factory-rafter.png',
+                        caption: 'Rafter Detailing — Connection detail with optimized member sizes.' },
+                    { src: 'pic/portfolio/factory-assembly.png',
+                        caption: 'Assembly List — Complete assembly list with weights and quantities.' },
+                    { src: 'pic/portfolio/factory-weight.png',
+                        caption: 'Weight Comparison — Original: 210 MT vs Optimized: 180 MT — 14% savings.' },
                     { src: 'pic/portfolio/factory-cutting.png', caption: 'Cutting Plan — Optimized nesting plan for fabrication.' }
                 ]
             }, {
@@ -2594,14 +2618,22 @@
                 weightForming: '45 MT',
                 weightTotal: '285 MT',
                 images: [
-                    { src: 'pic/portfolio/mezzanine-3d.png', caption: '3D BIM Model — Complete Tekla model showing warehouse + mezzanine integration.' },
-                    { src: 'pic/portfolio/mezzanine-layout.png', caption: 'Layout Plan — Combined layout showing the warehouse and mezzanine footprint.' },
-                    { src: 'pic/portfolio/mezzanine-section.png', caption: 'Cross Section — Showing the mezzanine integration with the main warehouse frame.' },
-                    { src: 'pic/portfolio/mezzanine-roof.png', caption: 'Roof & Mezzanine Layout — Roof layout and mezzanine framing plan.' },
-                    { src: 'pic/portfolio/mezzanine-rafter.png', caption: 'Rafter & Mezzanine Beam Detail — Connection details for both structures.' },
-                    { src: 'pic/portfolio/mezzanine-assembly.png', caption: 'Assembly List — Combined assembly list for warehouse and mezzanine.' },
-                    { src: 'pic/portfolio/mezzanine-weight.png', caption: 'Weight Breakdown — Main Frame: 240 MT, Forming: 45 MT, Total: 285 MT.' },
-                    { src: 'pic/portfolio/mezzanine-cutting.png', caption: 'Cutting Plan — Optimized cutting plan for combined steel structures.' }
+                    { src: 'pic/portfolio/mezzanine-3d.png',
+                        caption: '3D BIM Model — Complete Tekla model showing warehouse + mezzanine integration.' },
+                    { src: 'pic/portfolio/mezzanine-layout.png',
+                        caption: 'Layout Plan — Combined layout showing the warehouse and mezzanine footprint.' },
+                    { src: 'pic/portfolio/mezzanine-section.png',
+                        caption: 'Cross Section — Showing the mezzanine integration with the main warehouse frame.' },
+                    { src: 'pic/portfolio/mezzanine-roof.png',
+                        caption: 'Roof & Mezzanine Layout — Roof layout and mezzanine framing plan.' },
+                    { src: 'pic/portfolio/mezzanine-rafter.png',
+                        caption: 'Rafter & Mezzanine Beam Detail — Connection details for both structures.' },
+                    { src: 'pic/portfolio/mezzanine-assembly.png',
+                        caption: 'Assembly List — Combined assembly list for warehouse and mezzanine.' },
+                    { src: 'pic/portfolio/mezzanine-weight.png',
+                        caption: 'Weight Breakdown — Main Frame: 240 MT, Forming: 45 MT, Total: 285 MT.' },
+                    { src: 'pic/portfolio/mezzanine-cutting.png',
+                        caption: 'Cutting Plan — Optimized cutting plan for combined steel structures.' }
                 ]
             }];
 
@@ -2630,7 +2662,6 @@
                         </div>
                     `).join('');
 
-                // Add click listeners
                 document.querySelectorAll('.portfolio-card').forEach(card => {
                     card.addEventListener('click', function() {
                         const id = parseInt(this.dataset.id);
@@ -2638,7 +2669,6 @@
                     });
                 });
 
-                // Re-run scroll animations
                 const newEls = grid.querySelectorAll('.animate-on-scroll');
                 const obs = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
@@ -2694,13 +2724,11 @@
                 const images = project.images || [{ src: project.thumbnail, caption: 'Project Overview' }];
                 const image = images[currentIndex] || images[0];
 
-                // Main image
                 modalImage.src = image.src;
                 modalImage.alt = image.caption;
                 modalCaption.textContent = image.caption;
                 modalCounter.textContent = `${currentIndex + 1} / ${images.length}`;
 
-                // Info
                 modalTitle.textContent = project.title;
                 modalSubtitle.textContent = project.subtitle || '';
                 modalDescription.textContent = project.description || '';
@@ -2712,14 +2740,12 @@
                 wForming.textContent = project.weightForming || '—';
                 wTotal.textContent = project.weightTotal || '—';
 
-                // Thumbnails
                 modalThumbnails.innerHTML = images.map((img, idx) => `
                         <div class="thumb ${idx === currentIndex ? 'active' : ''}" data-index="${idx}">
                             <img src="${img.src}" alt="${img.caption}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=70&h=50&fit=crop'" />
                         </div>
                     `).join('');
 
-                // Thumbnail click
                 modalThumbnails.querySelectorAll('.thumb').forEach(thumb => {
                     thumb.addEventListener('click', function() {
                         currentIndex = parseInt(this.dataset.index);
@@ -2727,23 +2753,20 @@
                     });
                 });
 
-                // Update contact button link
                 const contactBtn = document.getElementById('modalContactBtn');
                 if (contactBtn) {
                     contactBtn.href = '#contact';
                 }
 
-                // Update download button
                 const downloadBtn = document.getElementById('modalDownloadBtn');
                 if (downloadBtn) {
                     downloadBtn.onclick = function() {
-                        // In production, this would download a PDF
-                        alert('📄 PDF download would start here.\n\nIn production, this would download a detailed project report for: ' + project.title);
+                        alert('📄 PDF download would start here.\n\nIn production, this would download a detailed project report for: ' +
+                            project.title);
                     };
                 }
             }
 
-            // Navigation
             modalPrev.addEventListener('click', function(e) {
                 e.stopPropagation();
                 if (!currentProject) return;
@@ -2760,7 +2783,6 @@
                 updateModal();
             });
 
-            // Keyboard navigation
             document.addEventListener('keydown', function(e) {
                 if (!modal.classList.contains('active')) return;
                 if (e.key === 'Escape') closeModal();
@@ -2770,7 +2792,6 @@
                     e.preventDefault(); }
             });
 
-            // Close on overlay click
             modal.addEventListener('click', function(e) {
                 if (e.target === this) closeModal();
             });
@@ -2890,22 +2911,18 @@
             }
 
             // ============================================================
-            // 10. FORMPREE AJAX
+            // 10. FORMSPREE — already loaded via CDN script tag
+            //     The form uses data-formspree="mdaqball" and data-fs-field
+            //     attributes. The library handles submission, validation,
+            //     and success/error messages automatically.
             // ============================================================
-            window.formspree = window.formspree || function() {
-                (formspree.q = formspree.q || []).push(arguments);
-            };
-            formspree('initForm', {
-                formElement: '#contactForm',
-                formId: 'mdaqball'
-            });
 
             // ============================================================
             // 11. INIT
             // ============================================================
             renderCards();
 
-            console.log('🏗️ Unity Structural Solution v6.0 — International Edition loaded');
+            console.log('🏗️ Unity Structural Solution v7.0 — Formspree Integrated');
             console.log('📧 Formspree endpoint: https://formspree.io/f/mdaqball');
             console.log('📂 Portfolio projects loaded:', portfolioData.length);
 
