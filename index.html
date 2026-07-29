@@ -45,9 +45,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <!-- ===== FORMSPREE JS LIBRARY ===== -->
-    <script src="https://formspree.io/js/formspree.js">
-    </script>
+    <!-- ===== REMOVED OLD FORMSPREE SCRIPT – using @formspree/ajax instead ===== -->
 
     <style>
         /* ============================================================
@@ -2296,8 +2294,8 @@
                             ⚠️ Something went wrong. Please try again.
                         </div>
 
-                        <form id="contactForm" data-formspree="mdaqball">
-
+                        <!-- The form uses data-fs-* attributes for Formspree Ajax -->
+                        <form id="contactForm">
                             <!-- Personal Info -->
                             <div class="form-row">
                                 <div class="form-group">
@@ -2532,14 +2530,30 @@
     </a>
 
     <!-- ============================================================
-    JAVASCRIPT
+    JAVASCRIPT (Formspree Ajax + all other functionality)
     ============================================================ -->
+
+    <!-- 1. Formspree Ajax library (deferred) -->
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+    <!-- 2. Formspree initialisation (runs before library loads, queued) -->
+    <script>
+        window.formspree = window.formspree || function() {
+            (formspree.q = formspree.q || []).push(arguments);
+        };
+        formspree('initForm', {
+            formElement: '#contactForm',
+            formId: 'mdaqball'
+        });
+    </script>
+
+    <!-- 3. Main application script (theme, portfolio, counters, modal, etc.) -->
     <script>
         (function() {
             'use strict';
 
             // ============================================================
-            // 1. PORTFOLIO DATA
+            // PORTFOLIO DATA
             // ============================================================
             const portfolioData = [{
                 id: 1,
@@ -2637,7 +2651,7 @@
             }];
 
             // ============================================================
-            // 2. RENDER PORTFOLIO CARDS
+            // RENDER PORTFOLIO CARDS
             // ============================================================
             const grid = document.getElementById('portfolioGrid');
 
@@ -2678,7 +2692,7 @@
             }
 
             // ============================================================
-            // 3. MODAL LOGIC
+            // MODAL LOGIC
             // ============================================================
             let currentProject = null;
             let currentIndex = 0;
@@ -2798,7 +2812,7 @@
             modalClose.addEventListener('click', closeModal);
 
             // ============================================================
-            // 4. THEME
+            // THEME
             // ============================================================
             const themeToggle = document.getElementById('themeToggle');
             const themeIcon = document.getElementById('themeIcon');
@@ -2827,7 +2841,7 @@
             }
 
             // ============================================================
-            // 5. NAVIGATION
+            // NAVIGATION
             // ============================================================
             const navToggle = document.getElementById('navToggle');
             const navLinks = document.getElementById('navLinks');
@@ -2848,7 +2862,7 @@
             }
 
             // ============================================================
-            // 6. NAVBAR SCROLL
+            // NAVBAR SCROLL
             // ============================================================
             const navbar = document.getElementById('navbar');
             const stickyCta = document.getElementById('stickyCta');
@@ -2863,7 +2877,7 @@
             });
 
             // ============================================================
-            // 7. SCROLL ANIMATIONS
+            // SCROLL ANIMATIONS
             // ============================================================
             const animElements = document.querySelectorAll('.animate-on-scroll');
             const animObserver = new IntersectionObserver((entries) => {
@@ -2876,7 +2890,7 @@
             animElements.forEach(el => animObserver.observe(el));
 
             // ============================================================
-            // 8. COUNTERS
+            // COUNTERS
             // ============================================================
             const counters = document.querySelectorAll('.stats-grid .number span[data-count]');
             const counterObserver = new IntersectionObserver((entries) => {
@@ -2901,7 +2915,7 @@
             counters.forEach(el => counterObserver.observe(el));
 
             // ============================================================
-            // 9. STICKY CTA
+            // STICKY CTA
             // ============================================================
             if (stickyCta) {
                 stickyCta.addEventListener('click', function() {
@@ -2910,18 +2924,11 @@
             }
 
             // ============================================================
-            // 10. FORMSPREE — already loaded via CDN script tag
-            //     The form uses data-formspree="mdaqball" and data-fs-field
-            //     attributes. The library handles submission, validation,
-            //     and success/error messages automatically.
-            // ============================================================
-
-            // ============================================================
-            // 11. INIT
+            // INIT
             // ============================================================
             renderCards();
 
-            console.log('🏗️ Unity Structural Solution v7.0 — Formspree Integrated');
+            console.log('🏗️ Unity Structural Solution v7.0 — Formspree Ajax Integrated');
             console.log('📧 Formspree endpoint: https://formspree.io/f/mdaqball');
             console.log('📂 Portfolio projects loaded:', portfolioData.length);
 
