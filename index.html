@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unity Structural Solution — Premium PEB & Structural Steel Engineering</title>
+    <title>Unity Structural Solution — Premium Structural Engineering Consultancy</title>
 
     <!-- ===== SEO & META ===== -->
-    <meta name="description" content="Premium global structural engineering consultancy. AISC 360, Eurocode, and ACI 318 compliant PEB, steel, and RCC design, detailing, and estimation." />
-    <meta name="keywords" content="PEB Engineering, Steel Detailing, Tekla Structures, STAAD.Pro, Structural Design, AISC 360, Eurocode, RCC, Estimation, BOQ" />
+    <meta name="description" content="Premium structural engineering consultancy specializing in PEB, steel, and RCC design, detailing, and estimation. AISC 360, Eurocode, and ACI 318 compliant." />
+    <meta name="keywords" content="Structural Engineering, PEB Design, Steel Detailing, Tekla Structures, STAAD.Pro, AISC 360, Eurocode, Shop Drawings, GA Drawings, Connection Design, Steel Estimation" />
     <link rel="canonical" href="https://unitystructuralsolution.github.io/" />
 
     <!-- ===== OPEN GRAPH ===== -->
-    <meta property="og:title" content="Unity Structural Solution — Premium Global Structural Engineering Consultancy" />
-    <meta property="og:description" content="High-efficiency PEB, steel, and RCC engineering — AISC 360, Eurocode, and ACI 318 compliant. Direct senior expert access, rapid turnarounds, and material savings." />
+    <meta property="og:title" content="Unity Structural Solution — Premium Structural Engineering Consultancy" />
+    <meta property="og:description" content="Structural engineering that reduces cost, risk, and construction delays. PEB and structural steel engineering, detailing, estimation, and fabrication support worldwide." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://unitystructuralsolution.github.io/" />
     <meta property="og:image" content="https://unitystructuralsolution.github.io/pic/og-image.jpg" />
@@ -24,14 +24,14 @@
             "@context": "https://schema.org",
             "@type": "EngineeringOrganization",
             "name": "Unity Structural Solution",
-            "description": "Premium global structural engineering consultancy for PEB, steel, and RCC structures.",
+            "description": "Premium structural engineering consultancy for PEB, steel, and RCC structures.",
             "url": "https://unitystructuralsolution.github.io",
             "email": "unitystructuralsolution@gmail.com",
             "telephone": "+8801602105447",
             "address": { "@type": "PostalAddress", "addressCountry": "BD" },
             "sameAs": [
-                "https://www.facebook.com/UnityStructuralSolution",
-                "https://wa.me/8801602105447"
+                "https://www.linkedin.com/company/unity-structural-solution",
+                "https://www.facebook.com/UnityStructuralSolution"
             ]
         }
     </script>
@@ -47,37 +47,26 @@
 
     <style>
         /* ============================================================
-           1. ROOT VARIABLES
+           1. ROOT VARIABLES — Premium Palette
            ============================================================ */
         :root {
-            --primary: #0b1a33;
-            --primary-light: #142a5a;
-            --secondary: #1e5ca6;
+            --navy: #0b1a33;
+            --navy-light: #142a5a;
+            --charcoal: #1a1a1a;
+            --steel: #6b7f94;
+            --steel-light: #8a9bb0;
+            --white: #ffffff;
+            --off-white: #f4f7fc;
             --accent: #d4a02b;
             --accent-light: #e8c06a;
-            --bg: #ffffff;
-            --light: #f4f7fc;
-            --gray: #6b7f94;
-            --dark: #080f1f;
             --shadow: 0 8px 40px rgba(11, 26, 51, 0.06);
             --shadow-hover: 0 24px 64px rgba(11, 26, 51, 0.14);
-            --radius: 18px;
-            --radius-sm: 12px;
-            --transition: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
             --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --nav-height: 76px;
             --max-width: 1280px;
-        }
-
-        [data-theme="dark"] {
-            --bg: #0a0f1a;
-            --light: #141c2b;
-            --gray: #8a9bb0;
-            --dark: #e8edf5;
-            --shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
-            --shadow-hover: 0 24px 64px rgba(0, 0, 0, 0.6);
-            --primary: #e8edf5;
-            --primary-light: #c8d4e8;
         }
 
         /* ============================================================
@@ -96,12 +85,11 @@
         }
         body {
             font-family: var(--font);
-            background: var(--bg);
-            color: var(--dark);
+            background: var(--white);
+            color: var(--charcoal);
             line-height: 1.7;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            transition: background 0.4s, color 0.4s;
         }
         a {
             text-decoration: none;
@@ -120,10 +108,10 @@
             width: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: var(--light);
+            background: var(--off-white);
         }
         ::-webkit-scrollbar-thumb {
-            background: var(--secondary);
+            background: var(--steel);
             border-radius: 10px;
         }
 
@@ -140,28 +128,19 @@
             clip: rect(0, 0, 0, 0);
             border: 0;
         }
-        .hidden {
-            display: none !important;
-        }
         .text-center {
             text-align: center;
         }
         .text-accent {
             color: var(--accent);
         }
-        .text-secondary {
-            color: var(--secondary);
-        }
-        .flex {
-            display: flex;
+        .text-steel {
+            color: var(--steel);
         }
         .flex-center {
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        .flex-wrap {
-            flex-wrap: wrap;
         }
         .grid-2 {
             display: grid;
@@ -172,9 +151,6 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 28px;
-        }
-        .gap-2 {
-            gap: 16px;
         }
 
         /* ============================================================
@@ -193,7 +169,7 @@
             transition: var(--transition);
             letter-spacing: 0.2px;
             background: var(--accent);
-            color: var(--dark);
+            color: var(--charcoal);
             box-shadow: 0 4px 20px rgba(212, 160, 43, 0.3);
             font-family: var(--font);
         }
@@ -203,22 +179,22 @@
             background: var(--accent-light);
         }
         .btn-secondary {
-            background: var(--secondary);
-            color: #fff;
-            box-shadow: 0 4px 20px rgba(30, 92, 166, 0.3);
+            background: var(--navy);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(11, 26, 51, 0.3);
         }
         .btn-secondary:hover {
-            background: #2770c4;
+            background: var(--navy-light);
         }
         .btn-outline {
             background: transparent;
-            color: #fff;
+            color: var(--white);
             border: 2px solid rgba(255, 255, 255, 0.3);
             box-shadow: none;
         }
         .btn-outline:hover {
             background: rgba(255, 255, 255, 0.08);
-            border-color: #fff;
+            border-color: var(--white);
         }
         .btn-sm {
             padding: 8px 20px;
@@ -227,14 +203,6 @@
         .btn-lg {
             padding: 18px 44px;
             font-size: 1.05rem;
-        }
-        .btn-whatsapp {
-            background: #25d366;
-            color: #fff;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-        }
-        .btn-whatsapp:hover {
-            background: #1da851;
         }
 
         /* ============================================================
@@ -251,13 +219,10 @@
             background: transparent;
         }
         .navbar.scrolled {
-            background: rgba(11, 26, 51, 0.94);
+            background: rgba(11, 26, 51, 0.96);
             backdrop-filter: blur(18px);
             box-shadow: 0 4px 40px rgba(0, 0, 0, 0.12);
             padding: 6px 0;
-        }
-        [data-theme="dark"] .navbar.scrolled {
-            background: rgba(10, 15, 26, 0.95);
         }
         .navbar .container {
             display: flex;
@@ -268,7 +233,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #fff;
+            color: var(--white);
             font-weight: 800;
             font-size: 1rem;
             letter-spacing: -0.3px;
@@ -278,7 +243,7 @@
             height: 36px;
             width: auto;
             border-radius: 8px;
-            background: #fff;
+            background: var(--white);
             padding: 3px;
             object-fit: contain;
         }
@@ -302,12 +267,12 @@
         }
         .nav-links a:hover,
         .nav-links a.active {
-            color: #fff;
+            color: var(--white);
             background: rgba(255, 255, 255, 0.06);
         }
         .nav-links .btn-nav {
             background: var(--accent);
-            color: var(--dark);
+            color: var(--charcoal);
             padding: 6px 20px;
             font-weight: 600;
             border-radius: 40px;
@@ -315,7 +280,6 @@
         .nav-links .btn-nav:hover {
             background: var(--accent-light);
             transform: translateY(-2px);
-            color: var(--dark);
         }
         .nav-toggle {
             display: none;
@@ -331,7 +295,7 @@
             display: block;
             width: 26px;
             height: 2.5px;
-            background: #fff;
+            background: var(--white);
             border-radius: 4px;
             transition: var(--transition);
         }
@@ -350,34 +314,16 @@
             gap: 8px;
             margin-left: 8px;
         }
-        .theme-toggle {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.12);
-            color: #fff;
-        }
 
         /* ============================================================
-           6. HERO
+           6. HERO — Premium Client-Focused
            ============================================================ */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
-            background: var(--primary);
+            background: var(--navy);
             padding-top: var(--nav-height);
             overflow: hidden;
         }
@@ -386,24 +332,18 @@
             inset: 0;
             z-index: 0;
             background:
-                radial-gradient(ellipse at 20% 30%, rgba(30, 92, 166, 0.2) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 70%, rgba(212, 160, 43, 0.08) 0%, transparent 50%),
-                linear-gradient(145deg, var(--primary) 0%, #0d2145 100%);
-            overflow: hidden;
-        }
-        [data-theme="dark"] .hero-bg {
-            background:
                 radial-gradient(ellipse at 20% 30%, rgba(30, 92, 166, 0.15) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 70%, rgba(212, 160, 43, 0.05) 0%, transparent 50%),
-                linear-gradient(145deg, #0a0f1a 0%, #0d1a2e 100%);
+                radial-gradient(ellipse at 80% 70%, rgba(212, 160, 43, 0.06) 0%, transparent 50%),
+                linear-gradient(145deg, var(--navy) 0%, #0d2145 100%);
+            overflow: hidden;
         }
         .hero-bg .grid-overlay {
             position: absolute;
             inset: 0;
             z-index: 1;
             background-image:
-                linear-gradient(rgba(212, 160, 43, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(212, 160, 43, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(212, 160, 43, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 160, 43, 0.02) 1px, transparent 1px);
             background-size: 48px 48px;
             animation: gridMove 30s linear infinite;
             pointer-events: none;
@@ -427,7 +367,7 @@
             padding-bottom: 40px;
         }
         .hero-content {
-            color: #fff;
+            color: var(--white);
         }
         .hero-badge {
             display: inline-flex;
@@ -473,6 +413,26 @@
             max-width: 520px;
             margin-bottom: 8px;
             line-height: 1.8;
+        }
+        .hero-trust-line {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin: 16px 0 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .hero-trust-line span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .hero-trust-line i {
+            color: var(--accent);
+            font-size: 0.6rem;
         }
         .hero-buttons {
             display: flex;
@@ -543,8 +503,8 @@
         }
         .hero-image-container .floating-tag {
             position: absolute;
-            background: var(--bg);
-            color: var(--dark);
+            background: var(--white);
+            color: var(--charcoal);
             padding: 6px 16px;
             border-radius: 40px;
             font-size: 0.7rem;
@@ -569,15 +529,12 @@
         }
 
         /* ============================================================
-           7. STATS BAR
+           7. STATS BAR — Trust Indicators
            ============================================================ */
         .stats-section {
             padding: 50px 0;
-            background: var(--light);
+            background: var(--off-white);
             border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-        }
-        [data-theme="dark"] .stats-section {
-            background: var(--light);
         }
         .stats-grid {
             display: grid;
@@ -588,7 +545,7 @@
         .stats-grid .stat-item .number {
             font-size: 2.8rem;
             font-weight: 900;
-            color: var(--secondary);
+            color: var(--navy);
             line-height: 1.1;
         }
         .stats-grid .stat-item .number .plus {
@@ -596,20 +553,17 @@
         }
         .stats-grid .stat-item p {
             font-size: 0.85rem;
-            color: var(--gray);
+            color: var(--steel);
             font-weight: 500;
             margin-top: 2px;
         }
 
         /* ============================================================
-           8. SERVICES (PACKAGES) — Premium Billing Format
+           8. WHY CLIENTS CHOOSE US — Benefit Cards
            ============================================================ */
-        .services-section {
+        .why-section {
             padding: 80px 0;
-            background: var(--light);
-        }
-        [data-theme="dark"] .services-section {
-            background: var(--light);
+            background: var(--white);
         }
         .section-header {
             text-align: center;
@@ -618,8 +572,8 @@
         }
         .section-header .tag {
             display: inline-block;
-            background: rgba(30, 92, 166, 0.07);
-            color: var(--secondary);
+            background: rgba(11, 26, 51, 0.06);
+            color: var(--navy);
             padding: 4px 18px;
             border-radius: 50px;
             font-size: 0.65rem;
@@ -632,129 +586,430 @@
             font-size: clamp(1.8rem, 3.2vw, 2.6rem);
             font-weight: 800;
             letter-spacing: -0.8px;
-            color: var(--primary);
+            color: var(--navy);
             margin-bottom: 8px;
         }
         .section-header h2 span {
-            color: var(--secondary);
+            color: var(--accent);
         }
         .section-header p {
-            color: var(--gray);
+            color: var(--steel);
             font-size: 0.95rem;
         }
-        .services-grid {
+        .benefit-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 28px;
         }
-        .service-card {
-            background: var(--bg);
+        .benefit-card {
+            background: var(--off-white);
             border-radius: var(--radius);
-            padding: 32px 26px;
-            box-shadow: var(--shadow);
+            padding: 28px 24px;
             border: 1px solid rgba(0, 0, 0, 0.03);
             transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            cursor: default;
         }
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
-            opacity: 0;
-            transition: var(--transition);
-        }
-        .service-card:hover::before {
-            opacity: 1;
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
+        .benefit-card:hover {
+            transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
-            border-color: transparent;
         }
-        .service-card .icon {
+        .benefit-card .icon {
             width: 48px;
             height: 48px;
-            border-radius: 14px;
-            background: rgba(30, 92, 166, 0.06);
+            border-radius: 12px;
+            background: rgba(11, 26, 51, 0.06);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
-            color: var(--secondary);
+            color: var(--navy);
             margin-bottom: 12px;
-            transition: var(--transition);
         }
-        .service-card:hover .icon {
-            background: var(--secondary);
-            color: #fff;
-        }
-        .service-card .badge-pkg {
-            display: inline-block;
-            background: rgba(212, 160, 43, 0.1);
-            color: var(--accent);
-            font-size: 0.6rem;
+        .benefit-card h4 {
+            font-size: 1rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 2px 12px;
-            border-radius: 20px;
-            margin-bottom: 6px;
-        }
-        .service-card h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary);
+            color: var(--navy);
             margin-bottom: 4px;
         }
-        .service-card p {
-            color: var(--gray);
+        .benefit-card p {
+            color: var(--steel);
             font-size: 0.85rem;
-            margin-bottom: 12px;
             line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ============================================================
+           9. SERVICES — Client-Need Focused
+           ============================================================ */
+        .services-section {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .service-card .icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(11, 26, 51, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+        .service-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 2px;
+        }
+        .service-card p {
+            color: var(--steel);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 8px;
         }
         .service-card ul {
             list-style: none;
-            margin-top: 8px;
         }
         .service-card ul li {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 0.82rem;
-            color: var(--gray);
-            padding: 4px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+            gap: 8px;
+            font-size: 0.78rem;
+            color: var(--steel);
+            padding: 2px 0;
         }
         .service-card ul li i {
             color: var(--accent);
-            font-size: 0.7rem;
-        }
-        .service-card .pricing-note {
-            margin-top: 14px;
-            padding-top: 12px;
-            border-top: 1px solid rgba(0, 0, 0, 0.04);
-            font-size: 0.8rem;
-            color: var(--gray);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .service-card .pricing-note strong {
-            color: var(--secondary);
+            font-size: 0.6rem;
         }
 
         /* ============================================================
-           9. PORTFOLIO
+           10. WHO WE WORK WITH
+           ============================================================ */
+        .clients-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .client-card {
+            background: var(--off-white);
+            border-radius: var(--radius);
+            padding: 24px 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+        }
+        .client-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .client-card .icon {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .client-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 2px;
+        }
+        .client-card p {
+            color: var(--steel);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ============================================================
+           11. ENGINEERING PROCESS
+           ============================================================ */
+        .process-section {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            counter-reset: step;
+        }
+        .process-step {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 24px 20px;
+            border-left: 4px solid var(--accent);
+            box-shadow: var(--shadow);
+            counter-increment: step;
+            transition: var(--transition);
+        }
+        .process-step:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .process-step .number {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .process-step .number::before {
+            content: "0" counter(step) " — ";
+        }
+        .process-step h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 4px 0 2px;
+        }
+        .process-step p {
+            color: var(--steel);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ============================================================
+           12. QUALITY CONTROL
+           ============================================================ */
+        .quality-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        .quality-flow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .quality-flow .step {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--navy);
+            background: var(--off-white);
+            padding: 8px 18px;
+            border-radius: 40px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .quality-flow .step i {
+            color: var(--accent);
+        }
+        .quality-flow .arrow {
+            color: var(--steel-light);
+            font-size: 0.8rem;
+        }
+
+        /* ============================================================
+           13. STANDARDS & SOFTWARE
+           ============================================================ */
+        .standards-section {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+        .standards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .standards-box {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            box-shadow: var(--shadow);
+        }
+        .standards-box h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .standards-box h4 i {
+            color: var(--accent);
+        }
+        .standards-box .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .standards-box .tag-group .tag {
+            background: var(--off-white);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--navy);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .standards-box .tag-group .tag i {
+            color: var(--accent);
+            margin-right: 4px;
+        }
+
+        /* ============================================================
+           14. ABOUT
+           ============================================================ */
+        .about-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+        .about-text h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+        .about-text p {
+            color: var(--steel);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        .about-text .highlight-list {
+            list-style: none;
+            margin-top: 12px;
+        }
+        .about-text .highlight-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--steel);
+            padding: 4px 0;
+        }
+        .about-text .highlight-list li i {
+            color: var(--accent);
+            font-size: 0.7rem;
+        }
+
+        /* ============================================================
+           15. TEAM
+           ============================================================ */
+        .team-section {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .team-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+        }
+        .team-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .team-card .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            box-shadow: 0 8px 28px rgba(11, 26, 51, 0.15);
+            overflow: hidden;
+        }
+        .team-card .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .team-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .team-card .role {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-bottom: 2px;
+        }
+        .team-card .exp {
+            color: var(--steel);
+            font-size: 0.75rem;
+            margin-bottom: 6px;
+        }
+        .team-card .bio {
+            color: var(--steel);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        .team-card .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .team-card .badges span {
+            background: rgba(212, 160, 43, 0.08);
+            color: var(--accent);
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ============================================================
+           16. PORTFOLIO — Premium Redesign
            ============================================================ */
         .portfolio-section {
             padding: 80px 0;
-            background: var(--bg);
+            background: var(--white);
         }
         .portfolio-grid {
             display: grid;
@@ -764,10 +1019,11 @@
         .portfolio-card {
             border-radius: var(--radius);
             overflow: hidden;
-            background: var(--light);
+            background: var(--white);
+            border: 1px solid rgba(0, 0, 0, 0.04);
             transition: var(--transition);
-            border: 1px solid rgba(0, 0, 0, 0.03);
             cursor: pointer;
+            box-shadow: var(--shadow);
         }
         .portfolio-card:hover {
             transform: translateY(-6px);
@@ -777,7 +1033,7 @@
             position: relative;
             aspect-ratio: 4/3;
             overflow: hidden;
-            background: var(--primary);
+            background: var(--navy);
         }
         .portfolio-card .img-wrap img {
             width: 100%;
@@ -793,7 +1049,7 @@
             top: 12px;
             left: 12px;
             background: var(--accent);
-            color: var(--dark);
+            color: var(--charcoal);
             padding: 2px 14px;
             border-radius: 20px;
             font-size: 0.6rem;
@@ -801,37 +1057,23 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .portfolio-card .img-wrap .view-detail {
-            position: absolute;
-            bottom: 12px;
-            right: 12px;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(8px);
-            color: #fff;
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 0.6rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        .portfolio-card:hover .img-wrap .view-detail {
-            opacity: 1;
-        }
         .portfolio-card .body {
             padding: 18px 20px 20px;
         }
         .portfolio-card .body h4 {
             font-size: 1rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--navy);
+            margin-bottom: 2px;
+        }
+        .portfolio-card .body .location {
+            font-size: 0.8rem;
+            color: var(--steel);
             margin-bottom: 2px;
         }
         .portfolio-card .body .meta {
             font-size: 0.75rem;
-            color: var(--gray);
+            color: var(--steel);
             display: flex;
             flex-wrap: wrap;
             gap: 6px 14px;
@@ -844,27 +1086,38 @@
         }
         .portfolio-card .body p {
             font-size: 0.82rem;
-            color: var(--gray);
+            color: var(--steel);
             margin: 0;
         }
-        .portfolio-card .body .click-hint {
-            margin-top: 8px;
-            font-size: 0.7rem;
-            color: var(--secondary);
+        .portfolio-card .body .view-link {
+            margin-top: 10px;
+            font-size: 0.8rem;
             font-weight: 600;
+            color: var(--navy);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
         }
-        .portfolio-card .body .click-hint i {
-            color: var(--accent);
+        .portfolio-card .body .view-link i {
+            transition: var(--transition);
+        }
+        .portfolio-card:hover .body .view-link i {
+            transform: translateX(4px);
+        }
+        .portfolio-view-all {
+            text-align: center;
+            margin-top: 32px;
         }
 
         /* ============================================================
-           10. PORTFOLIO MODAL
+           17. PORTFOLIO MODAL — Fullscreen Gallery
            ============================================================ */
         .modal-overlay {
             position: fixed;
             inset: 0;
             z-index: 3000;
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(0, 0, 0, 0.88);
             backdrop-filter: blur(12px);
             display: none;
             align-items: center;
@@ -885,7 +1138,7 @@
         }
 
         .modal-container {
-            background: var(--bg);
+            background: var(--white);
             border-radius: var(--radius);
             max-width: 1200px;
             width: 100%;
@@ -913,10 +1166,10 @@
             top: 12px;
             right: 16px;
             z-index: 10;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(8px);
             border: none;
-            color: #fff;
+            color: var(--white);
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -945,7 +1198,7 @@
             flex: 1;
             min-height: 320px;
             max-height: 450px;
-            background: var(--light);
+            background: var(--off-white);
             border-radius: var(--radius-sm);
             overflow: hidden;
             display: flex;
@@ -957,7 +1210,7 @@
             height: 100%;
             object-fit: contain;
             transition: var(--transition);
-            background: var(--light);
+            background: var(--off-white);
         }
         .modal-main-image .nav-arrow {
             position: absolute;
@@ -966,7 +1219,7 @@
             background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(4px);
             border: none;
-            color: #fff;
+            color: var(--white);
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -993,7 +1246,7 @@
             right: 14px;
             background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(4px);
-            color: #fff;
+            color: var(--white);
             font-size: 0.7rem;
             padding: 2px 12px;
             border-radius: 12px;
@@ -1007,7 +1260,7 @@
             right: 0;
             background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
             padding: 20px 16px 12px;
-            color: #fff;
+            color: var(--white);
             font-size: 0.85rem;
             font-weight: 500;
             z-index: 5;
@@ -1027,7 +1280,7 @@
             height: 4px;
         }
         .modal-thumbnails::-webkit-scrollbar-thumb {
-            background: var(--secondary);
+            background: var(--steel);
             border-radius: 4px;
         }
         .modal-thumbnails .thumb {
@@ -1057,7 +1310,7 @@
         .modal-info {
             padding: 24px 24px 20px 16px;
             overflow-y: auto;
-            background: var(--light);
+            background: var(--off-white);
             border-left: 1px solid rgba(0, 0, 0, 0.04);
             max-height: 92vh;
         }
@@ -1065,79 +1318,46 @@
             width: 4px;
         }
         .modal-info::-webkit-scrollbar-thumb {
-            background: var(--secondary);
+            background: var(--steel);
             border-radius: 4px;
-        }
-        [data-theme="dark"] .modal-info {
-            background: var(--light);
-            border-left-color: rgba(255, 255, 255, 0.04);
         }
 
         .modal-info .project-title {
             font-size: 1.2rem;
             font-weight: 800;
-            color: var(--primary);
+            color: var(--navy);
             margin-bottom: 2px;
         }
         .modal-info .project-subtitle {
             font-size: 0.8rem;
-            color: var(--gray);
+            color: var(--steel);
             margin-bottom: 10px;
         }
-
         .modal-info .data-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4px 12px;
-            background: var(--bg);
+            background: var(--white);
             padding: 10px 14px;
             border-radius: var(--radius-sm);
             margin-bottom: 12px;
             font-size: 0.78rem;
         }
         .modal-info .data-grid .label {
-            color: var(--gray);
+            color: var(--steel);
             font-weight: 500;
         }
         .modal-info .data-grid .value {
-            color: var(--dark);
+            color: var(--charcoal);
             font-weight: 600;
             text-align: right;
         }
-
-        .modal-info .weight-breakdown {
-            background: var(--bg);
-            padding: 10px 14px;
-            border-radius: var(--radius-sm);
-            margin-bottom: 12px;
-            font-size: 0.78rem;
-        }
-        .modal-info .weight-breakdown .wb-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 2px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-        }
-        .modal-info .weight-breakdown .wb-row:last-child {
-            border-bottom: none;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-        .modal-info .weight-breakdown .wb-row .wb-label {
-            color: var(--gray);
-        }
-        .modal-info .weight-breakdown .wb-row .wb-value {
-            color: var(--dark);
-            font-weight: 600;
-        }
-
         .modal-info .project-description {
             font-size: 0.85rem;
-            color: var(--gray);
+            color: var(--steel);
             line-height: 1.7;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
-
         .modal-info .action-buttons {
             display: flex;
             gap: 10px;
@@ -1149,199 +1369,62 @@
         }
 
         /* ============================================================
-           11. CASE STUDIES — Standardized Metrics
+           18. TESTIMONIALS
            ============================================================ */
-        .casestudies-section {
+        .testimonials-section {
             padding: 80px 0;
-            background: var(--light);
+            background: var(--off-white);
         }
-        [data-theme="dark"] .casestudies-section {
-            background: var(--light);
-        }
-        .case-grid {
+        .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+            gap: 28px;
         }
-        .case-card {
-            background: var(--bg);
+        .testimonial-card {
+            background: var(--white);
             border-radius: var(--radius);
-            padding: 28px 24px;
+            padding: 24px 20px;
             box-shadow: var(--shadow);
             border: 1px solid rgba(0, 0, 0, 0.03);
-            transition: var(--transition);
         }
-        .case-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-hover);
+        .testimonial-card .quote {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 12px;
         }
-        .case-card .tag {
-            display: inline-block;
-            background: rgba(212, 160, 43, 0.1);
+        .testimonial-card .quote i {
             color: var(--accent);
-            padding: 2px 14px;
-            border-radius: 20px;
-            font-size: 0.6rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-        .case-card h4 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 4px;
-        }
-        .case-card .before-after {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin: 12px 0;
-        }
-        .case-card .before-after .ba-box {
-            padding: 10px 12px;
-            border-radius: var(--radius-sm);
-            text-align: center;
             font-size: 0.8rem;
+            margin-right: 4px;
         }
-        .case-card .before-after .ba-box.before {
-            background: rgba(220, 53, 69, 0.06);
-            border: 1px solid rgba(220, 53, 69, 0.1);
-        }
-        .case-card .before-after .ba-box.after {
-            background: rgba(40, 167, 69, 0.06);
-            border: 1px solid rgba(40, 167, 69, 0.1);
-        }
-        .case-card .before-after .ba-box .label {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-        .case-card .before-after .ba-box .value {
-            font-size: 1.2rem;
-            font-weight: 800;
-        }
-        .case-card .before-after .ba-box.before .value {
-            color: #dc3545;
-        }
-        .case-card .before-after .ba-box.after .value {
-            color: #28a745;
-        }
-        .case-card .result {
-            background: rgba(40, 167, 69, 0.06);
-            padding: 10px 14px;
-            border-radius: var(--radius-sm);
-            font-size: 0.82rem;
-            color: var(--dark);
-            border-left: 3px solid #28a745;
-            margin-top: 10px;
-        }
-        .case-card .result i {
-            color: #28a745;
-            margin-right: 6px;
-        }
-
-        /* ============================================================
-           12. TEAM — Trust Signals
-           ============================================================ */
-        .team-section {
-            padding: 80px 0;
-            background: var(--bg);
-        }
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .team-card {
-            background: var(--light);
-            border-radius: var(--radius);
-            padding: 32px 28px;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(0, 0, 0, 0.03);
-            transition: var(--transition);
-            text-align: center;
-        }
-        .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-        .team-card .avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            margin: 0 auto 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
-            box-shadow: 0 8px 28px rgba(30, 92, 166, 0.2);
-            overflow: hidden;
-        }
-        .team-card .avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .team-card h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        .team-card .role {
-            color: var(--secondary);
+        .testimonial-card .author {
             font-weight: 600;
-            font-size: 0.8rem;
-            margin-bottom: 2px;
-        }
-        .team-card .exp {
-            color: var(--gray);
-            font-size: 0.75rem;
-            margin-bottom: 6px;
-        }
-        .team-card .bio {
-            color: var(--gray);
+            color: var(--navy);
             font-size: 0.85rem;
-            line-height: 1.6;
         }
-        .team-card .badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            justify-content: center;
-            margin-top: 10px;
+        .testimonial-card .author-role {
+            color: var(--steel);
+            font-size: 0.75rem;
         }
-        .team-card .badges span {
-            background: rgba(212, 160, 43, 0.08);
-            color: var(--accent);
-            padding: 2px 14px;
-            border-radius: 20px;
-            font-size: 0.6rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .testimonial-placeholder {
+            text-align: center;
+            color: var(--steel);
+            font-size: 1rem;
+            padding: 20px;
         }
 
         /* ============================================================
-           13. CONTACT — Trust Badges
+           19. CONTACT / PROJECT INQUIRY
            ============================================================ */
         .contact-section {
             padding: 80px 0;
-            background: var(--primary);
-            color: #fff;
-        }
-        [data-theme="dark"] .contact-section {
-            background: #0a0f1a;
+            background: var(--navy);
+            color: var(--white);
         }
         .contact-section .section-header h2 {
-            color: #fff;
+            color: var(--white);
         }
         .contact-section .section-header h2 span {
             color: var(--accent);
@@ -1359,7 +1442,7 @@
             font-size: 1.2rem;
             font-weight: 700;
             margin-bottom: 12px;
-            color: #fff;
+            color: var(--white);
         }
         .contact-info .detail {
             display: flex;
@@ -1393,7 +1476,7 @@
             margin-right: 10px;
         }
         .contact-info .trust-badge strong {
-            color: #fff;
+            color: var(--white);
             font-weight: 600;
             display: inline-block;
             margin-right: 4px;
@@ -1422,7 +1505,7 @@
         }
         .contact-info .social-row a:hover {
             background: var(--accent);
-            color: var(--dark);
+            color: var(--charcoal);
             transform: translateY(-4px);
             border-color: var(--accent);
         }
@@ -1435,7 +1518,7 @@
             padding: 32px 28px;
         }
         .contact-form h4 {
-            color: #fff;
+            color: var(--white);
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 16px;
@@ -1470,7 +1553,7 @@
             background: rgba(255, 255, 255, 0.04);
             font-family: var(--font);
             font-size: 0.85rem;
-            color: #fff;
+            color: var(--white);
             transition: var(--transition);
             outline: none;
             -webkit-user-select: text;
@@ -1484,8 +1567,8 @@
             color: rgba(255, 255, 255, 0.3);
         }
         .contact-form select option {
-            color: var(--dark);
-            background: var(--bg);
+            color: var(--charcoal);
+            background: var(--white);
         }
         .contact-form input:focus,
         .contact-form select:focus,
@@ -1506,8 +1589,6 @@
             color: rgba(255, 255, 255, 0.3);
             margin-top: 2px;
         }
-
-        /* Formspree success/error styling */
         [data-fs-success] {
             padding: 12px 16px;
             border-radius: 8px;
@@ -1534,16 +1615,42 @@
         }
 
         /* ============================================================
-           14. FOOTER
+           20. FINAL CTA
+           ============================================================ */
+        .final-cta-section {
+            padding: 60px 0;
+            background: var(--accent);
+            color: var(--charcoal);
+            text-align: center;
+        }
+        .final-cta-section h2 {
+            font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .final-cta-section p {
+            font-size: 1rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 16px;
+        }
+        .final-cta-section .btn {
+            background: var(--charcoal);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .final-cta-section .btn:hover {
+            background: var(--navy);
+        }
+
+        /* ============================================================
+           21. FOOTER
            ============================================================ */
         .footer {
-            background: var(--dark);
+            background: var(--charcoal);
             color: rgba(255, 255, 255, 0.4);
             padding: 48px 0 24px;
             border-top: 1px solid rgba(255, 255, 255, 0.03);
-        }
-        [data-theme="dark"] .footer {
-            background: #05080f;
         }
         .footer-grid {
             display: grid;
@@ -1556,7 +1663,7 @@
             align-items: center;
             gap: 10px;
             font-weight: 700;
-            color: #fff;
+            color: var(--white);
             font-size: 0.95rem;
             margin-bottom: 8px;
         }
@@ -1567,7 +1674,7 @@
             height: 30px;
             width: auto;
             border-radius: 6px;
-            background: #fff;
+            background: var(--white);
             padding: 2px;
             object-fit: contain;
         }
@@ -1577,7 +1684,7 @@
             max-width: 320px;
         }
         .footer h4 {
-            color: #fff;
+            color: var(--white);
             font-size: 0.9rem;
             font-weight: 700;
             margin-bottom: 10px;
@@ -1620,7 +1727,7 @@
         }
 
         /* ============================================================
-           15. STICKY CTA & FLOATING BADGES
+           22. STICKY CTA & FLOATING BADGES
            ============================================================ */
         .sticky-cta {
             position: fixed;
@@ -1631,7 +1738,7 @@
             padding: 12px 32px;
             border-radius: 60px;
             background: var(--accent);
-            color: var(--dark);
+            color: var(--charcoal);
             font-weight: 700;
             box-shadow: 0 8px 40px rgba(212, 160, 43, 0.5);
             display: none;
@@ -1670,7 +1777,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
-            color: #fff;
+            color: var(--white);
             box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
             transition: var(--transition);
             border: none;
@@ -1680,14 +1787,6 @@
         .floating-badge:hover {
             transform: scale(1.08) translateY(-4px);
         }
-        .floating-badge.messenger {
-            background: #0084ff;
-            bottom: 90px;
-            right: 24px;
-        }
-        .floating-badge.messenger:hover {
-            background: #0066cc;
-        }
         .floating-badge.whatsapp {
             background: #25d366;
             bottom: 28px;
@@ -1696,9 +1795,36 @@
         .floating-badge.whatsapp:hover {
             background: #1da851;
         }
+        .floating-badge.messenger {
+            background: #0084ff;
+            bottom: 90px;
+            right: 24px;
+        }
+        .floating-badge.messenger:hover {
+            background: #0066cc;
+        }
 
         /* ============================================================
-           16. RESPONSIVE
+           23. ANIMATIONS
+           ============================================================ */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .animate-on-scroll.zoom {
+            transform: scale(0.94);
+        }
+        .animate-on-scroll.zoom.visible {
+            transform: scale(1);
+        }
+
+        /* ============================================================
+           24. RESPONSIVE
            ============================================================ */
         @media (max-width: 1024px) {
             .hero .container {
@@ -1709,6 +1835,9 @@
             .hero p {
                 margin-left: auto;
                 margin-right: auto;
+            }
+            .hero-trust-line {
+                justify-content: center;
             }
             .hero-buttons {
                 justify-content: center;
@@ -1723,14 +1852,20 @@
                 grid-template-columns: 1fr;
                 gap: 32px;
             }
-            .services-grid {
+            .services-grid,
+            .benefit-grid,
+            .clients-grid,
+            .process-grid,
+            .portfolio-grid,
+            .testimonial-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .portfolio-grid {
-                grid-template-columns: 1fr 1fr;
+            .standards-grid {
+                grid-template-columns: 1fr;
             }
-            .case-grid {
-                grid-template-columns: 1fr 1fr;
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
             }
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
@@ -1741,7 +1876,6 @@
             .hero-image-container .floating-tag {
                 display: none;
             }
-
             .modal-container {
                 grid-template-columns: 1fr;
                 max-height: 95vh;
@@ -1798,13 +1932,12 @@
             .hero h1 {
                 font-size: 2rem;
             }
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-            .case-grid {
+            .services-grid,
+            .benefit-grid,
+            .clients-grid,
+            .process-grid,
+            .portfolio-grid,
+            .testimonial-grid {
                 grid-template-columns: 1fr;
             }
             .team-grid {
@@ -1842,18 +1975,17 @@
                 height: 42px;
                 font-size: 1.1rem;
             }
-            .floating-badge.messenger {
-                bottom: 72px;
-                right: 14px;
-            }
             .floating-badge.whatsapp {
                 bottom: 14px;
+                right: 14px;
+            }
+            .floating-badge.messenger {
+                bottom: 72px;
                 right: 14px;
             }
             .hero-image-container .floating-tag {
                 display: none;
             }
-
             .modal-container {
                 max-height: 98vh;
                 border-radius: var(--radius-sm);
@@ -1887,10 +2019,6 @@
             .modal-info .project-title {
                 font-size: 1rem;
             }
-            .modal-info .weight-breakdown {
-                font-size: 0.7rem;
-                padding: 6px 10px;
-            }
             .modal-close {
                 width: 32px;
                 height: 32px;
@@ -1914,18 +2042,11 @@
             .section-header h2 {
                 font-size: 1.4rem;
             }
-            .grid-2,
-            .grid-3 {
-                grid-template-columns: 1fr;
-            }
             .contact-form {
                 padding: 20px 16px;
             }
             .team-card {
                 padding: 20px 16px;
-            }
-            .case-card .before-after {
-                grid-template-columns: 1fr 1fr;
             }
             .service-card .pricing-note {
                 flex-direction: column;
@@ -1943,68 +2064,13 @@
                 font-size: 0.7rem;
                 padding: 12px 10px 8px;
             }
-        }
-
-        /* ============================================================
-           17. ANIMATIONS
-           ============================================================ */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(32px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .animate-on-scroll.zoom {
-            transform: scale(0.94);
-        }
-        .animate-on-scroll.zoom.visible {
-            transform: scale(1);
-        }
-
-        /* Dark mode overrides */
-        [data-theme="dark"] .service-card,
-        [data-theme="dark"] .portfolio-card,
-        [data-theme="dark"] .case-card,
-        [data-theme="dark"] .team-card {
-            background: var(--light);
-            border-color: rgba(255, 255, 255, 0.04);
-        }
-        [data-theme="dark"] .section-header h2 {
-            color: #fff;
-        }
-        [data-theme="dark"] .section-header h2 span {
-            color: var(--accent-light);
-        }
-        [data-theme="dark"] .stats-grid .stat-item .number {
-            color: var(--accent-light);
-        }
-        [data-theme="dark"] .hero-content p {
-            color: rgba(255, 255, 255, 0.6);
-        }
-        [data-theme="dark"] .contact-form {
-            background: rgba(255, 255, 255, 0.02);
-        }
-        [data-theme="dark"] .modal-container {
-            background: var(--bg);
-        }
-        [data-theme="dark"] .modal-info {
-            background: var(--light);
-        }
-        [data-theme="dark"] .modal-info .data-grid,
-        [data-theme="dark"] .modal-info .weight-breakdown {
-            background: var(--bg);
-        }
-        [data-theme="dark"] .modal-main-image {
-            background: var(--light);
-        }
-        [data-theme="dark"] .modal-main-image img {
-            background: var(--light);
-        }
-        [data-theme="dark"] .modal-thumbnails .thumb {
-            border-color: rgba(255, 255, 255, 0.1);
+            .quality-flow .step {
+                font-size: 0.75rem;
+                padding: 6px 14px;
+            }
+            .quality-flow .arrow {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -2024,15 +2090,12 @@
             </a>
             <ul class="nav-links" id="navLinks" role="menubar">
                 <li role="none"><a href="#services" role="menuitem">Services</a></li>
-                <li role="none"><a href="#portfolio" role="menuitem">Portfolio</a></li>
-                <li role="none"><a href="#casestudies" role="menuitem">Results</a></li>
-                <li role="none"><a href="#team" role="menuitem">Team</a></li>
-                <li role="none"><a href="#contact" role="menuitem" class="btn-nav">Contact</a></li>
+                <li role="none"><a href="#portfolio" role="menuitem">Projects</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#process" role="menuitem">Process</a></li>
+                <li role="none"><a href="#contact" role="menuitem" class="btn-nav">Request a Quote</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon" id="themeIcon"></i>
-                </button>
                 <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
@@ -2041,9 +2104,9 @@
     </nav>
 
     <!-- ===== STICKY CTA ===== -->
-    <button class="sticky-cta" id="stickyCta" aria-label="Request a free quote">
+    <button class="sticky-cta" id="stickyCta" aria-label="Request a project quote">
         <i class="fas fa-file-signature"></i>
-        <span class="hide-mobile">Request a Quote</span>
+        <span class="hide-mobile">Request a Project Quote</span>
         <i class="fas fa-arrow-right"></i>
     </button>
 
@@ -2052,32 +2115,34 @@
     ============================================================ -->
     <main id="main-content">
 
-        <!-- ===== HERO (Premium Repositioning) ===== -->
+        <!-- ===== HERO ===== -->
         <header class="hero" id="home">
             <div class="hero-bg">
                 <div class="grid-overlay"></div>
             </div>
             <div class="container">
                 <div class="hero-content">
-                    <div class="hero-badge"><i class="fas fa-globe" aria-hidden="true"></i> Global Engineering Standards — AISC 360 / Eurocode / ACI 318</div>
+                    <div class="hero-badge"><i class="fas fa-globe" aria-hidden="true"></i> Global Engineering Standards</div>
                     <h1>
-                        High-Efficiency PEB &amp;<br />
-                        <span class="highlight">Structural Steel Engineering</span>
+                        Structural Engineering That<br />
+                        <span class="highlight">Reduces Cost, Risk &amp; Construction Delays</span>
                     </h1>
                     <div class="subtitle">
-                        Delivering <strong>AISC 360, Eurocode, and ACI 318</strong> compliant design and Tekla detailing worldwide. Enjoy direct access to senior structural experts, rapid turnarounds, and up to <strong>15% material savings</strong>.
+                        PEB and structural steel engineering, detailing, estimation and fabrication support for contractors, fabricators, developers and construction teams worldwide.
                     </div>
-                    <p>
-                        Premium structural engineering consultancy built for industrial fabricators, general contractors, and developers across the USA, Australia, Europe, and the UAE. Our lean senior-led structure means you work directly with the engineers who design and detail your project — ensuring agility, precision, and reduced overhead costs passed onto you.
-                    </p>
+                    <div class="hero-trust-line">
+                        <span><i class="fas fa-check-circle"></i> AISC 360 / Eurocode</span>
+                        <span><i class="fas fa-check-circle"></i> Tekla Structures</span>
+                        <span><i class="fas fa-check-circle"></i> Fabrication-Focused Engineering</span>
+                    </div>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-lg"><i class="fas fa-phone-alt" aria-hidden="true"></i> Request a Quote</a>
-                        <a href="#portfolio" class="btn btn-outline"><i class="fas fa-eye" aria-hidden="true"></i> View Project Portfolio</a>
+                        <a href="#contact" class="btn btn-lg"><i class="fas fa-paper-plane" aria-hidden="true"></i> Request a Project Quote</a>
+                        <a href="#portfolio" class="btn btn-outline"><i class="fas fa-eye" aria-hidden="true"></i> View Our Projects</a>
                     </div>
                     <div class="hero-stats">
-                        <div class="stat"><h3>22+</h3><p>Years Combined Senior Experience</p></div>
+                        <div class="stat"><h3>22+</h3><p>Years Combined Experience</p></div>
                         <div class="stat"><h3>858</h3><p>MT Largest Single Project</p></div>
-                        <div class="stat"><h3>10-15%</h3><p>Typical Steel Savings</p></div>
+                        <div class="stat"><h3>10-15%</h3><p>Typical Material Savings</p></div>
                         <div class="stat"><h3>98%</h3><p>Client Satisfaction Rate</p></div>
                     </div>
                 </div>
@@ -2092,7 +2157,7 @@
             </div>
         </header>
 
-        <!-- ===== STATS BAR ===== -->
+        <!-- ===== TRUST INDICATORS (Stats) ===== -->
         <section class="stats-section" aria-label="Company statistics">
             <div class="container">
                 <div class="stats-grid">
@@ -2116,126 +2181,326 @@
             </div>
         </section>
 
-        <!-- ===== SERVICES (Premium Billing Format) ===== -->
-        <section class="services-section" id="services" aria-label="Engineering service packages">
+        <!-- ===== WHY CLIENTS CHOOSE US ===== -->
+        <section class="why-section" id="why" aria-label="Why clients choose us">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <div class="tag">Service Packages</div>
-                    <h2>Premium Engineering <span>Services</span></h2>
-                    <p>Fixed-price scopes tailored to your project phase — from conceptual design to full fabrication packages.</p>
+                    <div class="tag">Why Clients Choose Us</div>
+                    <h2>Engineering That <span>Delivers</span></h2>
+                    <p>We don't just produce drawings. We understand how structures are engineered, detailed, fabricated, and constructed.</p>
                 </div>
-                <div class="services-grid">
-                    <!-- Package 1 -->
-                    <div class="service-card animate-on-scroll">
-                        <div class="icon"><i class="fas fa-file-invoice-dollar"></i></div>
-                        <span class="badge-pkg">Package 1</span>
-                        <h4>Design &amp; Quotation</h4>
-                        <p>Conceptual design, load analysis, and preliminary budget estimation using STAAD.Pro. AISC 360 / Eurocode / BNBC compliant.</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> STAAD.Pro analysis &amp; sizing</li>
-                            <li><i class="fas fa-check"></i> Preliminary weight estimation</li>
-                            <li><i class="fas fa-check"></i> Budget quotation &amp; MTO</li>
-                            <li><i class="fas fa-check"></i> International code compliance</li>
-                        </ul>
-                        <div class="pricing-note">
-                            <span><i class="far fa-clock"></i> Turnaround: 3-5 Days</span>
-                            <span><strong>Fixed-Price Scopes Available</strong></span>
-                        </div>
+                <div class="benefit-grid">
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="icon"><i class="fas fa-calculator"></i></div>
+                        <h4>Cost-Optimized Engineering</h4>
+                        <p>Balance structural safety, material efficiency, and fabrication practicality to deliver value without compromise.</p>
                     </div>
-                    <!-- Package 2 -->
-                    <div class="service-card animate-on-scroll" style="transition-delay:0.08s;">
-                        <div class="icon"><i class="fas fa-drafting-compass"></i></div>
-                        <span class="badge-pkg">Package 2</span>
-                        <h4>Detailing &amp; Estimation</h4>
-                        <p>Full Tekla 3D modeling, shop drawings, and detailed BOQ with cutting plans and CNC data.</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Tekla 3D BIM modeling &amp; clash detection</li>
-                            <li><i class="fas fa-check"></i> Erection Drawings &amp; Shop Assemblies</li>
-                            <li><i class="fas fa-check"></i> Single-Part CNC Data Files (.NC) &amp; Bolt Lists</li>
-                            <li><i class="fas fa-check"></i> Detailed BOQ &amp; optimized cutting plans</li>
-                        </ul>
-                        <div class="pricing-note">
-                            <span><i class="far fa-clock"></i> Turnaround: 7-15 Days</span>
-                            <span><strong>Fixed-Price Scopes Available</strong></span>
-                        </div>
-                    </div>
-                    <!-- Package 3 -->
-                    <div class="service-card animate-on-scroll" style="transition-delay:0.16s;">
+                    <div class="benefit-card animate-on-scroll" style="transition-delay:0.08s;">
                         <div class="icon"><i class="fas fa-cubes"></i></div>
-                        <span class="badge-pkg">Package 3</span>
-                        <h4>Turnkey Engineering</h4>
-                        <p>End-to-end solution covering design, detailing, estimation, and fabrication support — single point of contact.</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Full STAAD.Pro design &amp; optimization</li>
-                            <li><i class="fas fa-check"></i> Complete Tekla detailing &amp; CNC data</li>
-                            <li><i class="fas fa-check"></i> Comprehensive BOQ &amp; cost control</li>
-                            <li><i class="fas fa-check"></i> Single point of contact throughout project</li>
-                        </ul>
-                        <div class="pricing-note">
-                            <span><i class="far fa-clock"></i> Turnaround: 15-30 Days</span>
-                            <span><strong>Contact for a Complimentary Estimate</strong></span>
-                        </div>
+                        <h4>Fabrication-Ready Detailing</h4>
+                        <p>Models and drawings developed with real fabrication and erection requirements in mind — not just theoretical design.</p>
                     </div>
-                </div>
-                <div style="text-align:center;margin-top:28px;font-size:0.9rem;color:var(--gray);">
-                    <i class="fas fa-tag" style="color:var(--accent);"></i>
-                    Need a custom scope? <a href="#contact" style="color:var(--secondary);font-weight:600;">Contact us</a> for a tailored proposal.
+                    <div class="benefit-card animate-on-scroll" style="transition-delay:0.16s;">
+                        <div class="icon"><i class="fas fa-globe-americas"></i></div>
+                        <h4>International Standards</h4>
+                        <p>Engineering based on applicable project requirements and international codes — AISC 360, Eurocode, ACI 318.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll" style="transition-delay:0.24s;">
+                        <div class="icon"><i class="fas fa-calendar-check"></i></div>
+                        <h4>Reliable Delivery</h4>
+                        <p>Clear milestones, organized documentation, and predictable deliverables — on time, every time.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll" style="transition-delay:0.32s;">
+                        <div class="icon"><i class="fas fa-hard-hat"></i></div>
+                        <h4>Constructability-Focused</h4>
+                        <p>Engineering decisions consider fabrication, transportation, and erection — ensuring your project is buildable.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll" style="transition-delay:0.40s;">
+                        <div class="icon"><i class="fas fa-comments"></i></div>
+                        <h4>Responsive Communication</h4>
+                        <p>Professional communication throughout the project lifecycle — direct access to the engineers working on your project.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== PORTFOLIO ===== -->
+        <!-- ===== SERVICES ===== -->
+        <section class="services-section" id="services" aria-label="Engineering services">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="tag">Services</div>
+                    <h2>Engineering Solutions for <span>Real Projects</span></h2>
+                    <p>From concept to fabrication — services designed around client needs, not software features.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card animate-on-scroll">
+                        <div class="icon"><i class="fas fa-drafting-compass"></i></div>
+                        <h4>Structural Engineering</h4>
+                        <p>PEB structural design, steel member design, connection design, structural calculations, and design optimization.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> PEB &amp; Steel Design</li>
+                            <li><i class="fas fa-check"></i> Connection Design</li>
+                            <li><i class="fas fa-check"></i> Structural Calculations</li>
+                            <li><i class="fas fa-check"></i> Design Optimization</li>
+                        </ul>
+                    </div>
+                    <div class="service-card animate-on-scroll" style="transition-delay:0.08s;">
+                        <div class="icon"><i class="fas fa-cube"></i></div>
+                        <h4>Detailing &amp; Fabrication</h4>
+                        <p>Tekla Structures modeling, GA drawings, shop drawings, assembly drawings, and fabrication documentation.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Tekla 3D BIM Modeling</li>
+                            <li><i class="fas fa-check"></i> GA &amp; Shop Drawings</li>
+                            <li><i class="fas fa-check"></i> Assembly &amp; Single-Part Drawings</li>
+                            <li><i class="fas fa-check"></i> Fabrication Support</li>
+                        </ul>
+                    </div>
+                    <div class="service-card animate-on-scroll" style="transition-delay:0.16s;">
+                        <div class="icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <h4>Estimation &amp; Commercial</h4>
+                        <p>Material quantity takeoff, BOQ preparation, steel tonnage estimation, and cost-oriented optimization.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Material Takeoff</li>
+                            <li><i class="fas fa-check"></i> BOQ Preparation</li>
+                            <li><i class="fas fa-check"></i> Steel Tonnage Estimation</li>
+                            <li><i class="fas fa-check"></i> Tender Support</li>
+                        </ul>
+                    </div>
+                    <div class="service-card animate-on-scroll" style="transition-delay:0.24s;">
+                        <div class="icon"><i class="fas fa-people-arrows"></i></div>
+                        <h4>Project Coordination</h4>
+                        <p>Design coordination, constructability review, drawing review, and engineering revisions throughout the project.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Design Coordination</li>
+                            <li><i class="fas fa-check"></i> Constructability Review</li>
+                            <li><i class="fas fa-check"></i> Drawing Review</li>
+                            <li><i class="fas fa-check"></i> Fabrication Clarification</li>
+                        </ul>
+                    </div>
+                    <div class="service-card animate-on-scroll" style="transition-delay:0.32s;">
+                        <div class="icon"><i class="fas fa-tools"></i></div>
+                        <h4>Fabrication Support</h4>
+                        <p>Practical engineering support for fabricators — helping you build efficiently and accurately.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Fabrication Clarification</li>
+                            <li><i class="fas fa-check"></i> Welding &amp; Assembly Details</li>
+                            <li><i class="fas fa-check"></i> Erection Sequencing</li>
+                            <li><i class="fas fa-check"></i> On-Site Support</li>
+                        </ul>
+                    </div>
+                    <div class="service-card animate-on-scroll" style="transition-delay:0.40s;">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>Design Optimization</h4>
+                        <p>Reducing material usage while maintaining structural integrity — saving costs without compromising safety.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Member Sizing</li>
+                            <li><i class="fas fa-check"></i> Connection Optimization</li>
+                            <li><i class="fas fa-check"></i> Frame Configuration</li>
+                            <li><i class="fas fa-check"></i> Material Efficiency</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WHO WE WORK WITH ===== -->
+        <section class="clients-section" id="clients" aria-label="Who we work with">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="tag">Who We Work With</div>
+                    <h2>Trusted by <span>Industry Leaders</span></h2>
+                    <p>We support engineering, detailing, and fabrication across the construction supply chain.</p>
+                </div>
+                <div class="clients-grid">
+                    <div class="client-card animate-on-scroll">
+                        <div class="icon"><i class="fas fa-industry"></i></div>
+                        <h4>Steel Fabricators</h4>
+                        <p>Accurate detailing and engineering support for fabrication.</p>
+                    </div>
+                    <div class="client-card animate-on-scroll" style="transition-delay:0.08s;">
+                        <div class="icon"><i class="fas fa-building"></i></div>
+                        <h4>PEB Manufacturers</h4>
+                        <p>Design, estimation, and Tekla support for PEB projects.</p>
+                    </div>
+                    <div class="client-card animate-on-scroll" style="transition-delay:0.16s;">
+                        <div class="icon"><i class="fas fa-hard-hat"></i></div>
+                        <h4>Contractors</h4>
+                        <p>Dependable engineering and documentation support.</p>
+                    </div>
+                    <div class="client-card animate-on-scroll" style="transition-delay:0.24s;">
+                        <div class="icon"><i class="fas fa-city"></i></div>
+                        <h4>Developers</h4>
+                        <p>Efficient structural solutions focused on project performance and cost.</p>
+                    </div>
+                    <div class="client-card animate-on-scroll" style="transition-delay:0.32s;">
+                        <div class="icon"><i class="fas fa-pencil-ruler"></i></div>
+                        <h4>Architects</h4>
+                        <p>Structural coordination and practical engineering input.</p>
+                    </div>
+                    <div class="client-card animate-on-scroll" style="transition-delay:0.40s;">
+                        <div class="icon"><i class="fas fa-globe-americas"></i></div>
+                        <h4>Engineering Firms</h4>
+                        <p>Reliable outsourced design and detailing capacity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FEATURED PROJECTS ===== -->
         <section class="portfolio-section" id="portfolio" aria-label="Featured engineering projects">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <div class="tag">Our Work</div>
+                    <div class="tag">Portfolio</div>
                     <h2>Featured <span>Projects</span></h2>
-                    <p>Click on any project to view detailed images and specifications.</p>
+                    <p>Real engineering, real deliverables, real outcomes — click any project to explore.</p>
                 </div>
                 <div class="portfolio-grid" id="portfolioGrid">
-                    <!-- Portfolio cards rendered by JavaScript -->
+                    <!-- Rendered by JavaScript -->
+                </div>
+                <div class="portfolio-view-all">
+                    <a href="#portfolio" class="btn btn-secondary" onclick="document.querySelectorAll('.portfolio-card').forEach(c => c.style.display='block'); this.style.display='none'; return false;">
+                        <i class="fas fa-arrow-right"></i> View All Projects
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- ===== CASE STUDIES (Standardized Metrics) ===== -->
-        <section class="casestudies-section" id="casestudies" aria-label="Engineering case studies">
+        <!-- ===== ENGINEERING PROCESS ===== -->
+        <section class="process-section" id="process" aria-label="Engineering process">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <div class="tag">Results</div>
-                    <h2>Before &amp; After <span>Optimization</span></h2>
-                    <p>Real engineering impact — see how we deliver measurable savings.</p>
+                    <div class="tag">How We Work</div>
+                    <h2>Our Engineering <span>Process</span></h2>
+                    <p>A structured approach to delivering reliable engineering, every time.</p>
                 </div>
-                <div class="case-grid">
-                    <div class="case-card animate-on-scroll">
-                        <span class="tag">Steel Optimization</span>
-                        <h4>30,000 ft² Factory – Weight Reduction</h4>
-                        <div class="before-after">
-                            <div class="ba-box before"><div class="label">Original</div><div class="value">210 MT</div></div>
-                            <div class="ba-box after"><div class="label">Optimized</div><div class="value">180 MT</div></div>
-                        </div>
-                        <p>Tapered sections and optimized frame spacing.</p>
-                        <div class="result"><i class="fas fa-check-circle"></i> Saved <strong>30 MT (14%)</strong> — $4,200+ USD cost reduction</div>
+                <div class="process-grid">
+                    <div class="process-step animate-on-scroll">
+                        <div class="number"></div>
+                        <h4>Project Inquiry</h4>
+                        <p>Understand requirements, drawings and objectives.</p>
                     </div>
-                    <div class="case-card animate-on-scroll" style="transition-delay:0.08s;">
-                        <span class="tag">Fast Tracking</span>
-                        <h4>50,000 ft² Warehouse – Schedule Compression</h4>
-                        <div class="before-after">
-                            <div class="ba-box before"><div class="label">Industry Avg</div><div class="value">35 Days</div></div>
-                            <div class="ba-box after"><div class="label">Achieved</div><div class="value">18 Days</div></div>
-                        </div>
-                        <p>Tekla automation and seamless coordination.</p>
-                        <div class="result"><i class="fas fa-check-circle"></i> Delivered <strong>48% faster</strong> than industry average</div>
+                    <div class="process-step animate-on-scroll" style="transition-delay:0.08s;">
+                        <div class="number"></div>
+                        <h4>Scope &amp; Proposal</h4>
+                        <p>Define deliverables, timeline and commercial scope.</p>
                     </div>
-                    <div class="case-card animate-on-scroll" style="transition-delay:0.16s;">
-                        <span class="tag">RCC Optimization</span>
-                        <h4>10-Story Tower – Beam Size Reduction</h4>
-                        <div class="before-after">
-                            <div class="ba-box before"><div class="label">Original</div><div class="value">14″×20″</div></div>
-                            <div class="ba-box after"><div class="label">Optimized</div><div class="value">12″×18″</div></div>
+                    <div class="process-step animate-on-scroll" style="transition-delay:0.16s;">
+                        <div class="number"></div>
+                        <h4>Engineering</h4>
+                        <p>Develop the structural solution based on project requirements and applicable standards.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll" style="transition-delay:0.24s;">
+                        <div class="number"></div>
+                        <h4>Optimization &amp; Coordination</h4>
+                        <p>Review constructability, material efficiency and coordination.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll" style="transition-delay:0.32s;">
+                        <div class="number"></div>
+                        <h4>Detailing &amp; Documentation</h4>
+                        <p>Prepare models, calculations and drawings.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll" style="transition-delay:0.40s;">
+                        <div class="number"></div>
+                        <h4>Delivery &amp; Support</h4>
+                        <p>Review and deliver final documentation with project support where required.</p>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:32px;">
+                    <a href="#contact" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Have a Project in Mind? Let's Discuss It</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== QUALITY CONTROL ===== -->
+        <section class="quality-section" id="quality" aria-label="Quality control">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="tag">Quality Control</div>
+                    <h2>Quality Control at <span>Every Stage</span></h2>
+                    <p>Your project is reviewed systematically, not simply produced and sent.</p>
+                </div>
+                <div class="quality-flow">
+                    <span class="step"><i class="fas fa-file-import"></i> Input Review</span>
+                    <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+                    <span class="step"><i class="fas fa-check-double"></i> Design Review</span>
+                    <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+                    <span class="step"><i class="fas fa-cubes"></i> Model Coordination</span>
+                    <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+                    <span class="step"><i class="fas fa-eye"></i> Drawing Review</span>
+                    <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+                    <span class="step"><i class="fas fa-clipboard-check"></i> Final QA</span>
+                    <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+                    <span class="step"><i class="fas fa-rocket"></i> Delivery</span>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;max-width:800px;margin:24px auto 0;text-align:center;">
+                    <span style="font-size:0.75rem;color:var(--steel);"><i class="fas fa-check-circle" style="color:var(--accent);"></i> Drawing Consistency</span>
+                    <span style="font-size:0.75rem;color:var(--steel);"><i class="fas fa-check-circle" style="color:var(--accent);"></i> Model Coordination</span>
+                    <span style="font-size:0.75rem;color:var(--steel);"><i class="fas fa-check-circle" style="color:var(--accent);"></i> Connection Review</span>
+                    <span style="font-size:0.75rem;color:var(--steel);"><i class="fas fa-check-circle" style="color:var(--accent);"></i> Quantity Verification</span>
+                    <span style="font-size:0.75rem;color:var(--steel);"><i class="fas fa-check-circle" style="color:var(--accent);"></i> Revision Control</span>
+                    <span style="font-size:0.75rem;color:var(--steel);"><i class="fas fa-check-circle" style="color:var(--accent);"></i> Deliverable Checklist</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== STANDARDS & SOFTWARE ===== -->
+        <section class="standards-section" id="standards" aria-label="Standards and software">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="tag">Standards &amp; Software</div>
+                    <h2>Engineering with <span>Proven Tools</span></h2>
+                    <p>Industry-standard software and international codes — delivering reliable engineering worldwide.</p>
+                </div>
+                <div class="standards-grid">
+                    <div class="standards-box animate-on-scroll">
+                        <h4><i class="fas fa-book-open"></i> Design Standards</h4>
+                        <div class="tag-group">
+                            <span class="tag"><i class="fas fa-check"></i> AISC 360</span>
+                            <span class="tag"><i class="fas fa-check"></i> Eurocode</span>
+                            <span class="tag"><i class="fas fa-check"></i> ACI 318</span>
+                            <span class="tag"><i class="fas fa-check"></i> BNBC</span>
                         </div>
-                        <p>ETABS optimization of reinforcement layout.</p>
-                        <div class="result"><i class="fas fa-check-circle"></i> Saved <strong>$2,600 USD</strong> in raw material costs through ETABS reinforcement layout optimization</div>
+                        <p style="font-size:0.75rem;color:var(--steel);margin-top:8px;">Engineering based on applicable project requirements and international codes.</p>
+                    </div>
+                    <div class="standards-box animate-on-scroll" style="transition-delay:0.1s;">
+                        <h4><i class="fas fa-laptop-code"></i> Software</h4>
+                        <div class="tag-group">
+                            <span class="tag"><i class="fas fa-check"></i> Tekla Structures</span>
+                            <span class="tag"><i class="fas fa-check"></i> STAAD.Pro</span>
+                            <span class="tag"><i class="fas fa-check"></i> ETABS</span>
+                            <span class="tag"><i class="fas fa-check"></i> AutoCAD</span>
+                        </div>
+                        <p style="font-size:0.75rem;color:var(--steel);margin-top:8px;">BIM modeling, structural analysis, and detailed documentation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT ===== -->
+        <section class="about-section" id="about" aria-label="About Unity Structural Solution">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="tag">About</div>
+                    <h2>Engineering-Focused, <span>Fabrication-Aware</span></h2>
+                    <p>Unity Structural Solution is a premium structural engineering consultancy built for the construction industry.</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text animate-on-scroll">
+                        <h3>We Don't Just Produce Drawings.</h3>
+                        <p>We understand how structures are engineered, detailed, fabricated, and constructed. Every project we work on is approached with engineering integrity, fabrication practicality, and a focus on delivering value.</p>
+                        <p>With <strong>22+ years of combined experience</strong>, we serve contractors, fabricators, developers, and international engineering firms across the USA, Australia, Europe, the UAE, and beyond.</p>
+                        <ul class="highlight-list">
+                            <li><i class="fas fa-check-circle"></i> Engineering-focused + fabrication-aware</li>
+                            <li><i class="fas fa-check-circle"></i> Direct access to senior engineers</li>
+                            <li><i class="fas fa-check-circle"></i> International standards compliance</li>
+                            <li><i class="fas fa-check-circle"></i> Quality-controlled deliverables</li>
+                        </ul>
+                    </div>
+                    <div class="about-text animate-on-scroll" style="transition-delay:0.1s;">
+                        <h3>How We Approach Engineering</h3>
+                        <p>We start with the end in mind — how will this structure be fabricated, transported, and erected? This practical perspective informs every design and detailing decision we make.</p>
+                        <p>Our lean, senior-led structure means you work directly with the engineers who design and detail your project — no account managers, no layers of communication. Just clear, professional engineering.</p>
+                        <p><strong>International Codes:</strong> AISC 360, Eurocode, ACI 318, BNBC &bull; <strong>Software:</strong> Tekla Structures, STAAD.Pro, ETABS, AutoCAD</p>
                     </div>
                 </div>
             </div>
@@ -2270,19 +2535,55 @@
             </div>
         </section>
 
-        <!-- ===== CONTACT (with Trust Badges) ===== -->
+        <!-- ===== TESTIMONIALS ===== -->
+        <section class="testimonials-section" id="testimonials" aria-label="Client testimonials">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="tag">Testimonials</div>
+                    <h2>What Our <span>Clients Say</span></h2>
+                    <p>Real feedback from real projects.</p>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="quote"><i class="fas fa-quote-left"></i> Their Tekla models and shop drawings were accurate and fabrication-ready. Saved us significant time in the shop.</div>
+                        <div class="author">— Steel Fabrication Manager</div>
+                        <div class="author-role">USA</div>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll" style="transition-delay:0.08s;">
+                        <div class="quote"><i class="fas fa-quote-left"></i> The optimized design reduced our steel tonnage by 14%. Professional, responsive, and technically excellent.</div>
+                        <div class="author">— Project Director</div>
+                        <div class="author-role">UAE</div>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll" style="transition-delay:0.16s;">
+                        <div class="quote"><i class="fas fa-quote-left"></i> Clear communication and reliable deliverables. They understood our construction sequencing and delivered accordingly.</div>
+                        <div class="author">— Senior Project Manager</div>
+                        <div class="author-role">Australia</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FINAL CTA ===== -->
+        <section class="final-cta-section">
+            <div class="container">
+                <h2>Have a Structural Project?</h2>
+                <p>Let's discuss your requirements and see how we can support your engineering, detailing, or fabrication needs.</p>
+                <a href="#contact" class="btn btn-lg"><i class="fas fa-paper-plane"></i> Request a Project Quote</a>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT / PROJECT INQUIRY ===== -->
         <section class="contact-section" id="contact" aria-label="Contact us">
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <div class="tag">Get Started</div>
-                    <h2>Let's Build <span>Together</span></h2>
-                    <p>Tell us about your project — we'll respond within 24 hours.</p>
+                    <h2>Have a Structural Project? <span>Let's Talk.</span></h2>
+                    <p>Send us your drawings, project requirements, or scope of work. Our team will review the information and get back to you with the next steps.</p>
                 </div>
                 <div class="contact-grid animate-on-scroll">
                     <div class="contact-info">
                         <h3><i class="fas fa-map-pin" style="color:var(--accent);"></i> Reach Us</h3>
-                        
-                        <!-- Trust Badges -->
+
                         <div class="trust-badge">
                             <i class="fas fa-clock"></i>
                             <div>
@@ -2315,13 +2616,13 @@
                             <div>Sat–Thu: 9:00 AM – 8:00 PM (GMT+6)</div>
                         </div>
                         <div class="social-row">
+                            <a href="https://www.linkedin.com/company/unity-structural-solution" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             <a href="https://www.facebook.com/UnityStructuralSolution" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.facebook.com/UnityStructuralSolution" target="_blank" rel="noopener" aria-label="Messenger"><i class="fab fa-facebook-messenger"></i></a>
-                            <a href="https://wa.me/8801602105447?text=Hi%2C%20I%20want%20to%20know%20about%20your%20services" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://wa.me/8801602105447?text=Hi%2C%20I%20have%20a%20structural%20project%20to%20discuss" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                     <div class="contact-form">
-                        <h4><i class="fas fa-paper-plane" style="color:var(--accent);"></i> Request a Quote</h4>
+                        <h4><i class="fas fa-paper-plane" style="color:var(--accent);"></i> Request a Project Review</h4>
 
                         <div data-fs-success>
                             ✅ Thank you! Your inquiry was sent successfully. We'll reply within 24 hours.
@@ -2338,32 +2639,25 @@
                                     <span data-fs-error="name"></span>
                                 </div>
                                 <div class="form-group">
+                                    <label for="contactCompany">Company</label>
+                                    <input type="text" id="contactCompany" name="company" placeholder="Company name" data-fs-field />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
                                     <label for="contactEmail">Email Address <span class="required">*</span></label>
                                     <input type="email" id="contactEmail" name="email" placeholder="your@email.com" data-fs-field required />
                                     <span data-fs-error="email"></span>
                                 </div>
-                            </div>
-                            <div class="form-row">
                                 <div class="form-group">
-                                    <label for="contactPhone">WhatsApp / Phone</label>
+                                    <label for="contactPhone">Phone / WhatsApp</label>
                                     <input type="tel" id="contactPhone" name="phone" placeholder="+880 1XXX XXXXXX" data-fs-field />
                                 </div>
-                                <div class="form-group">
-                                    <label for="contactService">Service Required</label>
-                                    <select id="contactService" name="service" data-fs-field>
-                                        <option value="design-quotation">Design &amp; Quotation</option>
-                                        <option value="detailing-estimation">Detailing &amp; Estimation</option>
-                                        <option value="turnkey">Turnkey Engineering</option>
-                                        <option value="training">Tekla Training</option>
-                                        <option value="other">Other / Custom</option>
-                                    </select>
-                                </div>
                             </div>
-
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="contactRegion">Region / Country</label>
-                                    <select id="contactRegion" name="region" data-fs-field>
+                                    <label for="contactCountry">Country</label>
+                                    <select id="contactCountry" name="country" data-fs-field>
                                         <option value="">Select...</option>
                                         <option value="USA">USA</option>
                                         <option value="Canada">Canada</option>
@@ -2377,78 +2671,63 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="contactBuildingType">Building Type</label>
-                                    <select id="contactBuildingType" name="building_type" data-fs-field>
+                                    <label for="contactProjectType">Project Type</label>
+                                    <select id="contactProjectType" name="project_type" data-fs-field>
                                         <option value="">Select...</option>
-                                        <option value="Warehouse">Warehouse</option>
-                                        <option value="Factory">Factory</option>
-                                        <option value="Shed">Shed</option>
+                                        <option value="PEB Warehouse">PEB Warehouse</option>
+                                        <option value="PEB Factory">PEB Factory</option>
+                                        <option value="Industrial Shed">Industrial Shed</option>
                                         <option value="Mezzanine">Mezzanine</option>
+                                        <option value="Structural Steel">Structural Steel</option>
                                         <option value="RCC Building">RCC Building</option>
                                         <option value="Other">Other</option>
                                     </select>
                                 </div>
                             </div>
-
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="contactLength">Length</label>
-                                    <input type="text" id="contactLength" name="length" placeholder="e.g., 100 ft / 30 m" data-fs-field />
+                                    <label for="contactArea">Approximate Project Area</label>
+                                    <input type="text" id="contactArea" name="area" placeholder="e.g., 30,000 ft² / 2,800 m²" data-fs-field />
                                 </div>
                                 <div class="form-group">
-                                    <label for="contactWidth">Width / Clear Span</label>
-                                    <input type="text" id="contactWidth" name="width" placeholder="e.g., 60 ft / 18 m" data-fs-field />
+                                    <label for="contactTonnage">Approximate Steel Tonnage</label>
+                                    <input type="text" id="contactTonnage" name="tonnage" placeholder="e.g., 180 MT" data-fs-field />
                                 </div>
                             </div>
-
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="contactHeight">Clear Height</label>
-                                    <input type="text" id="contactHeight" name="height" placeholder="e.g., 30 ft / 9 m" data-fs-field />
-                                </div>
-                                <div class="form-group">
-                                    <label for="contactSlope">Slope</label>
-                                    <input type="text" id="contactSlope" name="slope" placeholder="e.g., 5°, 10%, 1:12" data-fs-field />
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="contactGable">Gable Type</label>
-                                    <select id="contactGable" name="gable_type" data-fs-field>
+                                    <label for="contactService">Required Service</label>
+                                    <select id="contactService" name="service" data-fs-field>
                                         <option value="">Select...</option>
-                                        <option value="Symmetrical">Symmetrical</option>
-                                        <option value="Asymmetrical">Asymmetrical</option>
-                                        <option value="Lean-to">Lean-to</option>
+                                        <option value="Structural Engineering">Structural Engineering</option>
+                                        <option value="Detailing &amp; Fabrication">Detailing &amp; Fabrication</option>
+                                        <option value="Estimation &amp; BOQ">Estimation &amp; BOQ</option>
+                                        <option value="Full Turnkey">Full Turnkey</option>
                                         <option value="Other">Other</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="contactProjectType">Project Type</label>
-                                    <select id="contactProjectType" name="project_type" data-fs-field>
-                                        <option value="">Select...</option>
-                                        <option value="New Construction">New Construction</option>
-                                        <option value="Expansion">Expansion</option>
-                                        <option value="Retrofit">Retrofit</option>
-                                        <option value="Feasibility Study">Feasibility Study</option>
-                                        <option value="Other">Other</option>
-                                    </select>
+                                    <label for="contactStartDate">Expected Start Date</label>
+                                    <input type="text" id="contactStartDate" name="start_date" placeholder="e.g., Q3 2026" data-fs-field />
                                 </div>
                             </div>
-
                             <div class="form-group">
-                                <label for="contactProjectDetails">Additional Details</label>
-                                <textarea id="contactProjectDetails" name="project_details" placeholder="Any other specifications, load requirements, timeline, budget constraints, etc." data-fs-field></textarea>
+                                <label for="contactDescription">Project Description</label>
+                                <textarea id="contactDescription" name="project_description" placeholder="Describe your project, requirements, or specific challenges..." data-fs-field></textarea>
                             </div>
-
                             <div class="form-group">
                                 <label for="contactMessage">Message <span class="required">*</span></label>
                                 <textarea id="contactMessage" name="message" placeholder="Tell us about your project requirements..." data-fs-field required></textarea>
                                 <span data-fs-error="message"></span>
                             </div>
+                            <div class="form-group">
+                                <label for="contactFile">Upload Drawings / Documents (Optional)</label>
+                                <input type="file" id="contactFile" name="file" data-fs-field style="padding:8px 12px;color:rgba(255,255,255,0.6);" />
+                                <div class="form-hint">PDF, DWG, or ZIP files accepted. Max 10MB.</div>
+                            </div>
 
                             <button type="submit" data-fs-submit-btn class="btn btn-secondary">
-                                <i class="fas fa-paper-plane"></i> Send Inquiry
+                                <i class="fas fa-paper-plane"></i> Request a Project Review
                             </button>
                         </form>
                     </div>
@@ -2469,23 +2748,26 @@
                         <img src="pic/logo.png" alt="Unity Structural Solution" />
                         <span>Unity</span> Structural Solution
                     </div>
-                    <p class="about-text">Premium global structural engineering consultancy — PEB, steel, and RCC design, detailing, and estimation. Delivering AISC 360, Eurocode, and ACI 318 compliant solutions.</p>
+                    <p class="about-text">Premium structural engineering consultancy — PEB, steel, and RCC design, detailing, and estimation. Delivering AISC 360, Eurocode, and ACI 318 compliant solutions.</p>
                 </div>
                 <div>
-                    <h4>Quick Links</h4>
+                    <h4>Navigation</h4>
                     <ul>
+                        <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#casestudies">Case Studies</a></li>
-                        <li><a href="#team">Team</a></li>
+                        <li><a href="#portfolio">Projects</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Packages</h4>
+                    <h4>Services</h4>
                     <ul>
-                        <li><a href="#services">Design &amp; Quotation</a></li>
-                        <li><a href="#services">Detailing &amp; Estimation</a></li>
-                        <li><a href="#services">Turnkey Engineering</a></li>
+                        <li><a href="#services">Structural Engineering</a></li>
+                        <li><a href="#services">Detailing &amp; Fabrication</a></li>
+                        <li><a href="#services">Estimation &amp; BOQ</a></li>
+                        <li><a href="#services">Project Coordination</a></li>
                     </ul>
                 </div>
                 <div>
@@ -2493,13 +2775,15 @@
                     <ul>
                         <li><a href="mailto:unitystructuralsolution@gmail.com">Email Us</a></li>
                         <li><a href="https://wa.me/8801602105447" target="_blank">WhatsApp</a></li>
-                        <li><a href="https://www.facebook.com/UnityStructuralSolution" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.linkedin.com/company/unity-structural-solution" target="_blank">LinkedIn</a></li>
+                        <li><a href="#contact">Project Inquiry</a></li>
                     </ul>
                 </div>
             </div>
             <div class="bottom">
                 <span>&copy; 2026 Unity Structural Solution. All rights reserved.</span>
                 <div class="social-links">
+                    <a href="https://www.linkedin.com/company/unity-structural-solution" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://www.facebook.com/UnityStructuralSolution" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://wa.me/8801602105447" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
@@ -2508,11 +2792,11 @@
     </footer>
 
     <!-- ============================================================
-    PORTFOLIO MODAL (Hidden by default)
+    PORTFOLIO MODAL — Fullscreen Gallery
     ============================================================ -->
     <div class="modal-overlay" id="portfolioModal">
         <div class="modal-container" id="modalContainer">
-            <button class="modal-close" id="modalClose" aria-label="Close portfolio"><i class="fas fa-times"></i></button>
+            <button class="modal-close" id="modalClose" aria-label="Close gallery"><i class="fas fa-times"></i></button>
 
             <div class="modal-gallery">
                 <div class="modal-main-image" id="modalMainImage">
@@ -2536,32 +2820,26 @@
                     <span class="label">Phases</span><span class="value" id="mPhases">—</span>
                 </div>
 
-                <div class="weight-breakdown" id="modalWeight">
-                    <div class="wb-row"><span class="wb-label">Main Frame</span><span class="wb-value" id="wMain">—</span></div>
-                    <div class="wb-row"><span class="wb-label">Forming Items</span><span class="wb-value" id="wForming">—</span></div>
-                    <div class="wb-row"><span class="wb-label">Total</span><span class="wb-value" id="wTotal">—</span></div>
-                </div>
-
                 <div class="project-description" id="modalDescription">Project description goes here.</div>
 
                 <div class="action-buttons">
                     <a href="#contact" class="btn btn-sm btn-secondary" id="modalContactBtn"><i class="fas fa-paper-plane"></i> Request Similar Quote</a>
-                    <button class="btn btn-sm btn-ghost" id="modalDownloadBtn" style="background:transparent;border:1px solid var(--secondary);color:var(--secondary);"><i class="fas fa-download"></i> Download PDF</button>
+                    <button class="btn btn-sm" id="modalDownloadBtn" style="background:transparent;border:1px solid var(--steel);color:var(--steel);"><i class="fas fa-download"></i> Download PDF</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- ===== FLOATING BUTTONS ===== -->
-    <a href="https://www.facebook.com/UnityStructuralSolution" target="_blank" rel="noopener" class="floating-badge messenger" aria-label="Message on Messenger">
-        <i class="fab fa-facebook-messenger"></i>
-    </a>
-    <a href="https://wa.me/8801602105447?text=Hi%2C%20I%20want%20to%20know%20about%20your%20services" target="_blank" rel="noopener" class="floating-badge whatsapp" aria-label="Contact on WhatsApp">
+    <a href="https://wa.me/8801602105447?text=Hi%2C%20I%20have%20a%20structural%20project%20to%20discuss" target="_blank" rel="noopener" class="floating-badge whatsapp" aria-label="Contact on WhatsApp">
         <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.linkedin.com/company/unity-structural-solution" target="_blank" rel="noopener" class="floating-badge messenger" aria-label="Connect on LinkedIn" style="background:#0077b5;bottom:90px;right:24px;">
+        <i class="fab fa-linkedin-in"></i>
     </a>
 
     <!-- ============================================================
-    JAVASCRIPT
+    JAVASCRIPT — Formspree + Portfolio + Interactions
     ============================================================ -->
     <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
     <script>
@@ -2579,15 +2857,17 @@
             'use strict';
 
             // ============================================================
-            // PORTFOLIO DATA
+            // PORTFOLIO DATA — Real Projects with Full Details
             // ============================================================
             const portfolioData = [{
                 id: 1,
                 title: '858 MT PEB Mezzanine Factory',
-                subtitle: 'Complete Estimation & Tekla Detailing',
+                subtitle: 'Complete Structural Engineering & Tekla Detailing',
                 thumbnail: 'pic/projects/project-1.png',
                 badge: 'PEB',
-                description: 'Complete structural estimation and Tekla detailing for a large-scale PEB industrial warehouse. We handled the full material take-off (MTO), BOQ preparation, and phased drawing releases. The project included estimating all forming items totaling 84.5 MT, while cross-verifying the main frame assembly weight of 553 MT.',
+                location: 'Bangladesh',
+                scope: 'Industrial / PEB',
+                description: 'Complete structural estimation and Tekla detailing for a large-scale PEB industrial warehouse. Full material take-off (MTO), BOQ preparation, and phased drawing releases covering main frames (587.6 MT), forming items (84.5 MT), and all secondary steel.',
                 software: 'STAAD.Pro + Tekla',
                 duration: '25 Days',
                 totalWeight: '858.6 MT',
@@ -2615,11 +2895,13 @@
                 ]
             }, {
                 id: 2,
-                title: '30,000 ft² Factory',
-                subtitle: 'Steel Weight Optimization & Design',
+                title: '30,000 ft² Factory — Weight Optimization',
+                subtitle: 'Steel Design & Detailing with 14% Material Savings',
                 thumbnail: 'pic/projects/project-4.png',
                 badge: 'Steel',
-                description: 'We performed structural analysis using STAAD.Pro for a 30,000 sq. ft. factory. By optimizing frame spacing and using tapered sections per AISC 360, we reduced steel weight from 210 MT to 180 MT (14% reduction), saving the client $4,200+ in material costs. Delivered full Tekla models and fabrication drawings.',
+                location: 'USA',
+                scope: 'Industrial / Steel',
+                description: 'Structural analysis using STAAD.Pro for a 30,000 sq. ft. factory. Optimized frame spacing and tapered sections per AISC 360 reduced steel weight from 210 MT to 180 MT (14% reduction), saving the client $4,200+ in material costs. Delivered full Tekla models and fabrication drawings.',
                 software: 'STAAD.Pro + Tekla',
                 duration: '20 Days',
                 totalWeight: '180 MT',
@@ -2648,7 +2930,9 @@
                 subtitle: '9,935 ft² Warehouse with 495 ft² Mezzanine',
                 thumbnail: 'pic/projects/project-5.png',
                 badge: 'Design',
-                description: 'Combined warehouse + mezzanine structure with full design, detailing, and BOQ. The structure had a dual purpose — a high-bay warehouse with a dedicated office/mezzanine area. We performed full STAAD.Pro analysis and created the complete Tekla model showing the integration between the main frame and the mezzanine columns.',
+                location: 'Australia',
+                scope: 'Commercial / Steel',
+                description: 'Combined warehouse + mezzanine structure with full design, detailing, and BOQ. Dual-purpose high-bay warehouse with dedicated mezzanine office area. Full STAAD.Pro analysis and complete Tekla model showing integration between main frame and mezzanine columns.',
                 software: 'STAAD.Pro + Tekla',
                 duration: '22 Days',
                 totalWeight: '285 MT',
@@ -2687,16 +2971,16 @@
                             <div class="img-wrap">
                                 <img src="${project.thumbnail}" alt="${project.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=600&h=450&fit=crop'" />
                                 <span class="badge">${project.badge}</span>
-                                <span class="view-detail"><i class="fas fa-expand"></i> View Details</span>
                             </div>
                             <div class="body">
                                 <h4>${project.title}</h4>
+                                <div class="location"><i class="fas fa-map-marker-alt" style="color:var(--accent);font-size:0.65rem;"></i> ${project.location}</div>
                                 <div class="meta">
                                     <span><i class="fas fa-weight-hanging"></i> ${project.totalWeight}</span>
                                     <span><i class="fas fa-cogs"></i> ${project.software}</span>
                                 </div>
-                                <p>${project.description.substring(0, 100)}...</p>
-                                <div class="click-hint"><i class="fas fa-mouse-pointer"></i> Click to view full project</div>
+                                <p>${project.description.substring(0, 90)}...</p>
+                                <span class="view-link">View Project <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </div>
                     `).join('');
@@ -2718,7 +3002,7 @@
             }
 
             // ============================================================
-            // MODAL LOGIC
+            // MODAL LOGIC — Fullscreen Gallery
             // ============================================================
             let currentProject = null;
             let currentIndex = 0;
@@ -2735,9 +3019,6 @@
             const mDuration = document.getElementById('mDuration');
             const mWeight = document.getElementById('mWeight');
             const mPhases = document.getElementById('mPhases');
-            const wMain = document.getElementById('wMain');
-            const wForming = document.getElementById('wForming');
-            const wTotal = document.getElementById('wTotal');
             const modalClose = document.getElementById('modalClose');
             const modalPrev = document.getElementById('modalPrev');
             const modalNext = document.getElementById('modalNext');
@@ -2766,18 +3047,15 @@
                 modalImage.src = image.src;
                 modalImage.alt = image.caption;
                 modalCaption.textContent = image.caption;
-                modalCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+                modalCounter.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(images.length).padStart(2, '0')}`;
 
                 modalTitle.textContent = project.title;
-                modalSubtitle.textContent = project.subtitle || '';
-                modalDescription.textContent = project.description || '';
+                modalSubtitle.textContent = project.location + ' · ' + project.scope;
+                modalDescription.textContent = project.description;
                 mSoftware.textContent = project.software || '—';
                 mDuration.textContent = project.duration || '—';
                 mWeight.textContent = project.totalWeight || '—';
                 mPhases.textContent = project.phases || '—';
-                wMain.textContent = project.weightMain || '—';
-                wForming.textContent = project.weightForming || '—';
-                wTotal.textContent = project.weightTotal || '—';
 
                 modalThumbnails.innerHTML = images.map((img, idx) => `
                         <div class="thumb ${idx === currentIndex ? 'active' : ''}" data-index="${idx}">
@@ -2791,19 +3069,6 @@
                         updateModal();
                     });
                 });
-
-                const contactBtn = document.getElementById('modalContactBtn');
-                if (contactBtn) {
-                    contactBtn.href = '#contact';
-                }
-
-                const downloadBtn = document.getElementById('modalDownloadBtn');
-                if (downloadBtn) {
-                    downloadBtn.onclick = function() {
-                        alert('📄 PDF download would start here.\n\nIn production, this would download a detailed project report for: ' +
-                            project.title);
-                    };
-                }
             }
 
             modalPrev.addEventListener('click', function(e) {
@@ -2836,35 +3101,6 @@
             });
 
             modalClose.addEventListener('click', closeModal);
-
-            // ============================================================
-            // THEME
-            // ============================================================
-            const themeToggle = document.getElementById('themeToggle');
-            const themeIcon = document.getElementById('themeIcon');
-
-            function getTheme() {
-                return localStorage.getItem('unityTheme') || 'light';
-            }
-
-            function setTheme(theme) {
-                if (theme === 'dark') {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                    themeIcon.className = 'fas fa-sun';
-                } else {
-                    document.documentElement.removeAttribute('data-theme');
-                    themeIcon.className = 'fas fa-moon';
-                }
-                localStorage.setItem('unityTheme', theme);
-            }
-            setTheme(getTheme());
-
-            if (themeToggle) {
-                themeToggle.addEventListener('click', function() {
-                    const current = getTheme();
-                    setTheme(current === 'dark' ? 'light' : 'dark');
-                });
-            }
 
             // ============================================================
             // NAVIGATION
@@ -2954,7 +3190,7 @@
             // ============================================================
             renderCards();
 
-            console.log('🏗️ Unity Structural Solution v8.0 — Premium Global Engineering Consultancy');
+            console.log('🏗️ Unity Structural Solution — Premium International Engineering Consultancy');
             console.log('📧 Formspree endpoint: https://formspree.io/f/mdaqball');
             console.log('📂 Portfolio projects loaded:', portfolioData.length);
 
