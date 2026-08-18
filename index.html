@@ -744,6 +744,142 @@
             padding: 80px 0;
             background: var(--off-white);
         }
+
+        /* ---- SLIDING PROJECT VIEWER ---- */
+        .project-slider {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 24px 20px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        .project-slider .slider-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .project-slider .slider-header h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .project-slider .slider-header h3 i {
+            color: var(--accent);
+        }
+        .project-slider .slider-nav {
+            display: flex;
+            gap: 8px;
+        }
+        .project-slider .slider-nav button {
+            background: var(--off-white);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--steel);
+            font-size: 0.8rem;
+        }
+        .project-slider .slider-nav button:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+        .project-slider .slider-track {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            padding: 8px 4px 16px;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .project-slider .slider-track::-webkit-scrollbar {
+            height: 4px;
+        }
+        .project-slider .slider-track::-webkit-scrollbar-thumb {
+            background: var(--steel);
+            border-radius: 4px;
+        }
+        .project-slider .slider-track::-webkit-scrollbar-track {
+            background: var(--off-white);
+            border-radius: 4px;
+        }
+        .project-slider .slide-item {
+            flex: 0 0 240px;
+            scroll-snap-align: start;
+            background: var(--off-white);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        .project-slider .slide-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent);
+        }
+        .project-slider .slide-item.active {
+            border-color: var(--accent);
+        }
+        .project-slider .slide-item img {
+            width: 100%;
+            aspect-ratio: 16/10;
+            object-fit: cover;
+            display: block;
+        }
+        .project-slider .slide-item .slide-info {
+            padding: 10px 12px 12px;
+        }
+        .project-slider .slide-item .slide-info h4 {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 1px;
+        }
+        .project-slider .slide-item .slide-info p {
+            font-size: 0.7rem;
+            color: var(--steel);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .project-slider .slide-item .slide-info p i {
+            color: var(--accent);
+            font-size: 0.55rem;
+        }
+        .project-slider .slider-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 8px;
+        }
+        .project-slider .slider-indicators .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--steel-light);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0;
+        }
+        .project-slider .slider-indicators .dot.active {
+            background: var(--accent);
+            width: 20px;
+            border-radius: 4px;
+        }
+
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1957,6 +2093,9 @@
                 top: 8px;
                 right: 8px;
             }
+            .project-slider .slide-item {
+                flex: 0 0 180px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1991,6 +2130,17 @@
                 padding: 10px 8px 6px;
             }
             .capabilities-grid .cap {
+                font-size: 0.7rem;
+            }
+            .project-slider .slide-item {
+                flex: 0 0 150px;
+            }
+            .project-slider .slider-header h3 {
+                font-size: 0.8rem;
+            }
+            .project-slider .slider-nav button {
+                width: 30px;
+                height: 30px;
                 font-size: 0.7rem;
             }
         }
@@ -2216,13 +2366,30 @@
             </div>
         </section>
 
-        <!-- ===== PORTFOLIO ===== -->
+        <!-- ===== PORTFOLIO with Sliding Viewer ===== -->
         <section class="portfolio-section" id="portfolio" aria-label="Project portfolio">
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <div class="tag">Portfolio</div>
                     <h2>Featured <span>Engineering Projects</span></h2>
                     <p>Real projects, real engineering — click to explore each case study.</p>
+                </div>
+
+                <!-- ===== SLIDING PROJECT VIEWER ===== -->
+                <div class="project-slider" id="projectSlider">
+                    <div class="slider-header">
+                        <h3><i class="fas fa-images"></i> Mezzanine Project Gallery</h3>
+                        <div class="slider-nav">
+                            <button id="sliderPrev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+                            <button id="sliderNext" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="slider-track" id="sliderTrack">
+                        <!-- Slides rendered by JavaScript -->
+                    </div>
+                    <div class="slider-indicators" id="sliderIndicators">
+                        <!-- Dots rendered by JavaScript -->
+                    </div>
                 </div>
 
                 <div class="portfolio-filters" id="portfolioFilters">
@@ -2727,7 +2894,7 @@
             'use strict';
 
             // ============================================================
-            // PORTFOLIO DATA
+            // PORTFOLIO DATA — UPDATED WITH 8 MEZZANINE IMAGES
             // ============================================================
             const portfolioData = [{
                 id: 1,
@@ -2738,28 +2905,28 @@
                 filter: ['peb', 'industrial'],
                 location: 'Bangladesh',
                 scope: 'Industrial / PEB',
-                description: 'Complete structural estimation and Tekla detailing for a large-scale PEB industrial warehouse. Full material take-off (MTO), BOQ preparation, and phased drawing releases covering Main Frames (127.68 MT), Anchor Bolts (0.50 MT), Connection Bolts (1.30 MT), Decking items (13.70 MT), and all secondary steel.',
+                description: 'Complete structural engineering and Tekla detailing for a 715 m² mezzanine structure with 1,439 m² floor area. Full STAAD.Pro analysis per AISC 360 and complete Tekla 3D BIM model. Total steel tonnage: 142.394 MT. Full BOQ, GA drawings, shop drawings, and fabrication documentation delivered.',
                 software: 'STAAD.Pro + Tekla',
                 duration: '7 Days',
-                totalWeight: '143.184 MT',
+                totalWeight: '142.394 MT',
                 phases: '2+ Releases',
                 images: [
                     { src: 'pic/portfolio/3d.png',
-                        caption: '3D BIM Model — Complete Tekla model showing the full warehouse structure with main frames, bracing, and cladding.' },
+                        caption: 'Tekla 3D BIM Model — Complete structural model of a 715 m² mezzanine system with 1,439 m² floor area. Model shows main frames, mezzanine, bracing, and decking.' },
                     { src: 'pic/portfolio/analysis.png',
-                        caption: 'Column Layout Plan — Grid spacing and foundation positions for the 858 MT project.' },
+                        caption: 'STAAD.Pro Analysis — Bending moment diagram used for member sizing and design verification per AISC 360. Peak positive moments at mid-spans guided member optimization.' },
                     { src: 'pic/portfolio/anchor.png',
-                        caption: 'Cross Section — Typical frame section showing rafter and column profiles with connection details.' },
+                        caption: 'Anchor Bolt Layout — Foundation anchorage plan with base plate details. 168 pcs Φ24×750 anchor bolts (2.98 kg/pcs, 750mm length) with stiffener arrangements.' },
                     { src: 'pic/portfolio/floor.png',
-                        caption: 'Roof Bracing & Rafter Layout — Roof bracing layout combined with rafter section details.' },
+                        caption: 'Floor Beam Layout — Mezzanine framing plan showing main beams, sub-beams, joists with member IDs (j1022, j1037). Coordinated for MEP services and penetrations.' },
                     { src: 'pic/portfolio/section.png',
-                        caption: 'Rafter Detail with BOM — Detailed rafter connection drawing with Bill of Materials.' },
+                        caption: 'Frame Section — Typical mezzanine frame section with connection details. Includes 3D isometric view showing beam-to-column connections and decking attachment.' },
                     { src: 'pic/portfolio/column.png',
-                        caption: 'Assembly List — Column and rafter assembly list tracking precise weights across 5 phased releases.' },
+                        caption: 'Column Assembly — Built-up column with base plate, stiffeners, and connection plates. 3D view for visualization. Splices at practical field connection points.' },
                     { src: 'pic/portfolio/part.png',
-                        caption: 'Total Weight Breakdown — Main Frame + Forming Items.' },
+                        caption: 'Single-Part Drawing — Fabrication-ready component detail with A572 Grade 50 material spec, cut lengths, bevel requirements, and bolt hole locations.' },
                     { src: 'pic/portfolio/moq.png',
-                        caption: 'Cutting Plan — Nesting/cutting plan for optimizing steel usage.' }
+                        caption: 'Material Quantity Overview — Complete weight breakdown (142.394 MT) across 6 pages (A3 layout). I-sections (108.22 MT), connection plates (19.00 MT), decking (12.91 MT), bolts, and 164+ assembly items.' }
                 ]
             }, {
                 id: 2,
@@ -2823,6 +2990,128 @@
                         caption: 'Cutting Plan — Optimized cutting plan for combined steel structures.' }
                 ]
             }];
+
+            // ============================================================
+            // SLIDING PROJECT VIEWER
+            // ============================================================
+            const sliderTrack = document.getElementById('sliderTrack');
+            const sliderPrev = document.getElementById('sliderPrev');
+            const sliderNext = document.getElementById('sliderNext');
+            const sliderIndicators = document.getElementById('sliderIndicators');
+
+            // Get all images from the first project (Mezzanine project)
+            const slideImages = portfolioData[0].images;
+            let currentSlide = 0;
+            let slideInterval;
+
+            function renderSlider() {
+                sliderTrack.innerHTML = slideImages.map((img, idx) => `
+                        <div class="slide-item ${idx === 0 ? 'active' : ''}" data-index="${idx}">
+                            <img src="${img.src}" alt="${img.caption}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=240&h=150&fit=crop'" />
+                            <div class="slide-info">
+                                <h4>${img.caption.split('—')[0].trim()}</h4>
+                                <p><i class="fas fa-image"></i> ${img.caption.split('—')[1] ? img.caption.split('—')[1].trim() : 'Click to view detail'}</p>
+                            </div>
+                        </div>
+                    `).join('');
+
+                sliderIndicators.innerHTML = slideImages.map((_, idx) => `
+                        <button class="dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" aria-label="Go to slide ${idx + 1}"></button>
+                    `).join('');
+
+                // Click on slide to open modal
+                document.querySelectorAll('.slide-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        const idx = parseInt(this.dataset.index);
+                        // Find the mezzanine project (id: 1) and open modal at specific image
+                        openModalWithImage(1, idx);
+                    });
+                });
+
+                // Click on dots
+                document.querySelectorAll('.dot').forEach(dot => {
+                    dot.addEventListener('click', function() {
+                        const idx = parseInt(this.dataset.index);
+                        goToSlide(idx);
+                    });
+                });
+
+                // Start auto-play
+                startAutoPlay();
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                const slides = sliderTrack.querySelectorAll('.slide-item');
+                const dots = sliderIndicators.querySelectorAll('.dot');
+
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+
+                // Scroll to the slide
+                const slideElement = slides[index];
+                if (slideElement) {
+                    slideElement.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                }
+
+                resetAutoPlay();
+            }
+
+            function nextSlide() {
+                const next = (currentSlide + 1) % slideImages.length;
+                goToSlide(next);
+            }
+
+            function prevSlide() {
+                const prev = (currentSlide - 1 + slideImages.length) % slideImages.length;
+                goToSlide(prev);
+            }
+
+            function startAutoPlay() {
+                slideInterval = setInterval(nextSlide, 4500);
+            }
+
+            function resetAutoPlay() {
+                clearInterval(slideInterval);
+                startAutoPlay();
+            }
+
+            sliderNext.addEventListener('click', function(e) {
+                e.stopPropagation();
+                nextSlide();
+            });
+
+            sliderPrev.addEventListener('click', function(e) {
+                e.stopPropagation();
+                prevSlide();
+            });
+
+            // Pause auto-play on hover
+            const sliderContainer = document.getElementById('projectSlider');
+            sliderContainer.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            sliderContainer.addEventListener('mouseleave', () => {
+                startAutoPlay();
+            });
+
+            // ============================================================
+            // OPEN MODAL WITH SPECIFIC IMAGE
+            // ============================================================
+            function openModalWithImage(projectId, imageIndex) {
+                const project = portfolioData.find(p => p.id === projectId);
+                if (!project) return;
+                currentProject = project;
+                currentIndex = imageIndex || 0;
+                updateModal();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
 
             // ============================================================
             // RENDER PORTFOLIO CARDS
@@ -2920,6 +3209,7 @@
             function closeModal() {
                 modal.classList.remove('active');
                 document.body.style.overflow = '';
+                resetAutoPlay();
             }
 
             function updateModal() {
@@ -3041,23 +3331,6 @@
             animElements.forEach(el => animObserver.observe(el));
 
             // ============================================================
-            // COUNTERS
-            // ============================================================
-            const counters = document.querySelectorAll('.hero-stats .stat h3');
-            let counted = false;
-
-            const counterObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !counted) {
-                        counted = true;
-                        // Simple animation: just show the numbers (already hardcoded)
-                        // Could add count-up animation if needed
-                    }
-                });
-            }, { threshold: 0.5 });
-            document.querySelectorAll('.hero-stats').forEach(el => counterObserver.observe(el));
-
-            // ============================================================
             // STICKY CTA
             // ============================================================
             if (stickyCta) {
@@ -3069,11 +3342,13 @@
             // ============================================================
             // INIT
             // ============================================================
+            renderSlider();
             renderCards('all');
 
             console.log('🏗️ Unity Structural Solution — Premium Engineering Consultancy');
             console.log('📧 Formspree endpoint: https://formspree.io/f/mdaqball');
             console.log('📂 Portfolio projects loaded:', portfolioData.length);
+            console.log('🖼️ Slider images loaded:', slideImages.length);
 
         })();
     </script>
