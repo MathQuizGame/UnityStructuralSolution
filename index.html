@@ -507,7 +507,6 @@
             color: var(--accent-light);
         }
 
-        /* Slider navigation dots on hero image */
         .hero-slider-dots {
             position: absolute;
             bottom: 16px;
@@ -2798,10 +2797,42 @@
             'use strict';
 
             // ============================================================
-            // PORTFOLIO DATA
+            // PORTFOLIO DATA — Includes Warehouse Shed Project
             // ============================================================
             const portfolioData = [{
                 id: 1,
+                title: '645 MT Warehouse Shed with Mezzanine',
+                subtitle: '51,000 ft² · Industrial / PEB',
+                thumbnail: 'pic/portfolio/warehouse.png',
+                badge: 'PEB',
+                filter: ['peb', 'industrial'],
+                location: 'Bangladesh',
+                scope: 'Industrial / PEB',
+                description: 'Complete structural engineering and Tekla detailing for a 38.55m × 122.85m (51,000 ft²) warehouse shed with 1,700 ft² integrated mezzanine. Full STAAD.Pro analysis per AISC 360 and complete Tekla 3D BIM model. Total steel tonnage: 645.34 MT. Full BOQ, GA drawings, shop drawings, and fabrication documentation delivered.',
+                software: 'STAAD.Pro + Tekla',
+                duration: '30 Days',
+                totalWeight: '645.34 MT',
+                phases: '5+ Releases',
+                images: [
+                    { src: 'pic/portfolio/warehouse.png',
+                        caption: 'Tekla 3D BIM Model — Complete structural model of a 51,000 ft² warehouse shed with 1,700 ft² mezzanine. Model shows main frames, bracing, purlins, girts, and mezzanine.' },
+                    { src: 'pic/portfolio/warehouse_anchor.png',
+                        caption: 'Anchor Bolt Layout — Foundation anchorage plan with anchor details and bolt list. Complete anchor bolt schedule with sizes and embedment depths.' },
+                    { src: 'pic/portfolio/warehouse_beam_layout.png',
+                        caption: 'Mezzanine Level Beam Layout — Beam layout at mezzanine floor level showing beam spacing, member sizes, and connection details.' },
+                    { src: 'pic/portfolio/warehouse_roof_bracing.png',
+                        caption: 'Roof Bracing Layout — Roof bracing layout with connection details showing cross-bracing, horizontal bracing, and bracing-to-frame connections.' },
+                    { src: 'pic/portfolio/warehouse_section.png',
+                        caption: 'Typical Middle Section — Typical cross-section through the warehouse showing frame configuration, clear height, mezzanine location, and connection details.' },
+                    { src: 'pic/portfolio/warehouse_rafter.png',
+                        caption: 'Typical Rafter Assembly — Middle ridge rafter assembly drawing with Bill of Materials (BOM). Shows splice locations, stiffener plates, and connection details.' },
+                    { src: 'pic/portfolio/warehouse_part.png',
+                        caption: 'Typical Part Drawing — Fabrication-ready single-part drawing with A572 Grade 50 material spec, cut lengths, bevel requirements, and bolt hole locations.' },
+                    { src: 'pic/portfolio/warehouse_moq.png',
+                        caption: 'Material Quantity Overview — Complete weight breakdown (645.34 MT): Columns/Rafters (331.98 MT), Bracing (50.07 MT), Beams (67.86 MT), Decking, Purlin (28.00 MT), Wall/roof sheets, and all accessories.' }
+                ]
+            }, {
+                id: 2,
                 title: '143 MT PEB Mezzanine Factory',
                 subtitle: 'Bangladesh · Industrial / PEB',
                 thumbnail: 'pic/portfolio/3d.png',
@@ -2833,7 +2864,7 @@
                         caption: 'Material Quantity Overview — Complete weight breakdown (142.394 MT) across 6 pages (A3 layout). I-sections (108.22 MT), connection plates (19.00 MT), decking (12.91 MT), bolts, and 164+ assembly items.' }
                 ]
             }, {
-                id: 2,
+                id: 3,
                 title: '30,000 ft² Factory — Weight Optimization',
                 subtitle: 'USA · Industrial / Steel',
                 thumbnail: 'pic/projects/project-4.png',
@@ -2862,7 +2893,7 @@
                     { src: 'pic/portfolio/factory-cutting.png', caption: 'Cutting Plan — Optimized nesting plan.' }
                 ]
             }, {
-                id: 3,
+                id: 4,
                 title: 'Mezzanine + Shed Combo',
                 subtitle: 'Australia · Commercial / Steel',
                 thumbnail: 'pic/projects/project-5.png',
