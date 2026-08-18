@@ -314,7 +314,7 @@
         }
 
         /* ============================================================
-           6. HERO
+           6. HERO with Slider
            ============================================================ */
         .hero {
             min-height: 92vh;
@@ -453,6 +453,8 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
+        /* ---- HERO IMAGE SLIDER ---- */
         .hero-image-container {
             position: relative;
             display: flex;
@@ -470,20 +472,27 @@
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.06);
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         .hero-image-container .image-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: opacity 0.8s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .hero-image-container .image-frame img.fade-out {
+            opacity: 0;
+        }
+        .hero-image-container .image-frame img.fade-in {
+            opacity: 1;
         }
         .hero-image-container .image-frame .frame-label {
             position: absolute;
             bottom: 12px;
             left: 16px;
-            z-index: 3;
+            z-index: 10;
             color: rgba(255, 255, 255, 0.3);
             font-size: 0.55rem;
             font-weight: 500;
@@ -492,10 +501,44 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            pointer-events: none;
         }
         .hero-image-container .image-frame .frame-label i {
             color: var(--accent-light);
         }
+
+        /* Slider navigation dots on hero image */
+        .hero-slider-dots {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            z-index: 10;
+            display: flex;
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+        .hero-slider-dots .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0;
+        }
+        .hero-slider-dots .dot.active {
+            background: var(--accent-light);
+            width: 20px;
+            border-radius: 4px;
+        }
+        .hero-slider-dots .dot:hover {
+            background: var(--accent-light);
+        }
+
         .hero-image-container .floating-tag {
             position: absolute;
             background: var(--white);
@@ -508,15 +551,16 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            z-index: 4;
+            z-index: 11;
             border: 1px solid rgba(0, 0, 0, 0.04);
+            pointer-events: none;
         }
         .hero-image-container .floating-tag.t1 {
             top: -8px;
             right: -8px;
         }
         .hero-image-container .floating-tag.t2 {
-            bottom: 20px;
+            bottom: 70px;
             left: -16px;
         }
         .hero-image-container .floating-tag i {
@@ -743,141 +787,6 @@
         .portfolio-section {
             padding: 80px 0;
             background: var(--off-white);
-        }
-
-        /* ---- SLIDING PROJECT VIEWER ---- */
-        .project-slider {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 24px 20px;
-            margin-bottom: 40px;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(0, 0, 0, 0.03);
-        }
-        .project-slider .slider-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-        .project-slider .slider-header h3 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--navy);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .project-slider .slider-header h3 i {
-            color: var(--accent);
-        }
-        .project-slider .slider-nav {
-            display: flex;
-            gap: 8px;
-        }
-        .project-slider .slider-nav button {
-            background: var(--off-white);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-            color: var(--steel);
-            font-size: 0.8rem;
-        }
-        .project-slider .slider-nav button:hover {
-            background: var(--accent);
-            color: var(--white);
-        }
-        .project-slider .slider-track {
-            display: flex;
-            gap: 16px;
-            overflow-x: auto;
-            padding: 8px 4px 16px;
-            scroll-behavior: smooth;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-        }
-        .project-slider .slider-track::-webkit-scrollbar {
-            height: 4px;
-        }
-        .project-slider .slider-track::-webkit-scrollbar-thumb {
-            background: var(--steel);
-            border-radius: 4px;
-        }
-        .project-slider .slider-track::-webkit-scrollbar-track {
-            background: var(--off-white);
-            border-radius: 4px;
-        }
-        .project-slider .slide-item {
-            flex: 0 0 240px;
-            scroll-snap-align: start;
-            background: var(--off-white);
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            cursor: pointer;
-            transition: var(--transition);
-            border: 2px solid transparent;
-        }
-        .project-slider .slide-item:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent);
-        }
-        .project-slider .slide-item.active {
-            border-color: var(--accent);
-        }
-        .project-slider .slide-item img {
-            width: 100%;
-            aspect-ratio: 16/10;
-            object-fit: cover;
-            display: block;
-        }
-        .project-slider .slide-item .slide-info {
-            padding: 10px 12px 12px;
-        }
-        .project-slider .slide-item .slide-info h4 {
-            font-size: 0.78rem;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 1px;
-        }
-        .project-slider .slide-item .slide-info p {
-            font-size: 0.7rem;
-            color: var(--steel);
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .project-slider .slide-item .slide-info p i {
-            color: var(--accent);
-            font-size: 0.55rem;
-        }
-        .project-slider .slider-indicators {
-            display: flex;
-            justify-content: center;
-            gap: 6px;
-            margin-top: 8px;
-        }
-        .project-slider .slider-indicators .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--steel-light);
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            padding: 0;
-        }
-        .project-slider .slider-indicators .dot.active {
-            background: var(--accent);
-            width: 20px;
-            border-radius: 4px;
         }
 
         .portfolio-grid {
@@ -1972,6 +1881,11 @@
                 width: 52px;
                 height: 38px;
             }
+            .hero-slider-dots {
+                bottom: 12px;
+                right: 12px;
+                padding: 4px 10px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -2093,8 +2007,17 @@
                 top: 8px;
                 right: 8px;
             }
-            .project-slider .slide-item {
-                flex: 0 0 180px;
+            .hero-slider-dots {
+                bottom: 10px;
+                right: 10px;
+                padding: 4px 8px;
+            }
+            .hero-slider-dots .dot {
+                width: 6px;
+                height: 6px;
+            }
+            .hero-slider-dots .dot.active {
+                width: 16px;
             }
         }
 
@@ -2132,16 +2055,11 @@
             .capabilities-grid .cap {
                 font-size: 0.7rem;
             }
-            .project-slider .slide-item {
-                flex: 0 0 150px;
-            }
-            .project-slider .slider-header h3 {
-                font-size: 0.8rem;
-            }
-            .project-slider .slider-nav button {
-                width: 30px;
-                height: 30px;
-                font-size: 0.7rem;
+            .hero-slider-dots {
+                bottom: 8px;
+                right: 8px;
+                padding: 3px 6px;
+                gap: 4px;
             }
         }
     </style>
@@ -2186,7 +2104,7 @@
     ============================================================ -->
     <main id="main-content">
 
-        <!-- ===== HERO ===== -->
+        <!-- ===== HERO with Slider ===== -->
         <header class="hero" id="home">
             <div class="hero-bg">
                 <div class="grid-overlay"></div>
@@ -2218,11 +2136,14 @@
                         <div class="stat"><h3>98%</h3><p>Client Satisfaction</p></div>
                     </div>
                 </div>
-                <div class="hero-image-container">
-                    <div class="image-frame">
-                        <img src="pic/hero-structure.jpg" alt="Structural steel engineering model" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'padding:40px;color:rgba(255,255,255,0.12);text-align:center;\'><i class=\'fas fa-cube\' style=\'font-size:4rem;display:block;\'></i><p style=\'font-size:0.7rem;margin-top:8px;\'>Upload pic/hero-structure.jpg</p></div>'" />
-                        <div class="frame-label"><i class="fas fa-cube" aria-hidden="true"></i> Tekla 3D BIM Model</div>
+
+                <!-- Hero Image Slider -->
+                <div class="hero-image-container" id="heroSlider">
+                    <div class="image-frame" id="heroImageFrame">
+                        <img id="heroSlideImage" src="" alt="Featured project" />
+                        <div class="frame-label"><i class="fas fa-cube" aria-hidden="true"></i> <span id="heroSlideLabel">Featured Project</span></div>
                     </div>
+                    <div class="hero-slider-dots" id="heroSliderDots"></div>
                     <div class="floating-tag t1"><i class="fas fa-check-circle"></i> STAAD.Pro</div>
                     <div class="floating-tag t2"><i class="fas fa-check-circle"></i> Tekla Structures</div>
                 </div>
@@ -2366,30 +2287,13 @@
             </div>
         </section>
 
-        <!-- ===== PORTFOLIO with Sliding Viewer ===== -->
+        <!-- ===== PORTFOLIO ===== -->
         <section class="portfolio-section" id="portfolio" aria-label="Project portfolio">
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <div class="tag">Portfolio</div>
                     <h2>Featured <span>Engineering Projects</span></h2>
                     <p>Real projects, real engineering — click to explore each case study.</p>
-                </div>
-
-                <!-- ===== SLIDING PROJECT VIEWER ===== -->
-                <div class="project-slider" id="projectSlider">
-                    <div class="slider-header">
-                        <h3><i class="fas fa-images"></i> Mezzanine Project Gallery</h3>
-                        <div class="slider-nav">
-                            <button id="sliderPrev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
-                            <button id="sliderNext" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                    </div>
-                    <div class="slider-track" id="sliderTrack">
-                        <!-- Slides rendered by JavaScript -->
-                    </div>
-                    <div class="slider-indicators" id="sliderIndicators">
-                        <!-- Dots rendered by JavaScript -->
-                    </div>
                 </div>
 
                 <div class="portfolio-filters" id="portfolioFilters">
@@ -2894,7 +2798,7 @@
             'use strict';
 
             // ============================================================
-            // PORTFOLIO DATA — UPDATED WITH 8 MEZZANINE IMAGES
+            // PORTFOLIO DATA
             // ============================================================
             const portfolioData = [{
                 id: 1,
@@ -2992,126 +2896,89 @@
             }];
 
             // ============================================================
-            // SLIDING PROJECT VIEWER
+            // HERO SLIDER — Only portfolio thumbnails
             // ============================================================
-            const sliderTrack = document.getElementById('sliderTrack');
-            const sliderPrev = document.getElementById('sliderPrev');
-            const sliderNext = document.getElementById('sliderNext');
-            const sliderIndicators = document.getElementById('sliderIndicators');
+            const heroSlideImage = document.getElementById('heroSlideImage');
+            const heroSlideLabel = document.getElementById('heroSlideLabel');
+            const heroSliderDots = document.getElementById('heroSliderDots');
 
-            // Get all images from the first project (Mezzanine project)
-            const slideImages = portfolioData[0].images;
-            let currentSlide = 0;
-            let slideInterval;
+            const heroSlides = portfolioData.map(p => ({
+                src: p.thumbnail,
+                label: p.title,
+                projectId: p.id
+            }));
 
-            function renderSlider() {
-                sliderTrack.innerHTML = slideImages.map((img, idx) => `
-                        <div class="slide-item ${idx === 0 ? 'active' : ''}" data-index="${idx}">
-                            <img src="${img.src}" alt="${img.caption}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=240&h=150&fit=crop'" />
-                            <div class="slide-info">
-                                <h4>${img.caption.split('—')[0].trim()}</h4>
-                                <p><i class="fas fa-image"></i> ${img.caption.split('—')[1] ? img.caption.split('—')[1].trim() : 'Click to view detail'}</p>
-                            </div>
-                        </div>
+            let currentHeroSlide = 0;
+            let heroInterval;
+
+            function renderHeroDots() {
+                heroSliderDots.innerHTML = heroSlides.map((_, idx) => `
+                        <button class="dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" aria-label="Go to project ${idx + 1}"></button>
                     `).join('');
 
-                sliderIndicators.innerHTML = slideImages.map((_, idx) => `
-                        <button class="dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" aria-label="Go to slide ${idx + 1}"></button>
-                    `).join('');
-
-                // Click on slide to open modal
-                document.querySelectorAll('.slide-item').forEach(item => {
-                    item.addEventListener('click', function() {
-                        const idx = parseInt(this.dataset.index);
-                        // Find the mezzanine project (id: 1) and open modal at specific image
-                        openModalWithImage(1, idx);
-                    });
-                });
-
-                // Click on dots
-                document.querySelectorAll('.dot').forEach(dot => {
+                heroSliderDots.querySelectorAll('.dot').forEach(dot => {
                     dot.addEventListener('click', function() {
                         const idx = parseInt(this.dataset.index);
-                        goToSlide(idx);
+                        goToHeroSlide(idx);
                     });
                 });
-
-                // Start auto-play
-                startAutoPlay();
             }
 
-            function goToSlide(index) {
-                currentSlide = index;
-                const slides = sliderTrack.querySelectorAll('.slide-item');
-                const dots = sliderIndicators.querySelectorAll('.dot');
+            function goToHeroSlide(index) {
+                currentHeroSlide = index;
+                const slide = heroSlides[index];
+                if (!slide) return;
 
-                slides.forEach((slide, i) => {
-                    slide.classList.toggle('active', i === index);
-                });
+                // Fade out
+                heroSlideImage.classList.remove('fade-in');
+                heroSlideImage.classList.add('fade-out');
 
-                dots.forEach((dot, i) => {
+                setTimeout(() => {
+                    heroSlideImage.src = slide.src;
+                    heroSlideImage.alt = slide.label;
+                    heroSlideLabel.textContent = slide.label;
+                    // Fade in
+                    heroSlideImage.classList.remove('fade-out');
+                    heroSlideImage.classList.add('fade-in');
+                }, 300);
+
+                // Update dots
+                heroSliderDots.querySelectorAll('.dot').forEach((dot, i) => {
                     dot.classList.toggle('active', i === index);
                 });
 
-                // Scroll to the slide
-                const slideElement = slides[index];
-                if (slideElement) {
-                    slideElement.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-                }
+                // Click on hero image opens the corresponding project modal
+                heroSlideImage.onclick = function() {
+                    openModal(slide.projectId);
+                };
 
-                resetAutoPlay();
+                resetHeroInterval();
             }
 
-            function nextSlide() {
-                const next = (currentSlide + 1) % slideImages.length;
-                goToSlide(next);
+            function nextHeroSlide() {
+                const next = (currentHeroSlide + 1) % heroSlides.length;
+                goToHeroSlide(next);
             }
 
-            function prevSlide() {
-                const prev = (currentSlide - 1 + slideImages.length) % slideImages.length;
-                goToSlide(prev);
+            function resetHeroInterval() {
+                clearInterval(heroInterval);
+                heroInterval = setInterval(nextHeroSlide, 5000);
             }
 
-            function startAutoPlay() {
-                slideInterval = setInterval(nextSlide, 4500);
+            // Initialize hero slider
+            function initHeroSlider() {
+                renderHeroDots();
+                goToHeroSlide(0);
             }
 
-            function resetAutoPlay() {
-                clearInterval(slideInterval);
-                startAutoPlay();
-            }
-
-            sliderNext.addEventListener('click', function(e) {
-                e.stopPropagation();
-                nextSlide();
+            // Pause on hover
+            const heroContainer = document.getElementById('heroSlider');
+            heroContainer.addEventListener('mouseenter', () => {
+                clearInterval(heroInterval);
             });
-
-            sliderPrev.addEventListener('click', function(e) {
-                e.stopPropagation();
-                prevSlide();
+            heroContainer.addEventListener('mouseleave', () => {
+                resetHeroInterval();
             });
-
-            // Pause auto-play on hover
-            const sliderContainer = document.getElementById('projectSlider');
-            sliderContainer.addEventListener('mouseenter', () => {
-                clearInterval(slideInterval);
-            });
-            sliderContainer.addEventListener('mouseleave', () => {
-                startAutoPlay();
-            });
-
-            // ============================================================
-            // OPEN MODAL WITH SPECIFIC IMAGE
-            // ============================================================
-            function openModalWithImage(projectId, imageIndex) {
-                const project = portfolioData.find(p => p.id === projectId);
-                if (!project) return;
-                currentProject = project;
-                currentIndex = imageIndex || 0;
-                updateModal();
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
 
             // ============================================================
             // RENDER PORTFOLIO CARDS
@@ -3143,7 +3010,6 @@
                         </div>
                     `).join('');
 
-                // Re-run animations
                 const newEls = grid.querySelectorAll('.animate-on-scroll');
                 const obs = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
@@ -3152,7 +3018,6 @@
                 }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
                 newEls.forEach(el => obs.observe(el));
 
-                // Click listeners
                 document.querySelectorAll('.portfolio-card').forEach(card => {
                     card.addEventListener('click', function() {
                         const id = parseInt(this.dataset.id);
@@ -3209,7 +3074,7 @@
             function closeModal() {
                 modal.classList.remove('active');
                 document.body.style.overflow = '';
-                resetAutoPlay();
+                resetHeroInterval();
             }
 
             function updateModal() {
@@ -3342,13 +3207,13 @@
             // ============================================================
             // INIT
             // ============================================================
-            renderSlider();
+            initHeroSlider();
             renderCards('all');
 
             console.log('🏗️ Unity Structural Solution — Premium Engineering Consultancy');
             console.log('📧 Formspree endpoint: https://formspree.io/f/mdaqball');
             console.log('📂 Portfolio projects loaded:', portfolioData.length);
-            console.log('🖼️ Slider images loaded:', slideImages.length);
+            console.log('🖼️ Hero slider images loaded:', heroSlides.length);
 
         })();
     </script>
