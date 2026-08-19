@@ -337,7 +337,6 @@
             }
         }
 
-        /* Hero Slider — full width at top */
         .hero-slider-wrapper {
             position: relative;
             z-index: 2;
@@ -391,7 +390,6 @@
             color: var(--accent-light);
         }
 
-        /* Slider controls on the image */
         .hero-slider-wrapper .slider-controls {
             position: absolute;
             bottom: 16px;
@@ -903,7 +901,7 @@
         }
 
         /* ============================================================
-           11. FULLSCREEN MODAL — 80%+ viewport, enlarged images
+           11. FULLSCREEN MODAL — 80%+ viewport
            ============================================================ */
         .modal-overlay {
             position: fixed;
@@ -965,7 +963,6 @@
             transform: rotate(90deg);
         }
 
-        /* Gallery: main image area — takes most of the screen */
         .modal-gallery {
             flex: 1;
             display: flex;
@@ -1059,7 +1056,6 @@
             text-overflow: ellipsis;
         }
 
-        /* Thumbnails */
         .modal-thumbnails {
             display: flex;
             gap: 8px;
@@ -1101,7 +1097,6 @@
             object-fit: cover;
         }
 
-        /* Info panel — slides in from right or bottom */
         .modal-info-toggle {
             position: absolute;
             bottom: 80px;
@@ -2856,18 +2851,55 @@
             'use strict';
 
             // ============================================================
-            // PORTFOLIO DATA — Only 2 projects with complete images
+            // PORTFOLIO DATA — Full Projects + 3D View Projects
             // ============================================================
             const portfolioData = [{
+                // ===== PROJECT 1: Mezzanine + Shed Building (NEW) =====
                 id: 1,
+                title: '749 MT Mezzanine + Shed Building',
+                subtitle: 'Bangladesh · 78,500 ft² · Industrial / PEB',
+                thumbnail: 'pic/portfolio/dual_3d.png',
+                badge: 'PEB',
+                filter: ['peb', 'industrial', 'commercial'],
+                location: 'Bangladesh',
+                scope: 'Industrial / PEB',
+                description: 'Complete structural engineering and Tekla detailing for a 7,288 m² (78,500 ft²) mezzanine + shed building with 6,182 m² (66,500 ft²) floor area. Full STAAD.Pro analysis per AISC 360 and complete Tekla 3D BIM model. Total steel tonnage: 749.77 MT. Full BOQ, GA drawings, shop drawings, and fabrication documentation delivered.',
+                software: 'STAAD.Pro + Tekla',
+                duration: '35 Days',
+                totalWeight: '749.77 MT',
+                phases: '6+ Releases',
+                weightMain: '521.77 MT (MS Plate + Connection)',
+                weightForming: '228.00 MT (Checkered Plate, Accessories, Bolts, Decking, Purlin, Sheets, Insulation)',
+                weightTotal: '749.77 MT',
+                images: [
+                    { src: 'pic/portfolio/dual_3d.png',
+                        caption: 'Tekla 3D BIM Model — Complete structural model of 78,500 ft² mezzanine + shed building with integrated mezzanine floor.' },
+                    { src: 'pic/portfolio/dual_anchor.png',
+                        caption: 'Anchor Bolt Layout — Foundation anchorage plan with anchor details and bolt list.' },
+                    { src: 'pic/portfolio/dual_beam_layout.png',
+                        caption: 'Beam Layout — Full beam layout at mezzanine and shed levels showing member IDs and connection details.' },
+                    { src: 'pic/portfolio/dual_section.png',
+                        caption: 'Typical Section — Cross-section through the building showing mezzanine integration, clear heights, and framing configuration.' },
+                    { src: 'pic/portfolio/dual_moq.png',
+                        caption: 'Material Quantity Overview — Complete weight breakdown: 749.77 MT across all components.' },
+                    { src: 'pic/portfolio/dual_roof_purlin.png',
+                        caption: 'Roof Purlin Layout — Roof purlin arrangement with spacing, sizes, and connection details.' },
+                    { src: 'pic/portfolio/dual_wall_sheet.png',
+                        caption: 'Wall Sheet Layout — Wall cladding arrangement with sheet sizes, fastening patterns, and accessories.' },
+                    { src: 'pic/portfolio/dual_roof_sheet.png',
+                        caption: 'Roof Sheet Layout — Roof cladding arrangement with sheet sizes, fastening patterns, and accessories.' }
+                ]
+            }, {
+                // ===== PROJECT 2: Warehouse Shed =====
+                id: 2,
                 title: '645 MT Warehouse Shed with Mezzanine',
-                subtitle: 'Bangladesh · Industrial / PEB',
+                subtitle: 'Bangladesh · 51,000 ft² · Industrial / PEB',
                 thumbnail: 'pic/portfolio/warehouse.png',
                 badge: 'PEB',
                 filter: ['peb', 'industrial'],
                 location: 'Bangladesh',
                 scope: 'Industrial / PEB',
-                description: 'Complete structural engineering and Tekla detailing for a 38.55m × 122.85m (51,000 ft²) warehouse shed with 1,700 ft² integrated mezzanine. Full STAAD.Pro analysis per AISC 360 and complete Tekla 3D BIM model. Total steel tonnage: 645.34 MT. Full BOQ, GA drawings, shop drawings, and fabrication documentation delivered.',
+                description: 'Complete structural engineering and Tekla detailing for a 38.55m × 122.85m (51,000 ft²) warehouse shed with 1,700 ft² integrated mezzanine. Full STAAD.Pro analysis per AISC 360 and complete Tekla 3D BIM model. Total steel tonnage: 645.34 MT.',
                 software: 'STAAD.Pro + Tekla',
                 duration: '30 Days',
                 totalWeight: '645.34 MT',
@@ -2894,15 +2926,16 @@
                         caption: 'Material Quantity Overview — Complete weight breakdown (645.34 MT) across all components.' }
                 ]
             }, {
-                id: 2,
+                // ===== PROJECT 3: 143 MT Mezzanine =====
+                id: 3,
                 title: '143 MT PEB Mezzanine Factory',
-                subtitle: 'Bangladesh · Industrial / PEB',
+                subtitle: 'Bangladesh · 15,488 ft² · Industrial / PEB',
                 thumbnail: 'pic/portfolio/3d.png',
                 badge: 'PEB',
                 filter: ['peb', 'industrial'],
                 location: 'Bangladesh',
                 scope: 'Industrial / PEB',
-                description: 'Complete structural engineering and Tekla detailing for a 715 m² mezzanine structure with 1,439 m² floor area. Full STAAD.Pro analysis per AISC 360 and complete Tekla 3D BIM model. Total steel tonnage: 142.394 MT. Full BOQ, GA drawings, shop drawings, and fabrication documentation delivered.',
+                description: 'Complete structural engineering and Tekla detailing for a 715 m² mezzanine structure with 1,439 m² floor area. Full STAAD.Pro analysis per AISC 360 and complete Tekla 3D BIM model. Total steel tonnage: 142.394 MT.',
                 software: 'STAAD.Pro + Tekla',
                 duration: '7 Days',
                 totalWeight: '142.394 MT',
@@ -2916,7 +2949,7 @@
                     { src: 'pic/portfolio/analysis.png',
                         caption: 'STAAD.Pro Analysis — Bending moment diagram used for member sizing and design verification per AISC 360.' },
                     { src: 'pic/portfolio/anchor.png',
-                        caption: 'Anchor Bolt Layout — Foundation anchorage plan with base plate details. 168 pcs Φ24×750 anchor bolts.' },
+                        caption: 'Anchor Bolt Layout — Foundation anchorage plan with base plate details.' },
                     { src: 'pic/portfolio/floor.png',
                         caption: 'Floor Beam Layout — Mezzanine framing plan showing main beams, sub-beams, joists with member IDs.' },
                     { src: 'pic/portfolio/section.png',
@@ -2928,10 +2961,148 @@
                     { src: 'pic/portfolio/moq.png',
                         caption: 'Material Quantity Overview — Complete weight breakdown (142.394 MT) across 6 pages (A3 layout).' }
                 ]
+            }, {
+                // ===== PROJECT 4: 3D View Only — Project A =====
+                id: 4,
+                title: 'Industrial Shed — 280 MT',
+                subtitle: 'Bangladesh · 32,000 ft² · PEB',
+                thumbnail: 'pic/projects/3d_a_1.png',
+                badge: '3D View',
+                filter: ['peb', 'industrial'],
+                location: 'Bangladesh',
+                scope: 'Industrial / PEB',
+                description: '3D structural model of a 32,000 ft² industrial shed. Total steel tonnage: 280 MT. Model shown from multiple angles.',
+                software: 'Tekla Structures',
+                duration: '15 Days',
+                totalWeight: '280 MT',
+                phases: '3 Releases',
+                weightMain: '—',
+                weightForming: '—',
+                weightTotal: '280 MT',
+                images: [
+                    { src: 'pic/projects/3d_a_1.png', caption: '3D View — Isometric view of the industrial shed structure.' },
+                    { src: 'pic/projects/3d_a_2.png', caption: '3D View — Side elevation showing frame configuration.' },
+                    { src: 'pic/projects/3d_a_3.png', caption: '3D View — Top view showing roof and bracing layout.' }
+                ]
+            }, {
+                // ===== PROJECT 5: 3D View Only — Project B =====
+                id: 5,
+                title: 'Commercial Complex — 185 MT',
+                subtitle: 'Bangladesh · 22,000 ft² · Steel',
+                thumbnail: 'pic/projects/3d_b_1.png',
+                badge: '3D View',
+                filter: ['steel', 'commercial'],
+                location: 'Bangladesh',
+                scope: 'Commercial / Steel',
+                description: '3D structural model of a 22,000 ft² commercial complex. Total steel tonnage: 185 MT. Model shown from multiple angles.',
+                software: 'Tekla Structures',
+                duration: '12 Days',
+                totalWeight: '185 MT',
+                phases: '3 Releases',
+                weightMain: '—',
+                weightForming: '—',
+                weightTotal: '185 MT',
+                images: [
+                    { src: 'pic/projects/3d_b_1.png', caption: '3D View — Isometric view of the commercial complex structure.' },
+                    { src: 'pic/projects/3d_b_2.png', caption: '3D View — Front elevation showing column and beam layout.' },
+                    { src: 'pic/projects/3d_b_3.png', caption: '3D View — Plan view of the floor framing system.' }
+                ]
+            }, {
+                // ===== PROJECT 6: 3D View Only — Project C =====
+                id: 6,
+                title: 'Warehouse Extension — 420 MT',
+                subtitle: 'Bangladesh · 48,000 ft² · PEB',
+                thumbnail: 'pic/projects/3d_c_1.png',
+                badge: '3D View',
+                filter: ['peb', 'industrial'],
+                location: 'Bangladesh',
+                scope: 'Industrial / PEB',
+                description: '3D structural model of a 48,000 ft² warehouse extension. Total steel tonnage: 420 MT. Model shown from multiple angles.',
+                software: 'Tekla Structures',
+                duration: '20 Days',
+                totalWeight: '420 MT',
+                phases: '4 Releases',
+                weightMain: '—',
+                weightForming: '—',
+                weightTotal: '420 MT',
+                images: [
+                    { src: 'pic/projects/3d_c_1.png', caption: '3D View — Isometric view of the warehouse extension.' },
+                    { src: 'pic/projects/3d_c_2.png', caption: '3D View — Side view showing the extension integration.' },
+                    { src: 'pic/projects/3d_c_3.png', caption: '3D View — Roof layout and bracing configuration.' }
+                ]
+            }, {
+                // ===== PROJECT 7: 3D View Only — Project D =====
+                id: 7,
+                title: 'Factory Building — 560 MT',
+                subtitle: 'Bangladesh · 65,000 ft² · PEB',
+                thumbnail: 'pic/projects/3d_d_1.png',
+                badge: '3D View',
+                filter: ['peb', 'industrial'],
+                location: 'Bangladesh',
+                scope: 'Industrial / PEB',
+                description: '3D structural model of a 65,000 ft² factory building. Total steel tonnage: 560 MT. Model shown from multiple angles.',
+                software: 'Tekla Structures',
+                duration: '25 Days',
+                totalWeight: '560 MT',
+                phases: '5 Releases',
+                weightMain: '—',
+                weightForming: '—',
+                weightTotal: '560 MT',
+                images: [
+                    { src: 'pic/projects/3d_d_1.png', caption: '3D View — Isometric view of the factory building.' },
+                    { src: 'pic/projects/3d_d_2.png', caption: '3D View — Front elevation showing the main framing.' },
+                    { src: 'pic/projects/3d_d_3.png', caption: '3D View — Roof and mezzanine layout.' }
+                ]
+            }, {
+                // ===== PROJECT 8: 3D View Only — Project E =====
+                id: 8,
+                title: 'Showroom Structure — 95 MT',
+                subtitle: 'Bangladesh · 12,000 ft² · Steel',
+                thumbnail: 'pic/projects/3d_e_1.png',
+                badge: '3D View',
+                filter: ['steel', 'commercial'],
+                location: 'Bangladesh',
+                scope: 'Commercial / Steel',
+                description: '3D structural model of a 12,000 ft² showroom structure. Total steel tonnage: 95 MT. Model shown from multiple angles.',
+                software: 'Tekla Structures',
+                duration: '8 Days',
+                totalWeight: '95 MT',
+                phases: '2 Releases',
+                weightMain: '—',
+                weightForming: '—',
+                weightTotal: '95 MT',
+                images: [
+                    { src: 'pic/projects/3d_e_1.png', caption: '3D View — Isometric view of the showroom structure.' },
+                    { src: 'pic/projects/3d_e_2.png', caption: '3D View — Side elevation showing the frame design.' },
+                    { src: 'pic/projects/3d_e_3.png', caption: '3D View — Floor and roof layout.' }
+                ]
+            }, {
+                // ===== PROJECT 9: 3D View Only — Project F =====
+                id: 9,
+                title: 'Multi-level Car Park — 340 MT',
+                subtitle: 'Bangladesh · 38,000 ft² · Steel',
+                thumbnail: 'pic/projects/3d_f_1.png',
+                badge: '3D View',
+                filter: ['steel', 'commercial'],
+                location: 'Bangladesh',
+                scope: 'Commercial / Steel',
+                description: '3D structural model of a 38,000 ft² multi-level car park. Total steel tonnage: 340 MT. Model shown from multiple angles.',
+                software: 'Tekla Structures',
+                duration: '18 Days',
+                totalWeight: '340 MT',
+                phases: '3 Releases',
+                weightMain: '—',
+                weightForming: '—',
+                weightTotal: '340 MT',
+                images: [
+                    { src: 'pic/projects/3d_f_1.png', caption: '3D View — Isometric view of the multi-level car park.' },
+                    { src: 'pic/projects/3d_f_2.png', caption: '3D View — Side view showing the ramp and floor levels.' },
+                    { src: 'pic/projects/3d_f_3.png', caption: '3D View — Plan layout of the parking levels.' }
+                ]
             }];
 
             // ============================================================
-            // HERO SLIDER — Only projects with complete images
+            // HERO SLIDER — All project thumbnails
             // ============================================================
             const heroSlideImage = document.getElementById('heroSlideImage');
             const heroSlideLabel = document.getElementById('heroSlideLabel');
@@ -2966,17 +3137,14 @@
                 const slide = heroSlides[index];
                 if (!slide) return;
 
-                // Update image
                 heroSlideImage.src = slide.src;
                 heroSlideImage.alt = slide.label;
                 heroSlideLabel.innerHTML = '<i class="fas fa-cube"></i> ' + slide.label;
 
-                // Update dots
                 heroSliderDots.querySelectorAll('.dot').forEach((dot, i) => {
                     dot.classList.toggle('active', i === index);
                 });
 
-                // Click on hero image opens the corresponding project modal
                 heroSlideImage.onclick = function() {
                     openModal(slide.projectId);
                 };
@@ -3195,7 +3363,6 @@
             modalInfoToggle.addEventListener('click', toggleInfo);
             modalInfoClose.addEventListener('click', toggleInfo);
 
-            // Close info panel when clicking outside on mobile (through backdrop)
             modal.addEventListener('click', function(e) {
                 if (e.target === this && isInfoOpen) {
                     toggleInfo();
@@ -3217,7 +3384,6 @@
                     e.preventDefault(); }
             });
 
-            // Touch swipe support
             let touchStartX = 0;
             let touchEndX = 0;
             const modalImageEl = document.getElementById('modalMainImage');
