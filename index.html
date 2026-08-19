@@ -1014,90 +1014,108 @@
             padding: 80px 0;
             background: var(--off-white);
         }
-        .portfolio-grid {
+
+        /* --- Featured Projects --- */
+        .featured-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 28px;
+            margin-bottom: 56px;
         }
-        .portfolio-card {
+        .featured-card {
+            background: var(--white);
             border-radius: var(--radius);
             overflow: hidden;
-            background: var(--white);
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: var(--shadow);
             transition: var(--transition);
             cursor: pointer;
-            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.04);
         }
-        .portfolio-card:hover {
+        .featured-card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-hover);
         }
-        .portfolio-card .img-wrap {
+        .featured-card .img-wrap {
             position: relative;
             aspect-ratio: 4/3;
             overflow: hidden;
             background: var(--navy);
         }
-        .portfolio-card .img-wrap img {
+        .featured-card .img-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
         }
-        .portfolio-card:hover .img-wrap img {
+        .featured-card:hover .img-wrap img {
             transform: scale(1.03);
         }
-        .portfolio-card .img-wrap .badge {
+        .featured-card .img-wrap .badge {
             position: absolute;
             top: 12px;
             left: 12px;
             background: var(--accent);
             color: var(--white);
-            padding: 2px 12px;
+            padding: 2px 14px;
             border-radius: 4px;
             font-size: 0.55rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .portfolio-card .body {
+        .featured-card .img-wrap .featured-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            color: var(--white);
+            padding: 2px 12px;
+            border-radius: 4px;
+            font-size: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .featured-card .body {
             padding: 18px 20px 20px;
         }
-        .portfolio-card .body h4 {
-            font-size: 1rem;
-            font-weight: 700;
+        .featured-card .body h4 {
+            font-size: 1.05rem;
+            font-weight: 800;
             color: var(--navy);
             margin-bottom: 2px;
         }
-        .portfolio-card .body .location {
+        .featured-card .body .location {
             font-size: 0.78rem;
             color: var(--steel);
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
-        .portfolio-card .body .meta {
+        .featured-card .body .meta {
             font-size: 0.72rem;
             color: var(--steel);
             display: flex;
             flex-wrap: wrap;
             gap: 4px 14px;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
-        .portfolio-card .body .meta span i {
+        .featured-card .body .meta span i {
             color: var(--accent);
             margin-right: 4px;
             width: 14px;
         }
-        .portfolio-card .body p {
+        .featured-card .body p {
             font-size: 0.82rem;
             color: var(--steel);
-            margin: 0;
+            margin: 0 0 10px 0;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
+            line-height: 1.6;
         }
-        .portfolio-card .body .view-link {
-            margin-top: 10px;
+        .featured-card .body .view-link {
             font-size: 0.8rem;
             font-weight: 600;
             color: var(--accent);
@@ -1106,12 +1124,77 @@
             gap: 6px;
             transition: var(--transition);
         }
-        .portfolio-card .body .view-link i {
+        .featured-card .body .view-link i {
             transition: var(--transition);
         }
-        .portfolio-card:hover .body .view-link i {
+        .featured-card:hover .body .view-link i {
             transform: translateX(4px);
         }
+
+        /* --- Gallery Projects --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        .gallery-item {
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            position: relative;
+        }
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .gallery-item .img-wrap {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background: var(--navy);
+        }
+        .gallery-item .img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .gallery-item:hover .img-wrap img {
+            transform: scale(1.04);
+        }
+        .gallery-item .img-wrap .gallery-badge {
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 1px 10px;
+            border-radius: 3px;
+            font-size: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .gallery-item .caption {
+            padding: 8px 12px 10px;
+            text-align: center;
+        }
+        .gallery-item .caption .title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--navy);
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* --- Filters --- */
         .portfolio-filters {
             display: flex;
             flex-wrap: wrap;
@@ -1344,10 +1427,13 @@
             font-size: 1rem;
             cursor: pointer;
             transition: var(--transition);
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 20px var(--accent-glow);
+        }
+        .modal-info-toggle.visible {
+            display: flex;
         }
         .modal-info-toggle:hover {
             transform: scale(1.05);
@@ -1457,6 +1543,7 @@
             font-size: 0.72rem;
             padding: 6px 14px;
         }
+
         @media (max-width: 768px) {
             .modal-info-panel {
                 width: 100vw;
@@ -2239,12 +2326,17 @@
                 gap: 32px;
             }
             .services-grid,
-            .portfolio-grid,
             .quality-grid,
             .team-grid,
             .why-grid,
             .support-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+            .featured-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
             .workflow-grid {
                 grid-template-columns: 1fr 1fr;
@@ -2294,13 +2386,18 @@
                 font-size: 1.8rem;
             }
             .services-grid,
-            .portfolio-grid,
             .quality-grid,
             .team-grid,
             .why-grid,
             .support-grid,
             .workflow-grid {
                 grid-template-columns: 1fr;
+            }
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             .deliverables-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -2354,8 +2451,9 @@
             .contact-form {
                 padding: 16px 14px;
             }
-            .deliverables-grid {
+            .gallery-grid {
                 grid-template-columns: 1fr 1fr;
+                gap: 12px;
             }
             .capabilities-grid .cap {
                 font-size: 0.7rem;
@@ -2849,24 +2947,44 @@
                     <p>Representative projects from our engineering team's professional background. Each project illustrates the scope and capability we bring to your work.</p>
                 </div>
 
-                <div class="portfolio-filters" id="portfolioFilters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="peb">PEB</button>
-                    <button class="filter-btn" data-filter="steel">Structural Steel</button>
-                    <button class="filter-btn" data-filter="estimation">Estimation / MTO</button>
-                    <button class="filter-btn" data-filter="tekla">Tekla Detailing</button>
-                    <button class="filter-btn" data-filter="rcc">RCC</button>
-                    <button class="filter-btn" data-filter="industrial">Industrial</button>
+                <!-- ===== FEATURED PROJECTS ===== -->
+                <div class="section-header" style="margin-bottom:24px;max-width:100%;">
+                    <div style="display:inline-block;background:rgba(10,22,40,0.05);color:var(--navy);padding:4px 16px;border-radius:4px;font-size:0.6rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;">Featured</div>
+                    <h2 style="font-size:clamp(1.4rem,2.2vw,1.9rem);">Featured Engineering <span>Experience</span></h2>
+                    <p style="font-size:0.88rem;">Three representative projects demonstrating our engineering, estimation and detailing capability.</p>
                 </div>
 
-                <div class="portfolio-grid" id="portfolioGrid">
+                <div class="featured-grid" id="featuredGrid">
                     <!-- Rendered by JavaScript -->
                 </div>
 
-                <div class="portfolio-view-all">
-                    <a href="#work" class="btn btn-outline-dark" onclick="document.querySelectorAll('.portfolio-card').forEach(c => c.style.display='block'); this.style.display='none'; return false;">
-                        <i class="fas fa-arrow-right"></i> View All Projects
-                    </a>
+                <!-- ===== PROJECT GALLERY ===== -->
+                <div style="border-top:1px solid rgba(0,0,0,0.06);padding-top:44px;margin-top:8px;">
+                    <div class="section-header" style="margin-bottom:20px;max-width:100%;">
+                        <div style="display:inline-block;background:rgba(10,22,40,0.05);color:var(--navy);padding:4px 16px;border-radius:4px;font-size:0.6rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;">Gallery</div>
+                        <h2 style="font-size:clamp(1.2rem,2vw,1.6rem);">More Engineering <span>Work</span></h2>
+                        <p style="font-size:0.85rem;">A visual selection of additional projects from our professional experience.</p>
+                    </div>
+
+                    <div class="portfolio-filters" id="portfolioFilters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="peb">PEB</button>
+                        <button class="filter-btn" data-filter="steel">Structural Steel</button>
+                        <button class="filter-btn" data-filter="estimation">Estimation / MTO</button>
+                        <button class="filter-btn" data-filter="tekla">Tekla Detailing</button>
+                        <button class="filter-btn" data-filter="rcc">RCC</button>
+                        <button class="filter-btn" data-filter="industrial">Industrial</button>
+                    </div>
+
+                    <div class="gallery-grid" id="galleryGrid">
+                        <!-- Rendered by JavaScript -->
+                    </div>
+
+                    <div class="portfolio-view-all">
+                        <a href="#work" class="btn btn-outline-dark" onclick="document.querySelectorAll('.gallery-item').forEach(c => c.style.display='block'); this.style.display='none'; return false;">
+                            <i class="fas fa-arrow-right"></i> View All Gallery Items
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -3337,7 +3455,7 @@
             'use strict';
 
             // ============================================================
-            // PORTFOLIO DATA — Selected Professional Experience
+            // PORTFOLIO DATA
             // ============================================================
             const portfolioData = [{
                 id: 1,
@@ -3356,6 +3474,7 @@
                 weightMain: '~522 MT (MS Plate + Connection)',
                 weightForming: '~228 MT (Accessories, Decking, Purlin, Sheets, Insulation)',
                 weightTotal: '~750 MT',
+                featured: true,
                 images: [
                     { src: 'pic/portfolio/dual_3d.png',
                         caption: 'Tekla 3D BIM Model — Complete structural model of 78,500 ft² mezzanine + shed building.' },
@@ -3391,6 +3510,7 @@
                 weightMain: '~332 MT (Columns & Rafters)',
                 weightForming: '~313 MT (Bracing, Beams, Sheets, Decking)',
                 weightTotal: '~645 MT',
+                featured: true,
                 images: [
                     { src: 'pic/portfolio/warehouse.png',
                         caption: 'Tekla 3D BIM Model — Complete structural model of a 51,000 ft² warehouse shed with 1,700 ft² mezzanine.' },
@@ -3426,6 +3546,7 @@
                 weightMain: '~108 MT (I-Section)',
                 weightForming: '~34 MT (Plates, Bolts, Decking)',
                 weightTotal: '~142 MT',
+                featured: true,
                 images: [
                     { src: 'pic/portfolio/3d.png',
                         caption: 'Tekla 3D BIM Model — Complete structural model of a 715 m² mezzanine system with 1,439 m² floor area.' },
@@ -3446,21 +3567,22 @@
                 ]
             }, {
                 id: 4,
-                title: 'Structural Steel Framing — 280 MT',
+                title: 'Structural Steel Framing',
                 subtitle: 'Bangladesh · 32,000 ft²',
                 thumbnail: 'pic/projects/3d_a_1.png',
                 badge: 'Steel',
                 filter: ['steel', 'industrial', 'tekla'],
                 location: 'Bangladesh',
                 scope: 'Structural Steel',
-                description: 'Professional engineering experience on a 32,000 ft² industrial shed. Complete Tekla detailing with GA drawings, shop drawings and BOM. Representative steel tonnage: 280 MT.',
+                description: '',
                 software: 'Tekla Structures',
-                duration: '15 Days',
-                totalWeight: '~280 MT',
-                phases: '3 Releases',
-                weightMain: '—',
-                weightForming: '—',
-                weightTotal: '~280 MT',
+                duration: '',
+                totalWeight: '',
+                phases: '',
+                weightMain: '',
+                weightForming: '',
+                weightTotal: '',
+                featured: false,
                 images: [
                     { src: 'pic/projects/3d_a_1.png', caption: '3D View — Isometric view of the industrial shed structure.' },
                     { src: 'pic/projects/3d_a_2.png', caption: '3D View — Side elevation showing frame configuration.' },
@@ -3468,21 +3590,22 @@
                 ]
             }, {
                 id: 5,
-                title: 'Commercial Steel Complex — 185 MT',
+                title: 'Commercial Steel Complex',
                 subtitle: 'Bangladesh · 22,000 ft²',
                 thumbnail: 'pic/projects/3d_b_1.png',
                 badge: 'Steel',
                 filter: ['steel', 'tekla'],
                 location: 'Bangladesh',
                 scope: 'Commercial / Steel',
-                description: 'Professional engineering experience on a 22,000 ft² commercial complex. Complete Tekla detailing with fabrication and erection drawings. Representative steel tonnage: 185 MT.',
+                description: '',
                 software: 'Tekla Structures',
-                duration: '12 Days',
-                totalWeight: '~185 MT',
-                phases: '3 Releases',
-                weightMain: '—',
-                weightForming: '—',
-                weightTotal: '~185 MT',
+                duration: '',
+                totalWeight: '',
+                phases: '',
+                weightMain: '',
+                weightForming: '',
+                weightTotal: '',
+                featured: false,
                 images: [
                     { src: 'pic/projects/3d_b_1.png', caption: '3D View — Isometric view of the commercial complex structure.' },
                     { src: 'pic/projects/3d_b_2.png', caption: '3D View — Front elevation showing column and beam layout.' },
@@ -3490,21 +3613,22 @@
                 ]
             }, {
                 id: 6,
-                title: 'Warehouse Extension — 420 MT',
+                title: 'Warehouse Extension',
                 subtitle: 'Bangladesh · 48,000 ft²',
                 thumbnail: 'pic/projects/3d_c_1.png',
                 badge: 'PEB',
                 filter: ['peb', 'industrial', 'tekla'],
                 location: 'Bangladesh',
                 scope: 'Industrial / PEB',
-                description: 'Professional engineering experience on a 48,000 ft² warehouse extension. Complete Tekla detailing with GA drawings, shop drawings and BOM. Representative steel tonnage: 420 MT.',
+                description: '',
                 software: 'Tekla Structures',
-                duration: '20 Days',
-                totalWeight: '~420 MT',
-                phases: '4 Releases',
-                weightMain: '—',
-                weightForming: '—',
-                weightTotal: '~420 MT',
+                duration: '',
+                totalWeight: '',
+                phases: '',
+                weightMain: '',
+                weightForming: '',
+                weightTotal: '',
+                featured: false,
                 images: [
                     { src: 'pic/projects/3d_c_1.png', caption: '3D View — Isometric view of the warehouse extension.' },
                     { src: 'pic/projects/3d_c_2.png', caption: '3D View — Side view showing the extension integration.' },
@@ -3512,21 +3636,22 @@
                 ]
             }, {
                 id: 7,
-                title: 'Factory Building — 560 MT',
+                title: 'Factory Building',
                 subtitle: 'Bangladesh · 65,000 ft²',
                 thumbnail: 'pic/projects/3d_d_1.png',
                 badge: 'PEB',
                 filter: ['peb', 'industrial', 'tekla'],
                 location: 'Bangladesh',
                 scope: 'Industrial / PEB',
-                description: 'Professional engineering experience on a 65,000 ft² factory building. Complete Tekla detailing with fabrication drawings, GA drawings and BOM. Representative steel tonnage: 560 MT.',
+                description: '',
                 software: 'Tekla Structures',
-                duration: '25 Days',
-                totalWeight: '~560 MT',
-                phases: '5 Releases',
-                weightMain: '—',
-                weightForming: '—',
-                weightTotal: '~560 MT',
+                duration: '',
+                totalWeight: '',
+                phases: '',
+                weightMain: '',
+                weightForming: '',
+                weightTotal: '',
+                featured: false,
                 images: [
                     { src: 'pic/projects/3d_d_1.png', caption: '3D View — Isometric view of the factory building.' },
                     { src: 'pic/projects/3d_d_2.png', caption: '3D View — Front elevation showing the main framing.' },
@@ -3534,21 +3659,22 @@
                 ]
             }, {
                 id: 8,
-                title: 'Showroom Structure — 95 MT',
+                title: 'Showroom Structure',
                 subtitle: 'Bangladesh · 12,000 ft²',
                 thumbnail: 'pic/projects/3d_e_1.png',
                 badge: 'Steel',
                 filter: ['steel', 'tekla'],
                 location: 'Bangladesh',
                 scope: 'Commercial / Steel',
-                description: 'Professional engineering experience on a 12,000 ft² showroom structure. Complete Tekla detailing with GA and shop drawings. Representative steel tonnage: 95 MT.',
+                description: '',
                 software: 'Tekla Structures',
-                duration: '8 Days',
-                totalWeight: '~95 MT',
-                phases: '2 Releases',
-                weightMain: '—',
-                weightForming: '—',
-                weightTotal: '~95 MT',
+                duration: '',
+                totalWeight: '',
+                phases: '',
+                weightMain: '',
+                weightForming: '',
+                weightTotal: '',
+                featured: false,
                 images: [
                     { src: 'pic/projects/3d_e_1.png', caption: '3D View — Isometric view of the showroom structure.' },
                     { src: 'pic/projects/3d_e_2.png', caption: '3D View — Side elevation showing the frame design.' },
@@ -3556,27 +3682,31 @@
                 ]
             }, {
                 id: 9,
-                title: 'Multi-level Car Park — 340 MT',
+                title: 'Multi-level Car Park',
                 subtitle: 'Bangladesh · 38,000 ft²',
                 thumbnail: 'pic/projects/3d_f_1.png',
                 badge: 'Steel',
                 filter: ['steel', 'tekla'],
                 location: 'Bangladesh',
                 scope: 'Commercial / Steel',
-                description: 'Professional engineering experience on a 38,000 ft² multi-level car park. Complete Tekla detailing with fabrication and erection drawings. Representative steel tonnage: 340 MT.',
+                description: '',
                 software: 'Tekla Structures',
-                duration: '18 Days',
-                totalWeight: '~340 MT',
-                phases: '3 Releases',
-                weightMain: '—',
-                weightForming: '—',
-                weightTotal: '~340 MT',
+                duration: '',
+                totalWeight: '',
+                phases: '',
+                weightMain: '',
+                weightForming: '',
+                weightTotal: '',
+                featured: false,
                 images: [
                     { src: 'pic/projects/3d_f_1.png', caption: '3D View — Isometric view of the multi-level car park.' },
                     { src: 'pic/projects/3d_f_2.png', caption: '3D View — Side view showing the ramp and floor levels.' },
                     { src: 'pic/projects/3d_f_3.png', caption: '3D View — Plan layout of the parking levels.' }
                 ]
             }];
+
+            const featuredProjects = portfolioData.filter(p => p.featured === true);
+            const galleryProjects = portfolioData.filter(p => p.featured !== true);
 
             // ============================================================
             // HERO SLIDER
@@ -3668,21 +3798,17 @@
             });
 
             // ============================================================
-            // RENDER PORTFOLIO CARDS
+            // RENDER FEATURED PROJECTS
             // ============================================================
-            const grid = document.getElementById('portfolioGrid');
-            let currentFilter = 'all';
+            const featuredGrid = document.getElementById('featuredGrid');
 
-            function renderCards(filter) {
-                const filtered = filter === 'all' ?
-                    portfolioData :
-                    portfolioData.filter(p => p.filter.includes(filter));
-
-                grid.innerHTML = filtered.map(project => `
-                        <div class="portfolio-card animate-on-scroll zoom" data-id="${project.id}" data-filter="${project.filter.join(' ')}">
+            function renderFeatured() {
+                featuredGrid.innerHTML = featuredProjects.map(project => `
+                        <div class="featured-card animate-on-scroll zoom" data-id="${project.id}">
                             <div class="img-wrap">
                                 <img src="${project.thumbnail}" alt="${project.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=600&h=450&fit=crop'" />
                                 <span class="badge">${project.badge}</span>
+                                <span class="featured-tag"><i class="fas fa-star"></i> Featured</span>
                             </div>
                             <div class="body">
                                 <h4>${project.title}</h4>
@@ -3690,25 +3816,58 @@
                                 <div class="meta">
                                     <span><i class="fas fa-weight-hanging"></i> ${project.totalWeight}</span>
                                     <span><i class="fas fa-cogs"></i> ${project.software}</span>
+                                    <span><i class="fas fa-clock"></i> ${project.duration}</span>
                                 </div>
-                                <p>${project.description.substring(0, 85)}...</p>
-                                <span class="view-link">View Project <i class="fas fa-arrow-right"></i></span>
+                                <p>${project.description.substring(0, 100)}${project.description.length > 100 ? '...' : ''}</p>
+                                <span class="view-link">View Case Study <i class="fas fa-arrow-right"></i></span>
                             </div>
                         </div>
                     `).join('');
 
-                const newEls = grid.querySelectorAll('.animate-on-scroll');
+                featuredGrid.querySelectorAll('.featured-card').forEach(card => {
+                    card.addEventListener('click', function() {
+                        const id = parseInt(this.dataset.id);
+                        openModal(id);
+                    });
+                });
+
+                // Animate
+                const els = featuredGrid.querySelectorAll('.animate-on-scroll');
                 const obs = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) entry.target.classList.add('visible');
                     });
                 }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-                newEls.forEach(el => obs.observe(el));
+                els.forEach(el => obs.observe(el));
+            }
 
-                document.querySelectorAll('.portfolio-card').forEach(card => {
-                    card.addEventListener('click', function() {
+            // ============================================================
+            // RENDER GALLERY
+            // ============================================================
+            const galleryGrid = document.getElementById('galleryGrid');
+            let currentGalleryFilter = 'all';
+
+            function renderGallery(filter) {
+                const filtered = filter === 'all' ?
+                    galleryProjects :
+                    galleryProjects.filter(p => p.filter.includes(filter));
+
+                galleryGrid.innerHTML = filtered.map(project => `
+                        <div class="gallery-item" data-id="${project.id}" data-filter="${project.filter.join(' ')}">
+                            <div class="img-wrap">
+                                <img src="${project.thumbnail}" alt="${project.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=400&h=300&fit=crop'" />
+                                <span class="gallery-badge">${project.badge}</span>
+                            </div>
+                            <div class="caption">
+                                <span class="title">${project.title}</span>
+                            </div>
+                        </div>
+                    `).join('');
+
+                galleryGrid.querySelectorAll('.gallery-item').forEach(item => {
+                    item.addEventListener('click', function() {
                         const id = parseInt(this.dataset.id);
-                        openModal(id);
+                        openGalleryModal(id);
                     });
                 });
             }
@@ -3716,23 +3875,24 @@
             // ============================================================
             // FILTERS
             // ============================================================
-            const filterBtns = document.querySelectorAll('.filter-btn');
+            const filterBtns = document.querySelectorAll('#portfolioFilters .filter-btn');
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
                     filterBtns.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
-                    currentFilter = this.dataset.filter;
-                    renderCards(currentFilter);
+                    currentGalleryFilter = this.dataset.filter;
+                    renderGallery(currentGalleryFilter);
                 });
             });
 
             // ============================================================
-            // MODAL
+            // MODAL — Featured Projects (Detailed)
             // ============================================================
             let currentProject = null;
             let currentIndex = 0;
             let isInfoOpen = false;
             let triggerElement = null;
+            let isFeaturedModal = false;
 
             const modal = document.getElementById('portfolioModal');
             const modalImage = document.getElementById('modalImage');
@@ -3763,7 +3923,25 @@
                 currentProject = project;
                 currentIndex = 0;
                 isInfoOpen = false;
+                isFeaturedModal = true;
                 modalInfoPanel.classList.remove('open');
+                modalInfoToggle.classList.add('visible');
+                updateModal();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                modal.focus();
+            }
+
+            function openGalleryModal(id) {
+                const project = portfolioData.find(p => p.id === id);
+                if (!project) return;
+                triggerElement = document.activeElement;
+                currentProject = project;
+                currentIndex = 0;
+                isInfoOpen = false;
+                isFeaturedModal = false;
+                modalInfoPanel.classList.remove('open');
+                modalInfoToggle.classList.remove('visible');
                 updateModal();
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
@@ -3793,28 +3971,48 @@
             function updateModal() {
                 if (!currentProject) return;
                 const project = currentProject;
-                const images = project.images || [{ src: project.thumbnail, caption: 'Project Overview' }];
+                const images = project.images || [{ src: project.thumbnail, caption: project.title || 'Project Overview' }];
                 const image = images[currentIndex] || images[0];
 
                 modalImage.src = image.src;
-                modalImage.alt = image.caption;
-                modalCaption.textContent = image.caption;
+                modalImage.alt = image.caption || project.title;
+                modalCaption.textContent = image.caption || project.title;
                 modalCounter.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(images.length).padStart(2, '0')}`;
 
                 modalTitle.textContent = project.title;
                 modalSubtitle.textContent = project.subtitle || project.location + ' · ' + project.scope;
-                modalDescription.textContent = project.description;
-                mSoftware.textContent = project.software || '—';
-                mDuration.textContent = project.duration || '—';
-                mWeight.textContent = project.totalWeight || '—';
-                mPhases.textContent = project.phases || '—';
-                wMain.textContent = project.weightMain || '—';
-                wForming.textContent = project.weightForming || '—';
-                wTotal.textContent = project.weightTotal || '—';
+
+                if (isFeaturedModal && project.featured) {
+                    modalDescription.textContent = project.description || 'Professional engineering experience on this project.';
+                    mSoftware.textContent = project.software || '—';
+                    mDuration.textContent = project.duration || '—';
+                    mWeight.textContent = project.totalWeight || '—';
+                    mPhases.textContent = project.phases || '—';
+                    wMain.textContent = project.weightMain || '—';
+                    wForming.textContent = project.weightForming || '—';
+                    wTotal.textContent = project.weightTotal || '—';
+                    modalInfoToggle.classList.add('visible');
+                    document.getElementById('modalData').style.display = 'grid';
+                    document.getElementById('modalWeight').style.display = 'block';
+                    modalDescription.style.display = 'block';
+                } else {
+                    modalDescription.textContent = project.title + ' — ' + (project.scope || 'Engineering project');
+                    mSoftware.textContent = '—';
+                    mDuration.textContent = '—';
+                    mWeight.textContent = '—';
+                    mPhases.textContent = '—';
+                    wMain.textContent = '—';
+                    wForming.textContent = '—';
+                    wTotal.textContent = '—';
+                    modalInfoToggle.classList.remove('visible');
+                    document.getElementById('modalData').style.display = 'none';
+                    document.getElementById('modalWeight').style.display = 'none';
+                    modalDescription.style.display = 'block';
+                }
 
                 modalThumbnails.innerHTML = images.map((img, idx) => `
                         <div class="thumb ${idx === currentIndex ? 'active' : ''}" data-index="${idx}" role="tab" aria-selected="${idx === currentIndex ? 'true' : 'false'}" tabindex="0">
-                            <img src="${img.src}" alt="${img.caption}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=70&h=50&fit=crop'" />
+                            <img src="${img.src}" alt="${img.caption || project.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=70&h=50&fit=crop'" />
                         </div>
                     `).join('');
 
@@ -3841,7 +4039,7 @@
             modalPrev.addEventListener('click', function(e) {
                 e.stopPropagation();
                 if (!currentProject) return;
-                const images = currentProject.images || [{ src: currentProject.thumbnail, caption: 'Project Overview' }];
+                const images = currentProject.images || [{ src: currentProject.thumbnail, caption: currentProject.title || 'Project Overview' }];
                 currentIndex = (currentIndex - 1 + images.length) % images.length;
                 updateModal();
             });
@@ -3849,7 +4047,7 @@
             modalNext.addEventListener('click', function(e) {
                 e.stopPropagation();
                 if (!currentProject) return;
-                const images = currentProject.images || [{ src: currentProject.thumbnail, caption: 'Project Overview' }];
+                const images = currentProject.images || [{ src: currentProject.thumbnail, caption: currentProject.title || 'Project Overview' }];
                 currentIndex = (currentIndex + 1) % images.length;
                 updateModal();
             });
@@ -3963,12 +4161,13 @@
             // INIT
             // ============================================================
             initHeroSlider();
-            renderCards('all');
+            renderFeatured();
+            renderGallery('all');
 
             console.log('🏗️ Unity Structural Solution — PEB Engineering & Estimation Consultancy');
             console.log('📧 Formspree endpoint: https://formspree.io/f/mdaqball');
-            console.log('📂 Portfolio projects loaded:', portfolioData.length);
-            console.log('🖼️ Hero slider images loaded:', heroSlides.length);
+            console.log('📂 Featured projects:', featuredProjects.length);
+            console.log('🖼️ Gallery projects:', galleryProjects.length);
 
         })();
     </script>
