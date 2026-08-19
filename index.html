@@ -653,7 +653,6 @@
             color: var(--navy);
             font-size: 0.85rem;
         }
-        /* Team inside about */
         .team-badge {
             display: inline-block;
             background: rgba(10, 22, 40, 0.05);
@@ -666,7 +665,7 @@
         }
 
         /* ============================================================
-           9. CLIENTS / TRUSTED BY (Logo Grid)
+           9. CLIENTS / TRUSTED BY (FIXED — FULLY VISIBLE LOGOS)
            ============================================================ */
         .clients-section {
             padding: 60px 0;
@@ -688,24 +687,37 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0.6;
             transition: var(--transition);
-            filter: grayscale(100%);
             font-size: 0.85rem;
             font-weight: 600;
             color: var(--steel);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .clients-grid .client-item:hover {
-            opacity: 1;
-            filter: grayscale(0%);
-            color: var(--navy);
-        }
+        /* Logos are fully visible by default */
         .clients-grid .client-item img {
             max-height: 40px;
             width: auto;
             object-fit: contain;
+            opacity: 1;
+            filter: none;
+            transition: var(--transition);
+        }
+        /* Subtle hover effect — slight scale up */
+        .clients-grid .client-item:hover img {
+            transform: scale(1.05);
+        }
+        /* Fallback text style when image is missing */
+        .clients-grid .client-item .fallback-text {
+            display: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--steel);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .clients-grid .client-item img[style*="display: none"] + .fallback-text {
+            display: block;
         }
         .clients-note {
             text-align: center;
@@ -1921,7 +1933,7 @@
         }
 
         /* ============================================================
-           22. PROFESSIONAL DISCLAIMER (NEW)
+           22. PROFESSIONAL DISCLAIMER
            ============================================================ */
         .footer-disclaimer {
             background: var(--off-white);
@@ -2193,11 +2205,11 @@
                 width: 14px;
             }
             .clients-grid .client-item {
-                height: 28px;
+                height: 24px;
                 font-size: 0.5rem;
             }
             .clients-grid {
-                gap: 8px 12px;
+                gap: 6px 10px;
             }
         }
     </style>
@@ -2247,7 +2259,6 @@
                 <div class="grid-overlay"></div>
             </div>
             <div class="container">
-                <!-- Hero Slider — placed at top of hero -->
                 <div class="hero-slider-wrapper" id="heroSlider">
                     <div class="slider-track" id="heroSliderTrack">
                         <img id="heroSlideImage" src="" alt="Featured project" class="active" />
@@ -2260,7 +2271,6 @@
                     </div>
                 </div>
 
-                <!-- Hero Text Content -->
                 <div class="hero-content">
                     <div class="hero-badge"><i class="fas fa-globe" aria-hidden="true"></i> Global Engineering Services</div>
                     <h1>
@@ -2303,13 +2313,12 @@
                     <span class="cap"><i class="fas fa-check-circle"></i> Structural Steel</span>
                     <span class="cap"><i class="fas fa-check-circle"></i> RCC Design</span>
                     <span class="cap"><i class="fas fa-check-circle"></i> BIM</span>
+                    <span class="cap"><i class="fas fa-check-circle"></i> IEB Member</span>
                 </div>
             </div>
         </section>
 
-        <!-- ============================================================
-             NEW SECTION: ABOUT (with Team & Credentials)
-             ============================================================ -->
+        <!-- ===== ABOUT ===== -->
         <section class="about-section" id="about" aria-label="About Unity Structural Solution">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -2354,8 +2363,8 @@
         </section>
 
         <!-- ============================================================
-             NEW SECTION: CLIENTS / TRUSTED BY (with Logo Placeholders)
-             ============================================================ -->
+            CLIENTS / TRUSTED BY — FIXED: FULLY VISIBLE LOGOS
+        ============================================================ -->
         <section class="clients-section" aria-label="Trusted by industry leaders">
             <div class="container">
                 <div class="section-header">
@@ -2364,31 +2373,77 @@
                     <p>We've delivered engineering and estimation support for 50+ leading companies across Bangladesh.</p>
                 </div>
                 <div class="clients-grid">
-                    <!-- Replace src with actual logo paths, or use text as fallback -->
-                    <div class="client-item"><img src="pic/logos/bat.png" alt="BAT" onerror="this.style.display='none';this.parentElement.textContent='BAT'"> BAT</div>
-                    <div class="client-item"><img src="pic/logos/square.png" alt="Square" onerror="this.style.display='none';this.parentElement.textContent='Square'"> Square</div>
-                    <div class="client-item"><img src="pic/logos/viyellatex.png" alt="Viyellatex" onerror="this.style.display='none';this.parentElement.textContent='Viyellatex'"> Viyellatex</div>
-                    <div class="client-item"><img src="pic/logos/bashundhara.png" alt="Bashundhara" onerror="this.style.display='none';this.parentElement.textContent='Bashundhara'"> Bashundhara</div>
-                    <div class="client-item"><img src="pic/logos/bsrm.png" alt="BSRM" onerror="this.style.display='none';this.parentElement.textContent='BSRM'"> BSRM</div>
-                    <div class="client-item"><img src="pic/logos/energypac.png" alt="Energypac" onerror="this.style.display='none';this.parentElement.textContent='Energypac'"> Energypac</div>
-                    <div class="client-item"><img src="pic/logos/summit.png" alt="Summit" onerror="this.style.display='none';this.parentElement.textContent='Summit'"> Summit</div>
-                    <div class="client-item"><img src="pic/logos/unilever.png" alt="Unilever" onerror="this.style.display='none';this.parentElement.textContent='Unilever'"> Unilever</div>
-                    <div class="client-item"><img src="pic/logos/pran-rfl.png" alt="Pran-RFL" onerror="this.style.display='none';this.parentElement.textContent='Pran-RFL'"> Pran-RFL</div>
-                    <div class="client-item"><img src="pic/logos/beximco.png" alt="Beximco" onerror="this.style.display='none';this.parentElement.textContent='Beximco'"> Beximco</div>
-                    <div class="client-item"><img src="pic/logos/lafarge.png" alt="Lafarge Holcim" onerror="this.style.display='none';this.parentElement.textContent='Lafarge'"> Lafarge Holcim</div>
-                    <div class="client-item"><img src="pic/logos/berger.png" alt="Berger" onerror="this.style.display='none';this.parentElement.textContent='Berger'"> Berger</div>
-                    <div class="client-item"><img src="pic/logos/marico.png" alt="Marico" onerror="this.style.display='none';this.parentElement.textContent='Marico'"> Marico</div>
-                    <div class="client-item"><img src="pic/logos/mjl.png" alt="MJL" onerror="this.style.display='none';this.parentElement.textContent='MJL'"> MJL</div>
-                    <div class="client-item"><img src="pic/logos/akij.png" alt="AKIJ" onerror="this.style.display='none';this.parentElement.textContent='AKIJ'"> AKIJ</div>
-                    <div class="client-item"><img src="pic/logos/navana.png" alt="Navana" onerror="this.style.display='none';this.parentElement.textContent='Navana'"> Navana</div>
+                    <!-- Logos are fully visible — no grayscale, no opacity reduction -->
+                    <div class="client-item">
+                        <img src="pic/logos/bat.png" alt="BAT" onerror="this.style.display='none';" />
+                        <span class="fallback-text">BAT</span>
+                    </div>
+                    <div class="client-item">
+                        <img src="pic/logos/square.png" alt="Square" onerror="this.style.display='none';" />
+                        <span class="fallback-text">Square</span>
+                    </div>
+                    <div class="client-item">
+                        <img src="pic/logos/viyellatex.png" alt="Viyellatex" onerror="this.style.display='none';" />
+                        <span class="fallback-text">Viyellatex</span>
+                    </div>
+                    <div class="client-item">
+                        <img src="pic/logos/bashundhara.png" alt="Bashundhara" onerror="this.style.display='none';" />
+                        <span class="fallback-text">Bashundhara</span>
+                    </div>
+                    <div class="client-item">
+                        <img src="pic/logos/bsrm.png" alt="BSRM" onerror="this.style.display='none';" />
+                        <span class="fallback-text">BSRM</span>
+                    </div>
+                    <div class="client-item">
+                        <img src="pic/logos/energypac.png" alt="Energypac" onerror="this.style.display='none';" />
+                        <span class="fallback-text">Energypac</span>
+                    </div>
+                    <div class="client-item">
+                        <img src="pic/logos/summit.png" alt="Summit" onerror="this.style.display='none';" />
+                        <span class="fallback-text">Summit</span>
+                    </div>
+                    <div class="client-item">
+                        <img src="pic/logos/unilever.png" alt="Unilever" onerror="this.style.display='none';" />
+                        <span class="fallback-text">Unilever</span>
+                    </div>
+                    <div class="client-item">
+                        <img src="pic/logos/pran-rfl.png" alt="Pran-RFL" onerror="this.style.display='none';" />
+                        <span class="fallback-text">Pran-RFL</span>
+                    </div>
+                    <div class="client-item">
+                        <img src="pic/logos/beximco.png" alt="Beximco" onerror="this.style.display='none';" />
+                        <span class="fallback-text">Beximco</span>
+                    </div>
+                    <div class="client-item">
+                        <img src="pic/logos/lafarge.png" alt="Lafarge Holcim" onerror="this.style.display='none';" />
+                        <span class="fallback-text">Lafarge</span>
+                    </div>
+                    <div class="client-item">
+                        <img src="pic/logos/berger.png" alt="Berger" onerror="this.style.display='none';" />
+                        <span class="fallback-text">Berger</span>
+                    </div>
+                    <div class="client-item">
+                        <img src="pic/logos/marico.png" alt="Marico" onerror="this.style.display='none';" />
+                        <span class="fallback-text">Marico</span>
+                    </div>
+                    <div class="client-item">
+                        <img src="pic/logos/mjl.png" alt="MJL" onerror="this.style.display='none';" />
+                        <span class="fallback-text">MJL</span>
+                    </div>
+                    <div class="client-item">
+                        <img src="pic/logos/akij.png" alt="AKIJ" onerror="this.style.display='none';" />
+                        <span class="fallback-text">AKIJ</span>
+                    </div>
+                    <div class="client-item">
+                        <img src="pic/logos/navana.png" alt="Navana" onerror="this.style.display='none';" />
+                        <span class="fallback-text">Navana</span>
+                    </div>
                 </div>
                 <p class="clients-note">...and 30+ more leading industrial and commercial clients</p>
             </div>
         </section>
 
-        <!-- ============================================================
-             NEW SECTION: HOW WE WORK (Process)
-             ============================================================ -->
+        <!-- ===== HOW WE WORK ===== -->
         <section class="process-section" id="process" aria-label="Engineering process">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -2919,7 +2974,7 @@
     </footer>
 
     <!-- ============================================================
-    PROFESSIONAL DISCLAIMER (NEW)
+    PROFESSIONAL DISCLAIMER
     ============================================================ -->
     <div class="footer-disclaimer">
         <div class="container">
@@ -2931,7 +2986,7 @@
     </div>
 
     <!-- ============================================================
-    PORTFOLIO MODAL — Fullscreen 80%+ Viewer
+    PORTFOLIO MODAL
     ============================================================ -->
     <div class="modal-overlay" id="portfolioModal">
         <div class="modal-container" id="modalContainer">
@@ -2951,7 +3006,6 @@
                 <div class="modal-thumbnails" id="modalThumbnails"></div>
             </div>
 
-            <!-- Info Panel — slides in from right -->
             <div class="modal-info-panel" id="modalInfoPanel">
                 <button class="panel-close" id="modalInfoClose"><i class="fas fa-times"></i></button>
                 <h3 id="modalTitle">Project Title</h3>
@@ -3006,10 +3060,9 @@
             'use strict';
 
             // ============================================================
-            // PORTFOLIO DATA — Full Projects + 3D View Projects
+            // PORTFOLIO DATA
             // ============================================================
             const portfolioData = [{
-                // ===== PROJECT 1: Mezzanine + Shed Building =====
                 id: 1,
                 title: '749 MT Mezzanine + Shed Building',
                 subtitle: 'Bangladesh · 78,500 ft² · Industrial / PEB',
@@ -3045,7 +3098,6 @@
                         caption: 'Roof Sheet Layout — Roof cladding arrangement with sheet sizes, fastening patterns, and accessories.' }
                 ]
             }, {
-                // ===== PROJECT 2: Warehouse Shed =====
                 id: 2,
                 title: '645 MT Warehouse Shed with Mezzanine',
                 subtitle: 'Bangladesh · 51,000 ft² · Industrial / PEB',
@@ -3081,7 +3133,6 @@
                         caption: 'Material Quantity Overview — Complete weight breakdown (645.34 MT) across all components.' }
                 ]
             }, {
-                // ===== PROJECT 3: 143 MT Mezzanine =====
                 id: 3,
                 title: '143 MT PEB Mezzanine Factory',
                 subtitle: 'Bangladesh · 15,488 ft² · Industrial / PEB',
@@ -3117,7 +3168,6 @@
                         caption: 'Material Quantity Overview — Complete weight breakdown (142.394 MT) across 6 pages (A3 layout).' }
                 ]
             }, {
-                // ===== PROJECT 4-9: 3D View Only Projects (Placeholder) =====
                 id: 4,
                 title: 'Industrial Shed — 280 MT',
                 subtitle: 'Bangladesh · 32,000 ft² · PEB',
@@ -3252,7 +3302,7 @@
             }];
 
             // ============================================================
-            // HERO SLIDER — All project thumbnails
+            // HERO SLIDER
             // ============================================================
             const heroSlideImage = document.getElementById('heroSlideImage');
             const heroSlideLabel = document.getElementById('heroSlideLabel');
@@ -3400,7 +3450,7 @@
             });
 
             // ============================================================
-            // FULLSCREEN MODAL — 80%+ viewport
+            // FULLSCREEN MODAL
             // ============================================================
             let currentProject = null;
             let currentIndex = 0;
