@@ -588,7 +588,7 @@
         }
 
         /* ============================================================
-           8. ABOUT
+           8. ABOUT (with Team & Credentials)
            ============================================================ */
         .about-section {
             padding: 80px 0;
@@ -653,9 +653,118 @@
             color: var(--navy);
             font-size: 0.85rem;
         }
+        /* Team inside about */
+        .team-badge {
+            display: inline-block;
+            background: rgba(10, 22, 40, 0.05);
+            color: var(--navy);
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin: 2px 0;
+        }
 
         /* ============================================================
-           9. SERVICES
+           9. CLIENTS / TRUSTED BY (Logo Grid)
+           ============================================================ */
+        .clients-section {
+            padding: 60px 0;
+            background: var(--white);
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .clients-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 24px 40px;
+            margin-top: 20px;
+        }
+        .clients-grid .client-item {
+            flex: 0 0 auto;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.6;
+            transition: var(--transition);
+            filter: grayscale(100%);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--steel);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .clients-grid .client-item:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+            color: var(--navy);
+        }
+        .clients-grid .client-item img {
+            max-height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+        .clients-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--steel);
+            margin-top: 16px;
+        }
+
+        /* ============================================================
+           10. HOW WE WORK (Process)
+           ============================================================ */
+        .process-section {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            counter-reset: step;
+        }
+        .process-step {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 24px 20px;
+            border-top: 4px solid var(--accent);
+            box-shadow: var(--shadow);
+            counter-increment: step;
+            transition: var(--transition);
+        }
+        .process-step:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .process-step .number {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .process-step .number::before {
+            content: "0" counter(step) " — ";
+        }
+        .process-step h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 4px 0 2px;
+        }
+        .process-step p {
+            color: var(--steel);
+            font-size: 0.83rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ============================================================
+           11. SERVICES
            ============================================================ */
         .services-section {
             padding: 80px 0;
@@ -766,7 +875,7 @@
         }
 
         /* ============================================================
-           10. PORTFOLIO
+           12. PORTFOLIO
            ============================================================ */
         .portfolio-section {
             padding: 80px 0;
@@ -901,7 +1010,7 @@
         }
 
         /* ============================================================
-           11. FULLSCREEN MODAL — 80%+ viewport
+           13. FULLSCREEN MODAL — 80%+ viewport
            ============================================================ */
         .modal-overlay {
             position: fixed;
@@ -1321,7 +1430,7 @@
         }
 
         /* ============================================================
-           12. ENGINEERING STANDARDS
+           14. ENGINEERING STANDARDS
            ============================================================ */
         .standards-section {
             padding: 80px 0;
@@ -1375,56 +1484,7 @@
         }
 
         /* ============================================================
-           13. WORKFLOW
-           ============================================================ */
-        .workflow-section {
-            padding: 80px 0;
-            background: var(--off-white);
-        }
-        .workflow-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            counter-reset: step;
-        }
-        .workflow-step {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 24px 20px;
-            border-top: 4px solid var(--accent);
-            box-shadow: var(--shadow);
-            counter-increment: step;
-            transition: var(--transition);
-        }
-        .workflow-step:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-        }
-        .workflow-step .number {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--accent);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .workflow-step .number::before {
-            content: "0" counter(step) " — ";
-        }
-        .workflow-step h4 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--navy);
-            margin: 4px 0 2px;
-        }
-        .workflow-step p {
-            color: var(--steel);
-            font-size: 0.83rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        /* ============================================================
-           14. DELIVERABLES
+           15. DELIVERABLES
            ============================================================ */
         .deliverables-section {
             padding: 80px 0;
@@ -1460,7 +1520,7 @@
         }
 
         /* ============================================================
-           15. INTERNATIONAL SUPPORT
+           16. INTERNATIONAL SUPPORT
            ============================================================ */
         .international-section {
             padding: 80px 0;
@@ -1510,7 +1570,7 @@
         }
 
         /* ============================================================
-           16. QUALITY / REVIEW
+           17. QUALITY / REVIEW
            ============================================================ */
         .quality-section {
             padding: 80px 0;
@@ -1550,7 +1610,7 @@
         }
 
         /* ============================================================
-           17. FAQ
+           18. FAQ
            ============================================================ */
         .faq-section {
             padding: 80px 0;
@@ -1577,7 +1637,7 @@
         }
 
         /* ============================================================
-           18. FINAL CTA
+           19. FINAL CTA
            ============================================================ */
         .final-cta-section {
             padding: 60px 0;
@@ -1607,7 +1667,7 @@
         }
 
         /* ============================================================
-           19. CONTACT
+           20. CONTACT
            ============================================================ */
         .contact-section {
             padding: 80px 0;
@@ -1778,7 +1838,7 @@
         }
 
         /* ============================================================
-           20. FOOTER
+           21. FOOTER
            ============================================================ */
         .footer {
             background: var(--charcoal);
@@ -1861,7 +1921,25 @@
         }
 
         /* ============================================================
-           21. STICKY CTA & FLOATING BADGES
+           22. PROFESSIONAL DISCLAIMER (NEW)
+           ============================================================ */
+        .footer-disclaimer {
+            background: var(--off-white);
+            padding: 16px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .footer-disclaimer p {
+            font-size: 0.7rem;
+            color: var(--steel);
+            line-height: 1.8;
+            margin: 0;
+        }
+        .footer-disclaimer strong {
+            color: var(--charcoal);
+        }
+
+        /* ============================================================
+           23. STICKY CTA & FLOATING BADGES
            ============================================================ */
         .sticky-cta {
             position: fixed;
@@ -1939,7 +2017,7 @@
         }
 
         /* ============================================================
-           22. ANIMATIONS
+           24. ANIMATIONS
            ============================================================ */
         .animate-on-scroll {
             opacity: 0;
@@ -1958,7 +2036,7 @@
         }
 
         /* ============================================================
-           23. RESPONSIVE
+           25. RESPONSIVE
            ============================================================ */
         @media (max-width: 1024px) {
             .about-grid,
@@ -1973,7 +2051,7 @@
             .quality-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .workflow-grid {
+            .process-grid {
                 grid-template-columns: 1fr 1fr;
             }
             .deliverables-grid {
@@ -1991,6 +2069,13 @@
             }
             .hero .container {
                 padding: 0 16px;
+            }
+            .clients-grid {
+                gap: 16px 24px;
+            }
+            .clients-grid .client-item {
+                height: 40px;
+                font-size: 0.7rem;
             }
         }
 
@@ -2026,7 +2111,7 @@
             .services-grid,
             .portfolio-grid,
             .quality-grid,
-            .workflow-grid {
+            .process-grid {
                 grid-template-columns: 1fr;
             }
             .deliverables-grid {
@@ -2075,6 +2160,13 @@
                 height: 28px;
                 font-size: 0.65rem;
             }
+            .clients-grid .client-item {
+                height: 32px;
+                font-size: 0.6rem;
+            }
+            .clients-grid {
+                gap: 12px 16px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -2100,6 +2192,13 @@
             .hero-slider-wrapper .slider-controls .dot.active {
                 width: 14px;
             }
+            .clients-grid .client-item {
+                height: 28px;
+                font-size: 0.5rem;
+            }
+            .clients-grid {
+                gap: 8px 12px;
+            }
         }
     </style>
 </head>
@@ -2121,8 +2220,7 @@
                 <li role="none"><a href="#about" role="menuitem">About</a></li>
                 <li role="none"><a href="#services" role="menuitem">Services</a></li>
                 <li role="none"><a href="#portfolio" role="menuitem">Portfolio</a></li>
-                <li role="none"><a href="#standards" role="menuitem">Standards</a></li>
-                <li role="none"><a href="#workflow" role="menuitem">Process</a></li>
+                <li role="none"><a href="#process" role="menuitem">Process</a></li>
                 <li role="none"><a href="#contact" role="menuitem" class="btn-nav">Start a Project</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -2209,23 +2307,26 @@
             </div>
         </section>
 
-        <!-- ===== ABOUT ===== -->
+        <!-- ============================================================
+             NEW SECTION: ABOUT (with Team & Credentials)
+             ============================================================ -->
         <section class="about-section" id="about" aria-label="About Unity Structural Solution">
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <div class="tag">About</div>
-                    <h2>Engineering Solutions Designed Around <span>Real Construction</span></h2>
+                    <h2>Senior Engineering Team — <span>Real Project Experience</span></h2>
                 </div>
                 <div class="about-grid">
                     <div class="about-text animate-on-scroll">
-                        <h3>Structural Engineering. Built for the Way You Build.</h3>
-                        <p>Unity Structural Solution provides structural analysis, design, BIM modeling, steel detailing, and engineering documentation for projects across the globe. We work with structural engineering companies, steel fabricators, PEB manufacturers, contractors, architects, and developers.</p>
-                        <p>Our approach is straightforward: understand the project requirements, apply the appropriate engineering standards, and deliver clear, coordinated documentation that supports fabrication and construction.</p>
+                        <h3>7+ Years of PEB & Structural Engineering Experience</h3>
+                        <p>Unity Structural Solution is a remote engineering consultancy built on <strong>real industry experience</strong>. Our team combines <strong>22+ years of collective PEB and structural engineering expertise</strong>, working together from Bangladesh's leading PEB manufacturer.</p>
+                        <p>We provide <strong>complete PEB estimation, design, and detailing support</strong> — from proposal design and material takeoffs to full fabrication documentation.</p>
                         <ul class="highlight-list">
-                            <li><i class="fas fa-check-circle"></i> Engineering analysis and design</li>
-                            <li><i class="fas fa-check-circle"></i> Tekla modeling and steel detailing</li>
-                            <li><i class="fas fa-check-circle"></i> Fabrication-ready shop drawings</li>
-                            <li><i class="fas fa-check-circle"></i> Remote collaboration for international projects</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>BSc Civil Engineers</strong> — IEB members</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>STAAD.Pro & ETABS</strong> — trained and certified</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Tekla Structures</strong> — 3D modeling & material takeoffs</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>AutoCAD & Excel</strong> — full estimation and drawing capability</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>IEB Membership</strong> — Institution of Engineers, Bangladesh</li>
                         </ul>
                         <a href="https://www.linkedin.com/in/unity-structural-solution-0b8a96423" target="_blank" rel="noopener" class="about-linkedin">
                             <i class="fab fa-linkedin-in"></i>
@@ -2234,11 +2335,97 @@
                         </a>
                     </div>
                     <div class="about-text animate-on-scroll" style="transition-delay:0.1s;">
-                        <h3>Remote Engineering Support. Worldwide.</h3>
-                        <p>We collaborate remotely with clients across time zones. Our workflow is built for international project delivery — clear communication, coordinated deliverables, and professional engineering documentation.</p>
-                        <p><strong>Design Standards:</strong> AISC 360, Eurocode, ACI 318, BNBC (applied according to project requirements and jurisdiction).</p>
-                        <p><strong>Software:</strong> STAAD.Pro (analysis &amp; design), ETABS (RCC design), Tekla Structures (BIM &amp; detailing), AutoCAD.</p>
-                        <p>We don't just produce drawings. We deliver engineering that supports fabrication, construction, and project success.</p>
+                        <h3>Who We Are</h3>
+                        <p><strong>Engr. Md S Hossen</strong> — BSc Civil Engineering (UAP, 2019) | IEB Member<br />
+                        <span style="font-size:0.85rem;color:var(--steel);">5+ years at Bangladesh's leading PEB manufacturer — Estimation & Quotation Design Expert</span></p>
+                        <p><strong>Engr. Md Munna Hossain</strong> — BSc Civil Engineering (UITS) | IEB Member<br />
+                        <span style="font-size:0.85rem;color:var(--steel);">13+ years — Senior Tekla & AutoCAD Detailing Expert</span></p>
+                        <p><strong>+ Additional Senior Engineers</strong> — 9+ years experience each</p>
+                        <p style="margin-top:12px;"><strong>Our clients include:</strong> BAT, Square, Viyellatex, Bashundhara, BSRM, Energypac, Summit, Unilever, Pran-RFL, Beximco, Lafarge Holcim, Berger Paints, Marico, MJL Bangladesh, and 50+ other leading companies.</p>
+                        <div style="margin-top:12px;">
+                            <span class="team-badge"><i class="fas fa-check-circle"></i> BSc Civil</span>
+                            <span class="team-badge"><i class="fas fa-check-circle"></i> IEB Member</span>
+                            <span class="team-badge"><i class="fas fa-check-circle"></i> STAAD.Pro Certified</span>
+                            <span class="team-badge"><i class="fas fa-check-circle"></i> Tekla Expert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             NEW SECTION: CLIENTS / TRUSTED BY (with Logo Placeholders)
+             ============================================================ -->
+        <section class="clients-section" aria-label="Trusted by industry leaders">
+            <div class="container">
+                <div class="section-header">
+                    <div class="tag">Trusted By</div>
+                    <h2>Working With <span>Industry Leaders</span></h2>
+                    <p>We've delivered engineering and estimation support for 50+ leading companies across Bangladesh.</p>
+                </div>
+                <div class="clients-grid">
+                    <!-- Replace src with actual logo paths, or use text as fallback -->
+                    <div class="client-item"><img src="pic/logos/bat.png" alt="BAT" onerror="this.style.display='none';this.parentElement.textContent='BAT'"> BAT</div>
+                    <div class="client-item"><img src="pic/logos/square.png" alt="Square" onerror="this.style.display='none';this.parentElement.textContent='Square'"> Square</div>
+                    <div class="client-item"><img src="pic/logos/viyellatex.png" alt="Viyellatex" onerror="this.style.display='none';this.parentElement.textContent='Viyellatex'"> Viyellatex</div>
+                    <div class="client-item"><img src="pic/logos/bashundhara.png" alt="Bashundhara" onerror="this.style.display='none';this.parentElement.textContent='Bashundhara'"> Bashundhara</div>
+                    <div class="client-item"><img src="pic/logos/bsrm.png" alt="BSRM" onerror="this.style.display='none';this.parentElement.textContent='BSRM'"> BSRM</div>
+                    <div class="client-item"><img src="pic/logos/energypac.png" alt="Energypac" onerror="this.style.display='none';this.parentElement.textContent='Energypac'"> Energypac</div>
+                    <div class="client-item"><img src="pic/logos/summit.png" alt="Summit" onerror="this.style.display='none';this.parentElement.textContent='Summit'"> Summit</div>
+                    <div class="client-item"><img src="pic/logos/unilever.png" alt="Unilever" onerror="this.style.display='none';this.parentElement.textContent='Unilever'"> Unilever</div>
+                    <div class="client-item"><img src="pic/logos/pran-rfl.png" alt="Pran-RFL" onerror="this.style.display='none';this.parentElement.textContent='Pran-RFL'"> Pran-RFL</div>
+                    <div class="client-item"><img src="pic/logos/beximco.png" alt="Beximco" onerror="this.style.display='none';this.parentElement.textContent='Beximco'"> Beximco</div>
+                    <div class="client-item"><img src="pic/logos/lafarge.png" alt="Lafarge Holcim" onerror="this.style.display='none';this.parentElement.textContent='Lafarge'"> Lafarge Holcim</div>
+                    <div class="client-item"><img src="pic/logos/berger.png" alt="Berger" onerror="this.style.display='none';this.parentElement.textContent='Berger'"> Berger</div>
+                    <div class="client-item"><img src="pic/logos/marico.png" alt="Marico" onerror="this.style.display='none';this.parentElement.textContent='Marico'"> Marico</div>
+                    <div class="client-item"><img src="pic/logos/mjl.png" alt="MJL" onerror="this.style.display='none';this.parentElement.textContent='MJL'"> MJL</div>
+                    <div class="client-item"><img src="pic/logos/akij.png" alt="AKIJ" onerror="this.style.display='none';this.parentElement.textContent='AKIJ'"> AKIJ</div>
+                    <div class="client-item"><img src="pic/logos/navana.png" alt="Navana" onerror="this.style.display='none';this.parentElement.textContent='Navana'"> Navana</div>
+                </div>
+                <p class="clients-note">...and 30+ more leading industrial and commercial clients</p>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             NEW SECTION: HOW WE WORK (Process)
+             ============================================================ -->
+        <section class="process-section" id="process" aria-label="Engineering process">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="tag">How We Work</div>
+                    <h2>Remote Engineering Support — <span>Global Delivery</span></h2>
+                    <p>We collaborate remotely with clients worldwide, delivering professional engineering documentation.</p>
+                </div>
+                <div class="process-grid">
+                    <div class="process-step animate-on-scroll">
+                        <div class="number"></div>
+                        <h4>Send Project Requirements</h4>
+                        <p>Drawings, scope, specifications, and design criteria.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll" style="transition-delay:0.08s;">
+                        <div class="number"></div>
+                        <h4>Technical Review</h4>
+                        <p>We review and define the approach.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll" style="transition-delay:0.16s;">
+                        <div class="number"></div>
+                        <h4>Scope &amp; Quote</h4>
+                        <p>Clear deliverables and timeline.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll" style="transition-delay:0.24s;">
+                        <div class="number"></div>
+                        <h4>Engineering Work</h4>
+                        <p>Analysis, design, estimation, or detailing.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll" style="transition-delay:0.32s;">
+                        <div class="number"></div>
+                        <h4>Review &amp; Revisions</h4>
+                        <p>Coordination and updates.</p>
+                    </div>
+                    <div class="process-step animate-on-scroll" style="transition-delay:0.40s;">
+                        <div class="number"></div>
+                        <h4>Final Delivery</h4>
+                        <p>Coordinated, fabrication-ready documentation.</p>
                     </div>
                 </div>
             </div>
@@ -2388,49 +2575,6 @@
                             <span class="tag"><i class="fas fa-check"></i> AutoCAD</span>
                         </div>
                         <p>Industry-standard software for analysis, design, BIM modeling, and engineering documentation.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== WORKFLOW ===== -->
-        <section class="workflow-section" id="workflow" aria-label="Engineering workflow">
-            <div class="container">
-                <div class="section-header animate-on-scroll">
-                    <div class="tag">Process</div>
-                    <h2>Engineering <span>Workflow</span></h2>
-                    <p>A structured process from project brief to final delivery.</p>
-                </div>
-                <div class="workflow-grid">
-                    <div class="workflow-step animate-on-scroll">
-                        <div class="number"></div>
-                        <h4>Project Brief</h4>
-                        <p>Understand project requirements, objectives, and scope.</p>
-                    </div>
-                    <div class="workflow-step animate-on-scroll" style="transition-delay:0.08s;">
-                        <div class="number"></div>
-                        <h4>Drawings &amp; Data Review</h4>
-                        <p>Review client drawings, specifications, and design criteria.</p>
-                    </div>
-                    <div class="workflow-step animate-on-scroll" style="transition-delay:0.16s;">
-                        <div class="number"></div>
-                        <h4>Structural Analysis</h4>
-                        <p>Perform structural analysis using appropriate software and standards.</p>
-                    </div>
-                    <div class="workflow-step animate-on-scroll" style="transition-delay:0.24s;">
-                        <div class="number"></div>
-                        <h4>Design Development</h4>
-                        <p>Develop the structural design — member sizing, connections, and details.</p>
-                    </div>
-                    <div class="workflow-step animate-on-scroll" style="transition-delay:0.32s;">
-                        <div class="number"></div>
-                        <h4>BIM / Detailing / Documentation</h4>
-                        <p>Model, detail, and prepare engineering documentation and drawings.</p>
-                    </div>
-                    <div class="workflow-step animate-on-scroll" style="transition-delay:0.40s;">
-                        <div class="number"></div>
-                        <h4>Review &amp; Final Delivery</h4>
-                        <p>Quality review, revisions, and coordinated final deliverables.</p>
                     </div>
                 </div>
             </div>
@@ -2738,8 +2882,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#standards">Standards</a></li>
-                        <li><a href="#workflow">Process</a></li>
+                        <li><a href="#process">Process</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -2774,6 +2917,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- ============================================================
+    PROFESSIONAL DISCLAIMER (NEW)
+    ============================================================ -->
+    <div class="footer-disclaimer">
+        <div class="container">
+            <p>
+                <strong>Professional Engineering Services</strong><br />
+                Unity Structural Solution provides engineering, design, and detailing services under the direction of qualified professional engineers. All designs and calculations are developed according to applicable codes and standards (AISC 360, Eurocode, ACI 318, BNBC) and are intended for review and approval by the client's local licensed engineering team. Project-specific engineering decisions require local professional engineering review and sign-off.
+            </p>
+        </div>
+    </div>
 
     <!-- ============================================================
     PORTFOLIO MODAL — Fullscreen 80%+ Viewer
@@ -2854,7 +3009,7 @@
             // PORTFOLIO DATA — Full Projects + 3D View Projects
             // ============================================================
             const portfolioData = [{
-                // ===== PROJECT 1: Mezzanine + Shed Building (NEW) =====
+                // ===== PROJECT 1: Mezzanine + Shed Building =====
                 id: 1,
                 title: '749 MT Mezzanine + Shed Building',
                 subtitle: 'Bangladesh · 78,500 ft² · Industrial / PEB',
@@ -2962,7 +3117,7 @@
                         caption: 'Material Quantity Overview — Complete weight breakdown (142.394 MT) across 6 pages (A3 layout).' }
                 ]
             }, {
-                // ===== PROJECT 4: 3D View Only — Project A =====
+                // ===== PROJECT 4-9: 3D View Only Projects (Placeholder) =====
                 id: 4,
                 title: 'Industrial Shed — 280 MT',
                 subtitle: 'Bangladesh · 32,000 ft² · PEB',
@@ -2985,7 +3140,6 @@
                     { src: 'pic/projects/3d_a_3.png', caption: '3D View — Top view showing roof and bracing layout.' }
                 ]
             }, {
-                // ===== PROJECT 5: 3D View Only — Project B =====
                 id: 5,
                 title: 'Commercial Complex — 185 MT',
                 subtitle: 'Bangladesh · 22,000 ft² · Steel',
@@ -2994,7 +3148,7 @@
                 filter: ['steel', 'commercial'],
                 location: 'Bangladesh',
                 scope: 'Commercial / Steel',
-                description: '3D structural model of a 22,000 ft² commercial complex. Total steel tonnage: 185 MT. Model shown from multiple angles.',
+                description: '3D structural model of a 22,000 ft² commercial complex. Total steel tonnage: 185 MT.',
                 software: 'Tekla Structures',
                 duration: '12 Days',
                 totalWeight: '185 MT',
@@ -3008,7 +3162,6 @@
                     { src: 'pic/projects/3d_b_3.png', caption: '3D View — Plan view of the floor framing system.' }
                 ]
             }, {
-                // ===== PROJECT 6: 3D View Only — Project C =====
                 id: 6,
                 title: 'Warehouse Extension — 420 MT',
                 subtitle: 'Bangladesh · 48,000 ft² · PEB',
@@ -3017,7 +3170,7 @@
                 filter: ['peb', 'industrial'],
                 location: 'Bangladesh',
                 scope: 'Industrial / PEB',
-                description: '3D structural model of a 48,000 ft² warehouse extension. Total steel tonnage: 420 MT. Model shown from multiple angles.',
+                description: '3D structural model of a 48,000 ft² warehouse extension. Total steel tonnage: 420 MT.',
                 software: 'Tekla Structures',
                 duration: '20 Days',
                 totalWeight: '420 MT',
@@ -3031,7 +3184,6 @@
                     { src: 'pic/projects/3d_c_3.png', caption: '3D View — Roof layout and bracing configuration.' }
                 ]
             }, {
-                // ===== PROJECT 7: 3D View Only — Project D =====
                 id: 7,
                 title: 'Factory Building — 560 MT',
                 subtitle: 'Bangladesh · 65,000 ft² · PEB',
@@ -3040,7 +3192,7 @@
                 filter: ['peb', 'industrial'],
                 location: 'Bangladesh',
                 scope: 'Industrial / PEB',
-                description: '3D structural model of a 65,000 ft² factory building. Total steel tonnage: 560 MT. Model shown from multiple angles.',
+                description: '3D structural model of a 65,000 ft² factory building. Total steel tonnage: 560 MT.',
                 software: 'Tekla Structures',
                 duration: '25 Days',
                 totalWeight: '560 MT',
@@ -3054,7 +3206,6 @@
                     { src: 'pic/projects/3d_d_3.png', caption: '3D View — Roof and mezzanine layout.' }
                 ]
             }, {
-                // ===== PROJECT 8: 3D View Only — Project E =====
                 id: 8,
                 title: 'Showroom Structure — 95 MT',
                 subtitle: 'Bangladesh · 12,000 ft² · Steel',
@@ -3063,7 +3214,7 @@
                 filter: ['steel', 'commercial'],
                 location: 'Bangladesh',
                 scope: 'Commercial / Steel',
-                description: '3D structural model of a 12,000 ft² showroom structure. Total steel tonnage: 95 MT. Model shown from multiple angles.',
+                description: '3D structural model of a 12,000 ft² showroom structure. Total steel tonnage: 95 MT.',
                 software: 'Tekla Structures',
                 duration: '8 Days',
                 totalWeight: '95 MT',
@@ -3077,7 +3228,6 @@
                     { src: 'pic/projects/3d_e_3.png', caption: '3D View — Floor and roof layout.' }
                 ]
             }, {
-                // ===== PROJECT 9: 3D View Only — Project F =====
                 id: 9,
                 title: 'Multi-level Car Park — 340 MT',
                 subtitle: 'Bangladesh · 38,000 ft² · Steel',
@@ -3086,7 +3236,7 @@
                 filter: ['steel', 'commercial'],
                 location: 'Bangladesh',
                 scope: 'Commercial / Steel',
-                description: '3D structural model of a 38,000 ft² multi-level car park. Total steel tonnage: 340 MT. Model shown from multiple angles.',
+                description: '3D structural model of a 38,000 ft² multi-level car park. Total steel tonnage: 340 MT.',
                 software: 'Tekla Structures',
                 duration: '18 Days',
                 totalWeight: '340 MT',
