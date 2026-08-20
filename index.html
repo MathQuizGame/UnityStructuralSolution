@@ -702,7 +702,7 @@
         }
 
         /* ============================================================
-           7. LOGO SHOWCASE SECTION — Fixed Fallback
+           7. LOGO SHOWCASE SECTION — Fixed Duplicate Bug
            ============================================================ */
         .logo-showcase {
             padding: 60px 0 50px;
@@ -3123,7 +3123,7 @@
                             <div class="hero-slide-counter" id="heroSlideCounter">CASE STUDY 01 / 03</div>
                             <div class="hero-slide-info" id="heroSlideInfo">
                                 <span class="hero-slide-type" id="heroSlideType">FEATURED CASE STUDY</span>
-                                <strong class="hero-slide-title" id="heroSlideTitle">Loading...</strong>
+                                <strong class="hero-slide-title" id="heroSlideTitle"></strong>
                                 <span class="hero-slide-meta" id="heroSlideMeta"></span>
                                 <button class="hero-slide-cta" id="heroSlideCta">View Detailed Portfolio →</button>
                             </div>
@@ -3138,7 +3138,7 @@
             </div>
         </header>
 
-        <!-- ===== LOGO SHOWCASE SECTION — Fixed Fallback ===== -->
+        <!-- ===== LOGO SHOWCASE SECTION — Fixed Duplicate Bug ===== -->
         <section class="logo-showcase" aria-label="Industry experience showcase">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -3148,7 +3148,7 @@
                 </div>
 
                 <div class="logo-grid">
-                    <!-- Logos — fully visible, clean fallback handling -->
+                    <!-- Each logo item uses fallback text properly — no duplication -->
                     <div class="logo-item">
                         <img src="pic/logos/bat.png" alt="BAT" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
                         <span class="fallback-text">BAT</span>
@@ -4506,7 +4506,7 @@
             const galleryProjects = portfolioData.filter(p => p.featured !== true);
 
             // ============================================================
-            // HERO SLIDER
+            // HERO SLIDER — Fixed "Loading..." Bug
             // ============================================================
             function getFeaturedEvidence(project) {
                 const captions = (project.images || []).map(img => img.caption || '');
@@ -4582,19 +4582,29 @@
                 });
             }
 
+            // --- FIXED: goToHeroSlide now immediately populates all fields ---
             function goToHeroSlide(index) {
                 currentHeroSlide = index;
                 const slide = heroSlides[index];
-                if (!slide) return;
-                heroSlideImage.src = slide.src;
-                heroSlideImage.alt = slide.title;
+                if (!slide) {
+                    // Hide slider if no slide
+                    const wrapper = document.querySelector('.hero-slider-wrapper');
+                    if (wrapper) wrapper.style.display = 'none';
+                    return;
+                }
+
+                // Immediately populate all fields (prevents "Loading..." flash)
+                heroSlideImage.src = slide.src || '';
+                heroSlideImage.alt = slide.title || 'Project';
+                heroSlideTitle.textContent = slide.title || 'Featured Project';
                 const isFeatured = slide.type === 'featured';
                 heroSlideType.textContent = isFeatured ? 'FEATURED CASE STUDY' : 'PROJECT GALLERY';
                 heroSlideType.style.color = isFeatured ? 'var(--accent-light)' : 'rgba(255,255,255,0.5)';
-                heroSlideTitle.textContent = slide.title;
                 heroSlideMeta.textContent = isFeatured ? slide.evidence : '';
                 heroSlideMeta.style.display = isFeatured ? 'block' : 'none';
                 heroSlideCta.textContent = isFeatured ? 'View Detailed Portfolio →' : 'View Images →';
+
+                // Update counter
                 if (isFeatured) {
                     const featuredIndex = featuredProjects.findIndex(p => p.id === slide.projectId) + 1;
                     heroSlideCounter.textContent =
@@ -4602,6 +4612,8 @@
                 } else {
                     heroSlideCounter.textContent = 'PROJECT GALLERY';
                 }
+
+                // CTA click
                 heroSlideCta.onclick = function(e) {
                     e.stopPropagation();
                     if (isFeatured) { openModal(slide.projectId); } else { openGalleryModal(slide.projectId); }
@@ -4609,9 +4621,12 @@
                 heroSlideImage.onclick = function() {
                     if (isFeatured) { openModal(slide.projectId); } else { openGalleryModal(slide.projectId); }
                 };
+
+                // Update dots
                 heroSliderDots.querySelectorAll('.dot').forEach((dot, i) => {
                     dot.classList.toggle('active', i === index);
                 });
+
                 resetHeroInterval();
             }
 
@@ -4641,9 +4656,16 @@
             heroContainer.addEventListener('focusin', () => { clearInterval(heroInterval); });
             heroContainer.addEventListener('focusout', () => { resetHeroInterval(); });
 
+            // --- FIXED: initHeroSlider with safety check ---
             function initHeroSlider() {
                 renderHeroDots();
-                goToHeroSlide(0);
+                if (heroSlides && heroSlides.length > 0) {
+                    goToHeroSlide(0);
+                } else {
+                    const wrapper = document.querySelector('.hero-slider-wrapper');
+                    if (wrapper) wrapper.style.display = 'none';
+                    console.warn('No hero slides available');
+                }
             }
 
             // ============================================================
