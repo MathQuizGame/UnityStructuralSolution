@@ -702,7 +702,7 @@
         }
 
         /* ============================================================
-           7. LOGO SHOWCASE SECTION — New
+           7. LOGO SHOWCASE SECTION — Fixed Fallback
            ============================================================ */
         .logo-showcase {
             padding: 60px 0 50px;
@@ -732,51 +732,56 @@
             gap: 20px 40px;
             margin-top: 28px;
         }
-        .logo-grid .logo-item {
+        .logo-item {
             flex: 0 0 auto;
             height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 1;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            filter: none;
+            position: relative;
+            min-width: 60px;
         }
-        .logo-grid .logo-item:hover {
-            opacity: 1;
-            filter: grayscale(0%);
-            transform: translateY(-4px);
-        }
-        .logo-grid .logo-item img {
+        .logo-item img {
             max-height: 40px;
             width: auto;
             object-fit: contain;
             max-width: 120px;
+            display: block;
         }
-        .logo-grid .logo-item .fallback-text {
+        .logo-item .fallback-text {
             display: none;
             font-size: 0.7rem;
             font-weight: 600;
             color: var(--steel);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            text-align: center;
         }
-        .logo-grid .logo-item img[style*="display: none"]+.fallback-text {
+        .logo-item.error img {
+            display: none !important;
+        }
+        .logo-item.error .fallback-text {
             display: block;
+        }
+        .logo-item {
+            transition: transform 0.3s ease;
+        }
+        .logo-item:hover {
+            transform: translateY(-4px);
         }
 
         @media (max-width: 768px) {
             .logo-grid {
                 gap: 16px 24px;
             }
-            .logo-grid .logo-item {
+            .logo-item {
                 height: 40px;
             }
-            .logo-grid .logo-item img {
+            .logo-item img {
                 max-height: 30px;
                 max-width: 80px;
             }
-            .logo-grid .logo-item .fallback-text {
+            .logo-item .fallback-text {
                 font-size: 0.55rem;
             }
         }
@@ -784,17 +789,21 @@
             .logo-grid {
                 gap: 10px 16px;
             }
-            .logo-grid .logo-item {
+            .logo-item {
                 height: 32px;
+                min-width: 40px;
             }
-            .logo-grid .logo-item img {
+            .logo-item img {
                 max-height: 24px;
                 max-width: 60px;
+            }
+            .logo-item .fallback-text {
+                font-size: 0.5rem;
             }
         }
 
         /* ============================================================
-           8. CAPABILITIES BAR (post-hero)
+           8. CAPABILITIES BAR
            ============================================================ */
         .capabilities-section {
             padding: 28px 0;
@@ -1662,7 +1671,7 @@
         }
 
         /* ============================================================
-           20. MODAL — Fixed "Loading..." Bug
+           20. MODAL
            ============================================================ */
         .modal-overlay {
             position: fixed;
@@ -2346,7 +2355,7 @@
         }
 
         /* ============================================================
-           28. CONTACT — Improved: Two-Step Form
+           28. CONTACT — Two-Step Form
            ============================================================ */
         .contact-section {
             padding: 80px 0;
@@ -3129,7 +3138,7 @@
             </div>
         </header>
 
-        <!-- ===== LOGO SHOWCASE SECTION — NEW ===== -->
+        <!-- ===== LOGO SHOWCASE SECTION — Fixed Fallback ===== -->
         <section class="logo-showcase" aria-label="Industry experience showcase">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -3139,30 +3148,78 @@
                 </div>
 
                 <div class="logo-grid">
-                    <!-- Logos — fully visible, grayscale by default, color on hover -->
-                    <div class="logo-item"><img src="pic/logos/bat.png" alt="BAT" onerror="this.style.display='none';" /><span class="fallback-text">BAT</span></div>
-                    <div class="logo-item"><img src="pic/logos/square.png" alt="Square" onerror="this.style.display='none';" /><span class="fallback-text">Square</span></div>
-                    <div class="logo-item"><img src="pic/logos/viyellatex.png" alt="Viyellatex" onerror="this.style.display='none';" /><span class="fallback-text">Viyellatex</span></div>
-                    <div class="logo-item"><img src="pic/logos/bashundhara.png" alt="Bashundhara" onerror="this.style.display='none';" /><span class="fallback-text">Bashundhara</span></div>
-                    <div class="logo-item"><img src="pic/logos/bsrm.png" alt="BSRM" onerror="this.style.display='none';" /><span class="fallback-text">BSRM</span></div>
-                    <div class="logo-item"><img src="pic/logos/energypac.png" alt="Energypac" onerror="this.style.display='none';" /><span class="fallback-text">Energypac</span></div>
-                    <div class="logo-item"><img src="pic/logos/summit.png" alt="Summit" onerror="this.style.display='none';" /><span class="fallback-text">Summit</span></div>
-                    <div class="logo-item"><img src="pic/logos/unilever.png" alt="Unilever" onerror="this.style.display='none';" /><span class="fallback-text">Unilever</span></div>
-                    <div class="logo-item"><img src="pic/logos/pran-rfl.png" alt="Pran-RFL" onerror="this.style.display='none';" /><span class="fallback-text">Pran-RFL</span></div>
-                    <div class="logo-item"><img src="pic/logos/beximco.png" alt="Beximco" onerror="this.style.display='none';" /><span class="fallback-text">Beximco</span></div>
-                    <div class="logo-item"><img src="pic/logos/lafarge.png" alt="Lafarge Holcim" onerror="this.style.display='none';" /><span class="fallback-text">Lafarge</span></div>
-                    <div class="logo-item"><img src="pic/logos/berger.png" alt="Berger" onerror="this.style.display='none';" /><span class="fallback-text">Berger</span></div>
-                    <div class="logo-item"><img src="pic/logos/marico.png" alt="Marico" onerror="this.style.display='none';" /><span class="fallback-text">Marico</span></div>
-                    <div class="logo-item"><img src="pic/logos/mjl.png" alt="MJL" onerror="this.style.display='none';" /><span class="fallback-text">MJL</span></div>
-                    <div class="logo-item"><img src="pic/logos/akij.png" alt="AKIJ" onerror="this.style.display='none';" /><span class="fallback-text">AKIJ</span></div>
-                    <div class="logo-item"><img src="pic/logos/navana.png" alt="Navana" onerror="this.style.display='none';" /><span class="fallback-text">Navana</span></div>
+                    <!-- Logos — fully visible, clean fallback handling -->
+                    <div class="logo-item">
+                        <img src="pic/logos/bat.png" alt="BAT" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">BAT</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="pic/logos/square.png" alt="Square" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">Square</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="pic/logos/viyellatex.png" alt="Viyellatex" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">Viyellatex</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="pic/logos/bashundhara.png" alt="Bashundhara" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">Bashundhara</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="pic/logos/bsrm.png" alt="BSRM" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">BSRM</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="pic/logos/energypac.png" alt="Energypac" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">Energypac</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="pic/logos/summit.png" alt="Summit" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">Summit</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="pic/logos/unilever.png" alt="Unilever" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">Unilever</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="pic/logos/pran-rfl.png" alt="Pran-RFL" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">Pran-RFL</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="pic/logos/beximco.png" alt="Beximco" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">Beximco</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="pic/logos/lafarge.png" alt="Lafarge Holcim" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">Lafarge</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="pic/logos/berger.png" alt="Berger" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">Berger</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="pic/logos/marico.png" alt="Marico" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">Marico</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="pic/logos/mjl.png" alt="MJL" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">MJL</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="pic/logos/akij.png" alt="AKIJ" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">AKIJ</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="pic/logos/navana.png" alt="Navana" onerror="this.style.display='none'; this.parentElement.classList.add('error');" />
+                        <span class="fallback-text">Navana</span>
+                    </div>
                 </div>
 
                 <p class="legal-note">Representative selection — team members have worked on projects for these and 50+ other organizations throughout their professional careers.</p>
             </div>
         </section>
 
-        <!-- ===== CAPABILITIES BAR (post-hero) ===== -->
+        <!-- ===== CAPABILITIES BAR ===== -->
         <section class="capabilities-section" aria-label="Engineering capabilities">
             <div class="container">
                 <div class="label">Technical Capabilities</div>
@@ -4159,7 +4216,6 @@
                 document.getElementById('step2').classList.add('hidden');
             };
             window.showStep2 = function() {
-                // Validate Step 1 fields
                 const name = document.getElementById('contactName').value.trim();
                 const email = document.getElementById('contactEmail').value.trim();
                 const message = document.getElementById('contactMessage').value.trim();
@@ -4176,7 +4232,6 @@
             // PORTFOLIO DATA — 3 Featured + 7 Gallery (total 10)
             // ============================================================
             const portfolioData = [{
-                // Featured 1
                 id: 1,
                 title: 'Industrial PEB Warehouse — 749 MT',
                 subtitle: 'Bangladesh · 78,500 ft²',
@@ -4213,7 +4268,6 @@
                         caption: 'Roof Sheet Layout — Roof cladding arrangement with sheet sizes, fastening patterns, and accessories.' }
                 ]
             }, {
-                // Featured 2
                 id: 2,
                 title: 'Warehouse Shed with Mezzanine — 645 MT',
                 subtitle: 'Bangladesh · 51,000 ft²',
@@ -4250,7 +4304,6 @@
                         caption: 'Material Quantity Overview — Complete weight breakdown across all components.' }
                 ]
             }, {
-                // Featured 3
                 id: 3,
                 title: 'PEB Mezzanine Factory — 142 MT',
                 subtitle: 'Bangladesh · 15,488 ft²',
@@ -4287,7 +4340,6 @@
                         caption: 'Material Quantity Overview — Complete weight breakdown across all components.' }
                 ]
             }, {
-                // Gallery 4 — Multi Roof or Step Roof PEB Warehouse
                 id: 4,
                 title: 'Multi Roof / Step Roof PEB Warehouse',
                 subtitle: 'Bangladesh · 45,000 ft²',
@@ -4311,7 +4363,6 @@
                     { src: 'pic/projects/4c.png', caption: '3D View — Roof plan showing the multi-level roof system and bracing layout.' }
                 ]
             }, {
-                // Gallery 5 — PEB Warehouse With Roof Monitor
                 id: 5,
                 title: 'PEB Warehouse With Roof Monitor',
                 subtitle: 'Bangladesh · 49,500 ft²',
@@ -4335,7 +4386,6 @@
                     { src: 'pic/projects/5c.png', caption: '3D View — Roof plan with monitor details and structural framing layout.' }
                 ]
             }, {
-                // Gallery 6 — PEB Warehouse Extension With Long Canopy
                 id: 6,
                 title: 'PEB Warehouse Extension With Long Canopy',
                 subtitle: 'Bangladesh · 13,500 ft²',
@@ -4359,7 +4409,6 @@
                     { src: 'pic/projects/6c.png', caption: '3D View — Canopy framing details and connection layout.' }
                 ]
             }, {
-                // Gallery 7 — PEB Warehouse with Future Expansion
                 id: 7,
                 title: 'PEB Warehouse with Future Expansion',
                 subtitle: 'Bangladesh · 95,000 ft²',
@@ -4383,7 +4432,6 @@
                     { src: 'pic/projects/7c.png', caption: '3D View — Roof plan with expansion bay framing and bracing details.' }
                 ]
             }, {
-                // Gallery 8 — Roof Top Shed On Existing Mezzanine Structure
                 id: 8,
                 title: 'Roof Top Shed On Existing Mezzanine',
                 subtitle: 'Bangladesh · 9,000 ft²',
@@ -4407,7 +4455,6 @@
                     { src: 'pic/projects/8c.png', caption: '3D View — Framing plan with load transfer details to the supporting mezzanine.' }
                 ]
             }, {
-                // Gallery 9 — Multi Gable Multi Shed Warehouse
                 id: 9,
                 title: 'Multi Gable Multi Shed Warehouse',
                 subtitle: 'Bangladesh · 66,000 ft²',
@@ -4431,7 +4478,6 @@
                     { src: 'pic/projects/9c.png', caption: '3D View — Roof plan showing the multi-gable configuration and bracing layout.' }
                 ]
             }, {
-                // Gallery 10 — Filling Station With Truss Structure
                 id: 10,
                 title: 'Filling Station With Truss Structure',
                 subtitle: 'Bangladesh · 3,250 ft²',
@@ -4460,15 +4506,12 @@
             const galleryProjects = portfolioData.filter(p => p.featured !== true);
 
             // ============================================================
-            // HERO SLIDER — Prioritized Featured Projects
+            // HERO SLIDER
             // ============================================================
-
-            // Helper to generate evidence string for featured projects
             function getFeaturedEvidence(project) {
                 const captions = (project.images || []).map(img => img.caption || '');
                 const allText = captions.join(' ').toLowerCase();
                 const parts = [];
-
                 if (allText.includes('tekla') || allText.includes('3d bim') || allText.includes('bim model')) parts.push('3D BIM');
                 if (allText.includes('anchor') || allText.includes('base plate')) parts.push('Anchor Layout');
                 if (allText.includes('beam') || allText.includes('rafter')) parts.push('Framing');
@@ -4480,18 +4523,15 @@
                 if (allText.includes('ga') || allText.includes('general arrangement')) parts.push('GA');
                 if (allText.includes('fabrication') || allText.includes('shop')) parts.push('Fabrication Drawings');
                 if (allText.includes('erection')) parts.push('Erection');
-
                 if (parts.length === 0) {
                     const software = project.software || '';
                     if (software.includes('STAAD')) parts.push('STAAD.Pro');
                     if (software.includes('Tekla')) parts.push('Tekla');
                     if (parts.length === 0) parts.push('Engineering Documentation');
                 }
-
                 return parts.slice(0, 4).join(' • ');
             }
 
-            // Build hero slides: featured first, then gallery
             const heroSlides = [
                 ...featuredProjects.map(project => ({
                     type: 'featured',
@@ -4515,7 +4555,6 @@
                 }))
             ];
 
-            // Hero DOM references
             const heroSlideImage = document.getElementById('heroSlideImage');
             const heroSliderDots = document.getElementById('heroSliderDots');
             const heroSliderPrev = document.getElementById('heroSliderPrev');
@@ -4529,15 +4568,12 @@
             let currentHeroSlide = 0;
             let heroInterval;
 
-            // Render dots
             function renderHeroDots() {
                 heroSliderDots.innerHTML = heroSlides.map((slide, idx) => {
-                    const label = slide.type === 'featured' ?
-                        `Featured case study ${idx + 1}` :
+                    const label = slide.type === 'featured' ? `Featured case study ${idx + 1}` :
                         `Project gallery image ${idx - featuredProjects.length + 1}`;
                     return `<button class="dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" aria-label="${label}"></button>`;
                 }).join('');
-
                 heroSliderDots.querySelectorAll('.dot').forEach(dot => {
                     dot.addEventListener('click', function() {
                         const idx = parseInt(this.dataset.index);
@@ -4546,16 +4582,12 @@
                 });
             }
 
-            // Go to slide — FIXED: removes "Loading..." text
             function goToHeroSlide(index) {
                 currentHeroSlide = index;
                 const slide = heroSlides[index];
                 if (!slide) return;
-
-                // Immediately set image and content
                 heroSlideImage.src = slide.src;
                 heroSlideImage.alt = slide.title;
-
                 const isFeatured = slide.type === 'featured';
                 heroSlideType.textContent = isFeatured ? 'FEATURED CASE STUDY' : 'PROJECT GALLERY';
                 heroSlideType.style.color = isFeatured ? 'var(--accent-light)' : 'rgba(255,255,255,0.5)';
@@ -4563,39 +4595,23 @@
                 heroSlideMeta.textContent = isFeatured ? slide.evidence : '';
                 heroSlideMeta.style.display = isFeatured ? 'block' : 'none';
                 heroSlideCta.textContent = isFeatured ? 'View Detailed Portfolio →' : 'View Images →';
-
-                // Update counter
                 if (isFeatured) {
                     const featuredIndex = featuredProjects.findIndex(p => p.id === slide.projectId) + 1;
-                    heroSlideCounter.textContent = `CASE STUDY ${String(featuredIndex).padStart(2, '0')} / ${String(featuredProjects.length).padStart(2, '0')}`;
+                    heroSlideCounter.textContent =
+                        `CASE STUDY ${String(featuredIndex).padStart(2, '0')} / ${String(featuredProjects.length).padStart(2, '0')}`;
                 } else {
                     heroSlideCounter.textContent = 'PROJECT GALLERY';
                 }
-
-                // CTA click
                 heroSlideCta.onclick = function(e) {
                     e.stopPropagation();
-                    if (isFeatured) {
-                        openModal(slide.projectId);
-                    } else {
-                        openGalleryModal(slide.projectId);
-                    }
+                    if (isFeatured) { openModal(slide.projectId); } else { openGalleryModal(slide.projectId); }
                 };
-
-                // Image click
                 heroSlideImage.onclick = function() {
-                    if (isFeatured) {
-                        openModal(slide.projectId);
-                    } else {
-                        openGalleryModal(slide.projectId);
-                    }
+                    if (isFeatured) { openModal(slide.projectId); } else { openGalleryModal(slide.projectId); }
                 };
-
-                // Update dots
                 heroSliderDots.querySelectorAll('.dot').forEach((dot, i) => {
                     dot.classList.toggle('active', i === index);
                 });
-
                 resetHeroInterval();
             }
 
@@ -4614,25 +4630,17 @@
                 heroInterval = setInterval(nextHeroSlide, 6000);
             }
 
-            // Arrows
-            heroSliderPrev.addEventListener('click', function(e) {
-                e.stopPropagation();
-                prevHeroSlide();
-            });
+            heroSliderPrev.addEventListener('click', function(e) { e.stopPropagation();
+                prevHeroSlide(); });
+            heroSliderNext.addEventListener('click', function(e) { e.stopPropagation();
+                nextHeroSlide(); });
 
-            heroSliderNext.addEventListener('click', function(e) {
-                e.stopPropagation();
-                nextHeroSlide();
-            });
-
-            // Pause on hover / focus
             const heroContainer = document.getElementById('heroSlider');
             heroContainer.addEventListener('mouseenter', () => { clearInterval(heroInterval); });
             heroContainer.addEventListener('mouseleave', () => { resetHeroInterval(); });
             heroContainer.addEventListener('focusin', () => { clearInterval(heroInterval); });
             heroContainer.addEventListener('focusout', () => { resetHeroInterval(); });
 
-            // Init
             function initHeroSlider() {
                 renderHeroDots();
                 goToHeroSlide(0);
@@ -4664,14 +4672,12 @@
                             </div>
                         </div>
                     `).join('');
-
                 featuredGrid.querySelectorAll('.featured-card').forEach(card => {
                     card.addEventListener('click', function() {
                         const id = parseInt(this.dataset.id);
                         openModal(id);
                     });
                 });
-
                 const els = featuredGrid.querySelectorAll('.animate-on-scroll');
                 const obs = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
@@ -4688,10 +4694,7 @@
             let currentGalleryFilter = 'all';
 
             function renderGallery(filter) {
-                const filtered = filter === 'all' ?
-                    galleryProjects :
-                    galleryProjects.filter(p => p.filter.includes(filter));
-
+                const filtered = filter === 'all' ? galleryProjects : galleryProjects.filter(p => p.filter.includes(filter));
                 galleryGrid.innerHTML = filtered.map(project => `
                         <div class="gallery-item" data-id="${project.id}" data-filter="${project.filter.join(' ')}">
                             <div class="img-wrap">
@@ -4706,7 +4709,6 @@
                             </div>
                         </div>
                     `).join('');
-
                 galleryGrid.querySelectorAll('.gallery-item').forEach(item => {
                     item.addEventListener('click', function() {
                         const id = parseInt(this.dataset.id);
@@ -4729,7 +4731,7 @@
             });
 
             // ============================================================
-            // MODAL — Featured Projects (Detailed)
+            // MODAL
             // ============================================================
             let currentProject = null;
             let currentIndex = 0;
@@ -4816,16 +4818,14 @@
                 const project = currentProject;
                 const images = project.images || [{ src: project.thumbnail, caption: project.title || 'Project Overview' }];
                 const image = images[currentIndex] || images[0];
-
                 modalImage.src = image.src;
                 modalImage.alt = image.caption || project.title;
                 modalCaption.textContent = image.caption || project.title;
-                modalCounter.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(images.length).padStart(2, '0')}`;
-
+                modalCounter.textContent =
+                    `${String(currentIndex + 1).padStart(2, '0')} / ${String(images.length).padStart(2, '0')}`;
                 modalTitle.textContent = project.title;
                 modalSubtitle.textContent = project.subtitle || project.location + ' · ' + project.scope;
 
-                // --- FIX: Always populate description, never leave placeholder ---
                 if (isFeaturedModal && project.featured) {
                     modalDescription.textContent = project.description || 'Professional engineering experience on this project.';
                     mSoftware.textContent = project.software || '—';
@@ -4840,7 +4840,6 @@
                     document.getElementById('modalWeight').style.display = 'block';
                     modalDescription.style.display = 'block';
                 } else {
-                    // For gallery projects, build a simple description
                     const descParts = [];
                     if (project.scope) descParts.push(project.scope);
                     if (project.totalWeight) descParts.push('Total Steel: ' + project.totalWeight);
@@ -4864,7 +4863,6 @@
                             <img src="${img.src}" alt="${img.caption || project.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=70&h=50&fit=crop'" />
                         </div>
                     `).join('');
-
                 modalThumbnails.querySelectorAll('.thumb').forEach(thumb => {
                     thumb.addEventListener('click', function() {
                         currentIndex = parseInt(this.dataset.index);
@@ -4878,7 +4876,6 @@
                         }
                     });
                 });
-
                 const contactBtn = document.getElementById('modalContactBtn');
                 if (contactBtn) {
                     contactBtn.href = '#contact';
@@ -4888,36 +4885,30 @@
             modalPrev.addEventListener('click', function(e) {
                 e.stopPropagation();
                 if (!currentProject) return;
-                const images = currentProject.images || [{ src: currentProject.thumbnail, caption: currentProject.title || 'Project Overview' }];
+                const images = currentProject.images || [{ src: currentProject.thumbnail, caption: currentProject.title ||
+                        'Project Overview' }];
                 currentIndex = (currentIndex - 1 + images.length) % images.length;
                 updateModal();
             });
-
             modalNext.addEventListener('click', function(e) {
                 e.stopPropagation();
                 if (!currentProject) return;
-                const images = currentProject.images || [{ src: currentProject.thumbnail, caption: currentProject.title || 'Project Overview' }];
+                const images = currentProject.images || [{ src: currentProject.thumbnail, caption: currentProject.title ||
+                        'Project Overview' }];
                 currentIndex = (currentIndex + 1) % images.length;
                 updateModal();
             });
-
             modalInfoToggle.addEventListener('click', toggleInfo);
             modalInfoClose.addEventListener('click', toggleInfo);
-
             modal.addEventListener('click', function(e) {
                 if (e.target === this && isInfoOpen) {
                     toggleInfo();
                 }
             });
-
             document.addEventListener('keydown', function(e) {
                 if (!modal.classList.contains('active')) return;
                 if (e.key === 'Escape') {
-                    if (isInfoOpen) {
-                        toggleInfo();
-                    } else {
-                        closeModal();
-                    }
+                    if (isInfoOpen) { toggleInfo(); } else { closeModal(); }
                     e.preventDefault();
                 }
                 if (e.key === 'ArrowLeft') { modalPrev.click();
@@ -4925,27 +4916,19 @@
                 if (e.key === 'ArrowRight') { modalNext.click();
                     e.preventDefault(); }
             });
-
-            let touchStartX = 0;
-            let touchEndX = 0;
+            let touchStartX = 0,
+                touchEndX = 0;
             const modalImageEl = document.getElementById('modalMainImage');
-
             modalImageEl.addEventListener('touchstart', function(e) {
                 touchStartX = e.changedTouches[0].screenX;
             }, { passive: true });
-
             modalImageEl.addEventListener('touchend', function(e) {
                 touchEndX = e.changedTouches[0].screenX;
                 const diff = touchStartX - touchEndX;
                 if (Math.abs(diff) > 50) {
-                    if (diff > 0) {
-                        modalNext.click();
-                    } else {
-                        modalPrev.click();
-                    }
+                    if (diff > 0) { modalNext.click(); } else { modalPrev.click(); }
                 }
             }, { passive: true });
-
             modalClose.addEventListener('click', closeModal);
 
             // ============================================================
@@ -4953,7 +4936,6 @@
             // ============================================================
             const navToggle = document.getElementById('navToggle');
             const navLinks = document.getElementById('navLinks');
-
             if (navToggle && navLinks) {
                 navToggle.addEventListener('click', function() {
                     const open = navLinks.classList.toggle('open');
@@ -4974,7 +4956,6 @@
             // ============================================================
             const navbar = document.getElementById('navbar');
             const stickyCta = document.getElementById('stickyCta');
-
             window.addEventListener('scroll', function() {
                 if (navbar) {
                     navbar.classList.toggle('scrolled', window.scrollY > 40);
@@ -5012,12 +4993,10 @@
             initHeroSlider();
             renderFeatured();
             renderGallery('all');
-
             console.log('🏗️ Unity Structural Solution — PEB Engineering & Estimation Consultancy');
             console.log('📧 Formspree endpoint: https://formspree.io/f/mdaqball');
             console.log('📂 Featured projects:', featuredProjects.length);
             console.log('🖼️ Gallery projects:', galleryProjects.length);
-
         })();
     </script>
 
