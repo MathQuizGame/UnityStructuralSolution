@@ -310,15 +310,92 @@
         }
 
         /* ============================================================
-           6. HERO
+           6. TOP SERVICE STRIP
+           ============================================================ */
+        .service-strip {
+            background: var(--white);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 10px 0;
+            position: relative;
+            z-index: 5;
+            margin-top: var(--nav-height);
+        }
+        .service-strip .strip-label {
+            font-size: 0.55rem;
+            font-weight: 700;
+            color: var(--steel);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+        .service-strip .strip-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+        }
+        .service-strip .strip-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            background: var(--off-white);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--navy);
+        }
+        .service-strip .strip-item:hover {
+            background: var(--white);
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+        .service-strip .strip-item .icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 4px;
+            background: rgba(30, 111, 217, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: var(--accent);
+        }
+        .service-strip .strip-item .info {
+            flex: 1;
+            min-width: 0;
+        }
+        .service-strip .strip-item .info .title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: var(--navy);
+            display: block;
+            line-height: 1.2;
+        }
+        .service-strip .strip-item .info .desc {
+            font-size: 0.55rem;
+            color: var(--steel);
+            display: block;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* ============================================================
+           7. HERO
            ============================================================ */
         .hero {
-            min-height: 100vh;
+            min-height: calc(100vh - var(--nav-height));
             display: flex;
             align-items: center;
             position: relative;
             background: var(--navy);
-            padding-top: var(--nav-height);
+            padding-top: 0;
             overflow: hidden;
         }
         .hero-bg {
@@ -428,7 +505,7 @@
             margin-bottom: 16px;
         }
 
-        /* Hero Slider */
+        /* Hero Slider Wrapper */
         .hero-slider-wrapper {
             position: relative;
             border-radius: var(--radius);
@@ -456,33 +533,73 @@
         .hero-slider-wrapper .slider-track img.active {
             opacity: 1;
         }
-        .hero-slider-wrapper .slider-track .slide-label {
+
+        /* Hero Slide Overlay */
+        .hero-slide-info {
             position: absolute;
-            bottom: 16px;
-            left: 16px;
-            z-index: 10;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.6rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(4px);
-            padding: 4px 14px;
-            border-radius: 20px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 12;
+            padding: 20px 24px 24px;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%);
             pointer-events: none;
         }
-        .hero-slider-wrapper .slider-track .slide-label i {
-            color: var(--accent-light);
+        .hero-slide-info>* {
+            pointer-events: auto;
         }
+        .hero-slide-type {
+            display: inline-block;
+            font-size: 0.55rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent-light);
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            padding: 2px 12px;
+            border-radius: 4px;
+            margin-bottom: 4px;
+        }
+        .hero-slide-title {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 2px;
+        }
+        .hero-slide-meta {
+            display: block;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 6px;
+        }
+        .hero-slide-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--accent-light);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px 0;
+            transition: var(--transition);
+            font-family: var(--font);
+        }
+        .hero-slide-cta:hover {
+            color: var(--white);
+            gap: 10px;
+        }
+
+        /* Slider Controls */
         .hero-slider-wrapper .slider-controls {
             position: absolute;
             bottom: 16px;
             right: 16px;
-            z-index: 10;
+            z-index: 15;
             display: flex;
             gap: 6px;
             background: rgba(0, 0, 0, 0.4);
@@ -508,11 +625,12 @@
         .hero-slider-wrapper .slider-controls .dot:hover {
             background: var(--accent-light);
         }
+
         .hero-slider-wrapper .slider-arrows {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            z-index: 10;
+            z-index: 15;
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -539,8 +657,25 @@
             background: var(--accent);
         }
 
+        /* Hero slide counter indicator (static label) */
+        .hero-slide-counter {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 12;
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            padding: 3px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            pointer-events: none;
+        }
+
         /* ============================================================
-           7. CAPABILITIES BAR
+           8. CAPABILITIES BAR (post-hero)
            ============================================================ */
         .capabilities-section {
             padding: 28px 0;
@@ -576,7 +711,7 @@
         }
 
         /* ============================================================
-           8. SECTION HEADER
+           9. SECTION HEADER
            ============================================================ */
         .section-header {
             text-align: center;
@@ -611,7 +746,7 @@
         }
 
         /* ============================================================
-           9. ABOUT
+           10. ABOUT
            ============================================================ */
         .about-section {
             padding: 80px 0;
@@ -678,7 +813,7 @@
         }
 
         /* ============================================================
-           10. TEAM
+           11. TEAM
            ============================================================ */
         .team-section {
             padding: 80px 0;
@@ -751,7 +886,7 @@
         }
 
         /* ============================================================
-           11. WHY UNITY
+           12. WHY UNITY
            ============================================================ */
         .why-section {
             padding: 80px 0;
@@ -794,7 +929,7 @@
         }
 
         /* ============================================================
-           12. SERVICES
+           13. SERVICES (detailed)
            ============================================================ */
         .services-section {
             padding: 80px 0;
@@ -874,7 +1009,7 @@
         }
 
         /* ============================================================
-           13. WHO WE SUPPORT
+           14. WHO WE SUPPORT
            ============================================================ */
         .support-section {
             padding: 80px 0;
@@ -917,7 +1052,7 @@
         }
 
         /* ============================================================
-           14. WORKFLOW
+           15. WORKFLOW
            ============================================================ */
         .workflow-section {
             padding: 80px 0;
@@ -960,7 +1095,7 @@
         }
 
         /* ============================================================
-           15. ESTIMATION DIFFERENTIATOR
+           16. ESTIMATION DIFFERENTIATOR
            ============================================================ */
         .estimation-section {
             padding: 80px 0;
@@ -1008,14 +1143,13 @@
         }
 
         /* ============================================================
-           16. PORTFOLIO
+           17. PORTFOLIO
            ============================================================ */
         .portfolio-section {
             padding: 80px 0;
             background: var(--off-white);
         }
 
-        /* --- Featured Projects --- */
         .featured-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1131,7 +1265,6 @@
             transform: translateX(4px);
         }
 
-        /* --- Gallery Projects --- */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -1211,7 +1344,6 @@
             display: block;
         }
 
-        /* --- Filters --- */
         .portfolio-filters {
             display: flex;
             flex-wrap: wrap;
@@ -1242,7 +1374,7 @@
         }
 
         /* ============================================================
-           17. MODAL (Fullscreen 80%+)
+           18. MODAL (Fullscreen 80%+)
            ============================================================ */
         .modal-overlay {
             position: fixed;
@@ -1655,7 +1787,7 @@
         }
 
         /* ============================================================
-           18. STANDARDS
+           19. STANDARDS
            ============================================================ */
         .standards-section {
             padding: 80px 0;
@@ -1711,7 +1843,7 @@
         }
 
         /* ============================================================
-           19. TOOLS
+           20. TOOLS
            ============================================================ */
         .tools-section {
             padding: 60px 0;
@@ -1746,7 +1878,7 @@
         }
 
         /* ============================================================
-           20. DELIVERABLES
+           21. DELIVERABLES
            ============================================================ */
         .deliverables-section {
             padding: 80px 0;
@@ -1782,7 +1914,7 @@
         }
 
         /* ============================================================
-           21. QUALITY
+           22. QUALITY
            ============================================================ */
         .quality-section {
             padding: 80px 0;
@@ -1822,7 +1954,7 @@
         }
 
         /* ============================================================
-           22. INTERNATIONAL / REMOTE SUPPORT
+           23. INTERNATIONAL / REMOTE SUPPORT
            ============================================================ */
         .international-section {
             padding: 80px 0;
@@ -1868,7 +2000,7 @@
         }
 
         /* ============================================================
-           23. FAQ
+           24. FAQ
            ============================================================ */
         .faq-section {
             padding: 80px 0;
@@ -1895,7 +2027,7 @@
         }
 
         /* ============================================================
-           24. FINAL CTA
+           25. FINAL CTA
            ============================================================ */
         .final-cta-section {
             padding: 60px 0;
@@ -1925,7 +2057,7 @@
         }
 
         /* ============================================================
-           25. CONTACT
+           26. CONTACT
            ============================================================ */
         .contact-section {
             padding: 80px 0;
@@ -2096,7 +2228,7 @@
         }
 
         /* ============================================================
-           26. FOOTER
+           27. FOOTER
            ============================================================ */
         .footer {
             background: var(--charcoal);
@@ -2179,7 +2311,7 @@
         }
 
         /* ============================================================
-           27. DISCLAIMER
+           28. DISCLAIMER
            ============================================================ */
         .footer-disclaimer {
             background: var(--off-white);
@@ -2197,7 +2329,7 @@
         }
 
         /* ============================================================
-           28. STICKY CTA
+           29. STICKY CTA
            ============================================================ */
         .sticky-cta {
             position: fixed;
@@ -2239,7 +2371,7 @@
         }
 
         /* ============================================================
-           29. FLOATING BADGES
+           30. FLOATING BADGES
            ============================================================ */
         .floating-badge {
             position: fixed;
@@ -2279,7 +2411,7 @@
         }
 
         /* ============================================================
-           30. ANIMATIONS
+           31. ANIMATIONS
            ============================================================ */
         .animate-on-scroll {
             opacity: 0;
@@ -2321,9 +2453,12 @@
         }
 
         /* ============================================================
-           31. RESPONSIVE
+           32. RESPONSIVE
            ============================================================ */
         @media (max-width: 1024px) {
+            .service-strip .strip-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
             .hero-grid {
                 grid-template-columns: 1fr;
                 gap: 32px;
@@ -2374,6 +2509,32 @@
         }
 
         @media (max-width: 768px) {
+            .service-strip {
+                padding: 8px 0;
+            }
+            .service-strip .strip-label {
+                font-size: 0.5rem;
+                margin-bottom: 4px;
+            }
+            .service-strip .strip-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 4px;
+            }
+            .service-strip .strip-item {
+                padding: 4px 8px;
+                gap: 6px;
+            }
+            .service-strip .strip-item .icon {
+                width: 22px;
+                height: 22px;
+                font-size: 0.6rem;
+            }
+            .service-strip .strip-item .info .title {
+                font-size: 0.58rem;
+            }
+            .service-strip .strip-item .info .desc {
+                font-size: 0.48rem;
+            }
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -2401,6 +2562,18 @@
             }
             .hero h1 {
                 font-size: 1.8rem;
+            }
+            .hero-slide-title {
+                font-size: 0.9rem;
+            }
+            .hero-slide-meta {
+                font-size: 0.6rem;
+            }
+            .hero-slide-cta {
+                font-size: 0.7rem;
+            }
+            .hero-slide-info {
+                padding: 14px 16px 16px;
             }
             .services-grid,
             .quality-grid,
@@ -2459,8 +2632,17 @@
         }
 
         @media (max-width: 480px) {
+            .service-strip .strip-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
             .hero h1 {
                 font-size: 1.5rem;
+            }
+            .hero-slide-title {
+                font-size: 0.8rem;
+            }
+            .hero-slide-info {
+                padding: 10px 12px 14px;
             }
             .section-header h2 {
                 font-size: 1.3rem;
@@ -2513,6 +2695,59 @@
         </div>
     </nav>
 
+    <!-- ============================================================
+    TOP SERVICE STRIP
+    ============================================================ -->
+    <section class="service-strip" aria-label="Core engineering services at a glance">
+        <div class="container">
+            <div class="strip-label">Core Engineering Services</div>
+            <div class="strip-grid">
+                <a href="#services" class="strip-item">
+                    <span class="icon"><i class="fas fa-drafting-compass"></i></span>
+                    <span class="info">
+                        <span class="title">PEB Proposal Engineering</span>
+                        <span class="desc">Analysis • Optimization • Quotations</span>
+                    </span>
+                </a>
+                <a href="#services" class="strip-item">
+                    <span class="icon"><i class="fas fa-calculator"></i></span>
+                    <span class="info">
+                        <span class="title">PEB Estimation / MTO / BOQ</span>
+                        <span class="desc">Steel • Purlins • Girts • Sheets</span>
+                    </span>
+                </a>
+                <a href="#services" class="strip-item">
+                    <span class="icon"><i class="fas fa-building"></i></span>
+                    <span class="info">
+                        <span class="title">Structural Steel Design</span>
+                        <span class="desc">STAAD.Pro • Analysis • Design</span>
+                    </span>
+                </a>
+                <a href="#services" class="strip-item">
+                    <span class="icon"><i class="fas fa-cubes"></i></span>
+                    <span class="info">
+                        <span class="title">Tekla Steel Detailing</span>
+                        <span class="desc">3D BIM • Fabrication • Erection</span>
+                    </span>
+                </a>
+                <a href="#services" class="strip-item">
+                    <span class="icon"><i class="fas fa-drafting-compass"></i></span>
+                    <span class="info">
+                        <span class="title">AutoCAD Documentation</span>
+                        <span class="desc">GA • As-Built • Engineering Drawings</span>
+                    </span>
+                </a>
+                <a href="#services" class="strip-item">
+                    <span class="icon"><i class="fas fa-layer-group"></i></span>
+                    <span class="info">
+                        <span class="title">RCC Structural Services</span>
+                        <span class="desc">Design • Detailing • Estimation</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== STICKY CTA ===== -->
     <button class="sticky-cta" id="stickyCta" aria-label="Start a project">
         <i class="fas fa-paper-plane"></i>
@@ -2554,32 +2789,36 @@
                     <!-- Hero Slider -->
                     <div class="hero-slider-wrapper" id="heroSlider">
                         <div class="slider-track" id="heroSliderTrack">
-                            <img id="heroSlideImage" src="" alt="Featured project" class="active" />
-                            <div class="slide-label" id="heroSlideLabel"><i class="fas fa-cube"></i> Loading...</div>
+                            <img id="heroSlideImage" src="" alt="" class="active" />
+                            <div class="hero-slide-counter" id="heroSlideCounter">CASE STUDY 01 / 03</div>
+                            <div class="hero-slide-info" id="heroSlideInfo">
+                                <span class="hero-slide-type" id="heroSlideType">FEATURED CASE STUDY</span>
+                                <strong class="hero-slide-title" id="heroSlideTitle">Loading...</strong>
+                                <span class="hero-slide-meta" id="heroSlideMeta"></span>
+                                <button class="hero-slide-cta" id="heroSlideCta">View Detailed Portfolio →</button>
+                            </div>
                         </div>
                         <div class="slider-controls" id="heroSliderDots"></div>
                         <div class="slider-arrows">
-                            <button id="heroSliderPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-                            <button id="heroSliderNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+                            <button id="heroSliderPrev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+                            <button id="heroSliderNext" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
 
-        <!-- ===== CAPABILITIES BAR ===== -->
+        <!-- ===== CAPABILITIES BAR (post-hero) ===== -->
         <section class="capabilities-section" aria-label="Engineering capabilities">
             <div class="container">
-                <div class="label">Core Capabilities</div>
+                <div class="label">Technical Capabilities</div>
                 <div class="capabilities-grid">
-                    <span class="cap"><i class="fas fa-check-circle"></i> PEB Engineering</span>
-                    <span class="cap"><i class="fas fa-check-circle"></i> Estimation / MTO / BOQ</span>
-                    <span class="cap"><i class="fas fa-check-circle"></i> Structural Steel Design</span>
-                    <span class="cap"><i class="fas fa-check-circle"></i> STAAD.Pro Analysis</span>
-                    <span class="cap"><i class="fas fa-check-circle"></i> Tekla Detailing</span>
-                    <span class="cap"><i class="fas fa-check-circle"></i> AutoCAD Documentation</span>
-                    <span class="cap"><i class="fas fa-check-circle"></i> RCC Structural Services</span>
-                    <span class="cap"><i class="fas fa-check-circle"></i> Remote Engineering Support</span>
+                    <span class="cap"><i class="fas fa-check-circle"></i> MTO / BOQ</span>
+                    <span class="cap"><i class="fas fa-check-circle"></i> Steel Optimization</span>
+                    <span class="cap"><i class="fas fa-check-circle"></i> STAAD.Pro</span>
+                    <span class="cap"><i class="fas fa-check-circle"></i> Quantity Takeoff</span>
+                    <span class="cap"><i class="fas fa-check-circle"></i> Fabrication Documentation</span>
+                    <span class="cap"><i class="fas fa-check-circle"></i> Remote Support</span>
                 </div>
             </div>
         </section>
@@ -2734,7 +2973,7 @@
             </div>
         </section>
 
-        <!-- ===== SERVICES ===== -->
+        <!-- ===== SERVICES (detailed) ===== -->
         <section class="services-section" id="services" aria-label="Engineering services">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -3759,27 +3998,83 @@
             const galleryProjects = portfolioData.filter(p => p.featured !== true);
 
             // ============================================================
-            // HERO SLIDER
+            // HERO SLIDER — Prioritized Featured Projects
             // ============================================================
+
+            // Helper to generate evidence string for featured projects
+            function getFeaturedEvidence(project) {
+                const captions = (project.images || []).map(img => img.caption || '');
+                const allText = captions.join(' ').toLowerCase();
+                const parts = [];
+
+                if (allText.includes('tekla') || allText.includes('3d bim') || allText.includes('bim model')) parts.push('3D BIM');
+                if (allText.includes('anchor') || allText.includes('base plate')) parts.push('Anchor Layout');
+                if (allText.includes('beam') || allText.includes('rafter')) parts.push('Framing');
+                if (allText.includes('section') || allText.includes('cross-section')) parts.push('Sections');
+                if (allText.includes('assembly') || allText.includes('bom')) parts.push('Assembly');
+                if (allText.includes('part') || allText.includes('single-part')) parts.push('Part Drawings');
+                if (allText.includes('moq') || allText.includes('quantity') || allText.includes('weight')) parts.push('MTO');
+                if (allText.includes('analysis') || allText.includes('staad')) parts.push('Analysis');
+                if (allText.includes('ga') || allText.includes('general arrangement')) parts.push('GA');
+                if (allText.includes('fabrication') || allText.includes('shop')) parts.push('Fabrication Drawings');
+                if (allText.includes('erection')) parts.push('Erection');
+
+                if (parts.length === 0) {
+                    const software = project.software || '';
+                    if (software.includes('STAAD')) parts.push('STAAD.Pro');
+                    if (software.includes('Tekla')) parts.push('Tekla');
+                    if (parts.length === 0) parts.push('Engineering Documentation');
+                }
+
+                return parts.slice(0, 4).join(' • ');
+            }
+
+            // Build hero slides: featured first, then gallery
+            const heroSlides = [
+                ...featuredProjects.map(project => ({
+                    type: 'featured',
+                    projectId: project.id,
+                    project: project,
+                    src: project.thumbnail,
+                    title: project.title,
+                    evidence: getFeaturedEvidence(project),
+                    ctaText: 'View Detailed Portfolio →',
+                    ctaAction: 'modal'
+                })),
+                ...galleryProjects.map(project => ({
+                    type: 'gallery',
+                    projectId: project.id,
+                    project: project,
+                    src: project.thumbnail,
+                    title: project.title,
+                    evidence: '',
+                    ctaText: 'View Images →',
+                    ctaAction: 'gallery-modal'
+                }))
+            ];
+
+            // Hero DOM references
             const heroSlideImage = document.getElementById('heroSlideImage');
-            const heroSlideLabel = document.getElementById('heroSlideLabel');
             const heroSliderDots = document.getElementById('heroSliderDots');
             const heroSliderPrev = document.getElementById('heroSliderPrev');
             const heroSliderNext = document.getElementById('heroSliderNext');
-
-            const heroSlides = portfolioData.map(p => ({
-                src: p.thumbnail,
-                label: p.title,
-                projectId: p.id
-            }));
+            const heroSlideType = document.getElementById('heroSlideType');
+            const heroSlideTitle = document.getElementById('heroSlideTitle');
+            const heroSlideMeta = document.getElementById('heroSlideMeta');
+            const heroSlideCta = document.getElementById('heroSlideCta');
+            const heroSlideCounter = document.getElementById('heroSlideCounter');
 
             let currentHeroSlide = 0;
             let heroInterval;
 
+            // Render dots
             function renderHeroDots() {
-                heroSliderDots.innerHTML = heroSlides.map((_, idx) => `
-                        <button class="dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" aria-label="Go to project ${idx + 1}"></button>
-                    `).join('');
+                heroSliderDots.innerHTML = heroSlides.map((slide, idx) => {
+                    const label = slide.type === 'featured' ?
+                        `Featured case study ${idx + 1}` :
+                        `Project gallery image ${idx - featuredProjects.length + 1}`;
+                    return `<button class="dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" aria-label="${label}"></button>`;
+                }).join('');
 
                 heroSliderDots.querySelectorAll('.dot').forEach(dot => {
                     dot.addEventListener('click', function() {
@@ -3789,22 +4084,58 @@
                 });
             }
 
+            // Go to slide
             function goToHeroSlide(index) {
                 currentHeroSlide = index;
                 const slide = heroSlides[index];
                 if (!slide) return;
 
+                // Update image
                 heroSlideImage.src = slide.src;
-                heroSlideImage.alt = slide.label;
-                heroSlideLabel.innerHTML = '<i class="fas fa-cube"></i> ' + slide.label;
+                heroSlideImage.alt = slide.title;
 
+                // Update overlay
+                const isFeatured = slide.type === 'featured';
+                heroSlideType.textContent = isFeatured ? 'FEATURED CASE STUDY' : 'PROJECT GALLERY';
+                heroSlideType.style.color = isFeatured ? 'var(--accent-light)' : 'rgba(255,255,255,0.5)';
+                heroSlideTitle.textContent = slide.title;
+                heroSlideMeta.textContent = isFeatured ? slide.evidence : '';
+                heroSlideMeta.style.display = isFeatured ? 'block' : 'none';
+                heroSlideCta.textContent = isFeatured ? 'View Detailed Portfolio →' : 'View Images →';
+
+                // Update counter
+                if (isFeatured) {
+                    const featuredIndex = featuredProjects.findIndex(p => p.id === slide.projectId) + 1;
+                    heroSlideCounter.textContent = `CASE STUDY ${String(featuredIndex).padStart(2, '0')} / ${String(featuredProjects.length).padStart(2, '0')}`;
+                    heroSlideCounter.style.display = 'block';
+                } else {
+                    heroSlideCounter.textContent = 'PROJECT GALLERY';
+                    heroSlideCounter.style.display = 'block';
+                }
+
+                // CTA click
+                heroSlideCta.onclick = function(e) {
+                    e.stopPropagation();
+                    if (isFeatured) {
+                        openModal(slide.projectId);
+                    } else {
+                        openGalleryModal(slide.projectId);
+                    }
+                };
+
+                // Image click
+                heroSlideImage.onclick = function() {
+                    if (isFeatured) {
+                        openModal(slide.projectId);
+                    } else {
+                        openGalleryModal(slide.projectId);
+                    }
+                };
+
+                // Update dots
                 heroSliderDots.querySelectorAll('.dot').forEach((dot, i) => {
                     dot.classList.toggle('active', i === index);
                 });
-
-                heroSlideImage.onclick = function() {
-                    openModal(slide.projectId);
-                };
 
                 resetHeroInterval();
             }
@@ -3821,9 +4152,10 @@
 
             function resetHeroInterval() {
                 clearInterval(heroInterval);
-                heroInterval = setInterval(nextHeroSlide, 5000);
+                heroInterval = setInterval(nextHeroSlide, 6000);
             }
 
+            // Arrows
             heroSliderPrev.addEventListener('click', function(e) {
                 e.stopPropagation();
                 prevHeroSlide();
@@ -3834,18 +4166,18 @@
                 nextHeroSlide();
             });
 
+            // Pause on hover / focus
+            const heroContainer = document.getElementById('heroSlider');
+            heroContainer.addEventListener('mouseenter', () => { clearInterval(heroInterval); });
+            heroContainer.addEventListener('mouseleave', () => { resetHeroInterval(); });
+            heroContainer.addEventListener('focusin', () => { clearInterval(heroInterval); });
+            heroContainer.addEventListener('focusout', () => { resetHeroInterval(); });
+
+            // Init
             function initHeroSlider() {
                 renderHeroDots();
                 goToHeroSlide(0);
             }
-
-            const heroContainer = document.getElementById('heroSlider');
-            heroContainer.addEventListener('mouseenter', () => {
-                clearInterval(heroInterval);
-            });
-            heroContainer.addEventListener('mouseleave', () => {
-                resetHeroInterval();
-            });
 
             // ============================================================
             // RENDER FEATURED PROJECTS
@@ -4047,7 +4379,6 @@
                     document.getElementById('modalWeight').style.display = 'block';
                     modalDescription.style.display = 'block';
                 } else {
-                    // Gallery project — show minimal info
                     modalDescription.textContent = project.title + ' — ' + (project.scope || 'Engineering project') +
                         (project.totalWeight ? ' | Total Steel: ' + project.totalWeight : '');
                     mSoftware.textContent = project.software || '—';
