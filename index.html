@@ -1180,6 +1180,18 @@
             text-transform: uppercase;
             letter-spacing: 0.3px;
         }
+        .gallery-item .img-wrap .weight-badge {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(30, 111, 217, 0.8);
+            backdrop-filter: blur(4px);
+            color: var(--white);
+            padding: 1px 10px;
+            border-radius: 3px;
+            font-size: 0.5rem;
+            font-weight: 600;
+        }
         .gallery-item .caption {
             padding: 8px 12px 10px;
             text-align: center;
@@ -1192,6 +1204,11 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+        .gallery-item .caption .sub {
+            font-size: 0.65rem;
+            color: var(--steel);
+            display: block;
         }
 
         /* --- Filters --- */
@@ -3455,7 +3472,7 @@
             'use strict';
 
             // ============================================================
-            // PORTFOLIO DATA — 3 Featured + 13 Gallery (total 16)
+            // PORTFOLIO DATA — 3 Featured + 7 Gallery (total 10)
             // ============================================================
             const portfolioData = [{
                 // Featured 1
@@ -3736,150 +3753,6 @@
                     { src: 'pic/projects/10b.png', caption: '3D View — Side elevation showing the truss configuration and column layout.' },
                     { src: 'pic/projects/10c.png', caption: '3D View — Roof truss details and framing plan for the canopy structure.' }
                 ]
-            }, {
-                // Gallery 11 — Structural Steel Framing (existing)
-                id: 11,
-                title: 'Structural Steel Framing',
-                subtitle: 'Bangladesh · 32,000 ft²',
-                thumbnail: 'pic/projects/3d_a_1.png',
-                badge: 'Steel',
-                filter: ['steel', 'industrial', 'tekla'],
-                location: 'Bangladesh',
-                scope: 'Structural Steel',
-                description: '',
-                software: 'Tekla Structures',
-                duration: '',
-                totalWeight: '',
-                phases: '',
-                weightMain: '',
-                weightForming: '',
-                weightTotal: '',
-                featured: false,
-                images: [
-                    { src: 'pic/projects/3d_a_1.png', caption: '3D View — Isometric view of the industrial shed structure.' },
-                    { src: 'pic/projects/3d_a_2.png', caption: '3D View — Side elevation showing frame configuration.' },
-                    { src: 'pic/projects/3d_a_3.png', caption: '3D View — Top view showing roof and bracing layout.' }
-                ]
-            }, {
-                // Gallery 12 — Commercial Steel Complex (existing)
-                id: 12,
-                title: 'Commercial Steel Complex',
-                subtitle: 'Bangladesh · 22,000 ft²',
-                thumbnail: 'pic/projects/3d_b_1.png',
-                badge: 'Steel',
-                filter: ['steel', 'tekla'],
-                location: 'Bangladesh',
-                scope: 'Commercial / Steel',
-                description: '',
-                software: 'Tekla Structures',
-                duration: '',
-                totalWeight: '',
-                phases: '',
-                weightMain: '',
-                weightForming: '',
-                weightTotal: '',
-                featured: false,
-                images: [
-                    { src: 'pic/projects/3d_b_1.png', caption: '3D View — Isometric view of the commercial complex structure.' },
-                    { src: 'pic/projects/3d_b_2.png', caption: '3D View — Front elevation showing column and beam layout.' },
-                    { src: 'pic/projects/3d_b_3.png', caption: '3D View — Plan view of the floor framing system.' }
-                ]
-            }, {
-                // Gallery 13 — Warehouse Extension (existing)
-                id: 13,
-                title: 'Warehouse Extension',
-                subtitle: 'Bangladesh · 48,000 ft²',
-                thumbnail: 'pic/projects/3d_c_1.png',
-                badge: 'PEB',
-                filter: ['peb', 'industrial', 'tekla'],
-                location: 'Bangladesh',
-                scope: 'Industrial / PEB',
-                description: '',
-                software: 'Tekla Structures',
-                duration: '',
-                totalWeight: '',
-                phases: '',
-                weightMain: '',
-                weightForming: '',
-                weightTotal: '',
-                featured: false,
-                images: [
-                    { src: 'pic/projects/3d_c_1.png', caption: '3D View — Isometric view of the warehouse extension.' },
-                    { src: 'pic/projects/3d_c_2.png', caption: '3D View — Side view showing the extension integration.' },
-                    { src: 'pic/projects/3d_c_3.png', caption: '3D View — Roof layout and bracing configuration.' }
-                ]
-            }, {
-                // Gallery 14 — Factory Building (existing)
-                id: 14,
-                title: 'Factory Building',
-                subtitle: 'Bangladesh · 65,000 ft²',
-                thumbnail: 'pic/projects/3d_d_1.png',
-                badge: 'PEB',
-                filter: ['peb', 'industrial', 'tekla'],
-                location: 'Bangladesh',
-                scope: 'Industrial / PEB',
-                description: '',
-                software: 'Tekla Structures',
-                duration: '',
-                totalWeight: '',
-                phases: '',
-                weightMain: '',
-                weightForming: '',
-                weightTotal: '',
-                featured: false,
-                images: [
-                    { src: 'pic/projects/3d_d_1.png', caption: '3D View — Isometric view of the factory building.' },
-                    { src: 'pic/projects/3d_d_2.png', caption: '3D View — Front elevation showing the main framing.' },
-                    { src: 'pic/projects/3d_d_3.png', caption: '3D View — Roof and mezzanine layout.' }
-                ]
-            }, {
-                // Gallery 15 — Showroom Structure (existing)
-                id: 15,
-                title: 'Showroom Structure',
-                subtitle: 'Bangladesh · 12,000 ft²',
-                thumbnail: 'pic/projects/3d_e_1.png',
-                badge: 'Steel',
-                filter: ['steel', 'tekla'],
-                location: 'Bangladesh',
-                scope: 'Commercial / Steel',
-                description: '',
-                software: 'Tekla Structures',
-                duration: '',
-                totalWeight: '',
-                phases: '',
-                weightMain: '',
-                weightForming: '',
-                weightTotal: '',
-                featured: false,
-                images: [
-                    { src: 'pic/projects/3d_e_1.png', caption: '3D View — Isometric view of the showroom structure.' },
-                    { src: 'pic/projects/3d_e_2.png', caption: '3D View — Side elevation showing the frame design.' },
-                    { src: 'pic/projects/3d_e_3.png', caption: '3D View — Floor and roof layout.' }
-                ]
-            }, {
-                // Gallery 16 — Multi-level Car Park (existing)
-                id: 16,
-                title: 'Multi-level Car Park',
-                subtitle: 'Bangladesh · 38,000 ft²',
-                thumbnail: 'pic/projects/3d_f_1.png',
-                badge: 'Steel',
-                filter: ['steel', 'tekla'],
-                location: 'Bangladesh',
-                scope: 'Commercial / Steel',
-                description: '',
-                software: 'Tekla Structures',
-                duration: '',
-                totalWeight: '',
-                phases: '',
-                weightMain: '',
-                weightForming: '',
-                weightTotal: '',
-                featured: false,
-                images: [
-                    { src: 'pic/projects/3d_f_1.png', caption: '3D View — Isometric view of the multi-level car park.' },
-                    { src: 'pic/projects/3d_f_2.png', caption: '3D View — Side view showing the ramp and floor levels.' },
-                    { src: 'pic/projects/3d_f_3.png', caption: '3D View — Plan layout of the parking levels.' }
-                ]
             }];
 
             const featuredProjects = portfolioData.filter(p => p.featured === true);
@@ -4033,10 +3906,11 @@
                             <div class="img-wrap">
                                 <img src="${project.thumbnail}" alt="${project.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=400&h=300&fit=crop'" />
                                 <span class="gallery-badge">${project.badge}</span>
-                                ${project.totalWeight ? `<span class="gallery-badge" style="left:auto;right:8px;bottom:8px;background:rgba(0,0,0,0.6);">${project.totalWeight}</span>` : ''}
+                                ${project.totalWeight ? `<span class="weight-badge">${project.totalWeight}</span>` : ''}
                             </div>
                             <div class="caption">
                                 <span class="title">${project.title}</span>
+                                <span class="sub">${project.subtitle}</span>
                             </div>
                         </div>
                     `).join('');
