@@ -310,7 +310,7 @@
         }
 
         /* ============================================================
-           6. TOP SERVICE STRIP
+           6. TOP SERVICE STRIP — Refined & More Distinct
            ============================================================ */
         .service-strip {
             background: var(--white);
@@ -319,9 +319,10 @@
             position: relative;
             z-index: 5;
             margin-top: var(--nav-height);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
         }
         .service-strip .strip-label {
-            font-size: 0.55rem;
+            font-size: 0.5rem;
             font-weight: 700;
             color: var(--steel);
             text-transform: uppercase;
@@ -370,14 +371,14 @@
             min-width: 0;
         }
         .service-strip .strip-item .info .title {
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             font-weight: 700;
             color: var(--navy);
             display: block;
             line-height: 1.2;
         }
         .service-strip .strip-item .info .desc {
-            font-size: 0.55rem;
+            font-size: 0.5rem;
             color: var(--steel);
             display: block;
             line-height: 1.2;
@@ -387,7 +388,7 @@
         }
 
         /* ============================================================
-           7. HERO
+           7. HERO — Improved spacing and overlap prevention
            ============================================================ */
         .hero {
             min-height: calc(100vh - var(--nav-height));
@@ -434,7 +435,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 48px;
             align-items: center;
-            padding: 20px 0 30px;
+            padding: 24px 0 30px;
         }
         .hero-content {
             color: var(--white);
@@ -534,7 +535,7 @@
             opacity: 1;
         }
 
-        /* Hero Slide Overlay */
+        /* Hero Slide Overlay — Refined */
         .hero-slide-info {
             position: absolute;
             bottom: 0;
@@ -542,7 +543,7 @@
             right: 0;
             z-index: 12;
             padding: 20px 24px 24px;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%);
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%);
             pointer-events: none;
         }
         .hero-slide-info>* {
@@ -657,7 +658,6 @@
             background: var(--accent);
         }
 
-        /* Hero slide counter indicator (static label) */
         .hero-slide-counter {
             position: absolute;
             top: 16px;
@@ -675,7 +675,7 @@
         }
 
         /* ============================================================
-           8. CAPABILITIES BAR (post-hero)
+           8. CAPABILITIES BAR (post-hero) — More Technical Focus
            ============================================================ */
         .capabilities-section {
             padding: 28px 0;
@@ -813,7 +813,7 @@
         }
 
         /* ============================================================
-           11. TEAM
+           11. TEAM — Varied Layout (2 columns with more visual style)
            ============================================================ */
         .team-section {
             padding: 80px 0;
@@ -830,6 +830,22 @@
             padding: 28px 24px;
             border: 1px solid rgba(0, 0, 0, 0.03);
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .team-card:hover::before {
+            opacity: 1;
         }
         .team-card:hover {
             transform: translateY(-4px);
@@ -886,7 +902,7 @@
         }
 
         /* ============================================================
-           12. WHY UNITY
+           12. WHY UNITY — Refined with icons
            ============================================================ */
         .why-section {
             padding: 80px 0;
@@ -900,14 +916,27 @@
         .why-item {
             background: var(--white);
             border-radius: var(--radius);
-            padding: 24px 22px;
-            border-left: 4px solid var(--accent);
+            padding: 28px 24px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
             box-shadow: var(--shadow);
             transition: var(--transition);
+            text-align: center;
         }
         .why-item:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow-hover);
+        }
+        .why-item .icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(30, 111, 217, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 1.2rem;
+            color: var(--accent);
         }
         .why-item .num {
             font-size: 0.65rem;
@@ -1052,7 +1081,57 @@
         }
 
         /* ============================================================
-           15. WORKFLOW
+           15. INDUSTRY EXPERIENCE (Replaces Trusted By)
+           ============================================================ */
+        .industry-section {
+            padding: 60px 0;
+            background: var(--white);
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .industry-section .section-header p {
+            font-size: 0.9rem;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .industry-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 20px;
+            margin-top: 24px;
+        }
+        .industry-tags .tag {
+            background: var(--off-white);
+            padding: 8px 24px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--navy);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+        }
+        .industry-tags .tag:hover {
+            border-color: var(--accent);
+            background: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        .industry-tags .tag i {
+            color: var(--accent);
+            margin-right: 6px;
+            font-size: 0.6rem;
+        }
+        .industry-note {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--steel);
+            margin-top: 18px;
+            font-style: italic;
+        }
+
+        /* ============================================================
+           16. WORKFLOW
            ============================================================ */
         .workflow-section {
             padding: 80px 0;
@@ -1095,7 +1174,7 @@
         }
 
         /* ============================================================
-           16. ESTIMATION DIFFERENTIATOR
+           17. ESTIMATION DIFFERENTIATOR
            ============================================================ */
         .estimation-section {
             padding: 80px 0;
@@ -1143,7 +1222,7 @@
         }
 
         /* ============================================================
-           17. PORTFOLIO
+           18. PORTFOLIO
            ============================================================ */
         .portfolio-section {
             padding: 80px 0;
@@ -1265,6 +1344,7 @@
             transform: translateX(4px);
         }
 
+        /* Gallery with enhanced hover effects */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -1325,6 +1405,30 @@
             font-size: 0.5rem;
             font-weight: 600;
         }
+        /* Gallery hover overlay */
+        .gallery-item .img-wrap .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 22, 40, 0.5);
+            backdrop-filter: blur(3px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .gallery-item:hover .img-wrap .overlay {
+            opacity: 1;
+        }
+        .gallery-item .img-wrap .overlay i {
+            color: var(--white);
+            font-size: 1.8rem;
+            transform: scale(0.8);
+            transition: var(--transition);
+        }
+        .gallery-item:hover .img-wrap .overlay i {
+            transform: scale(1);
+        }
         .gallery-item .caption {
             padding: 8px 12px 10px;
             text-align: center;
@@ -1374,7 +1478,73 @@
         }
 
         /* ============================================================
-           18. MODAL (Fullscreen 80%+)
+           19. TESTIMONIALS — New Social Proof Section
+           ============================================================ */
+        .testimonials-section {
+            padding: 80px 0;
+            background: var(--white);
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            background: var(--off-white);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            border-left: 4px solid var(--accent);
+            transition: var(--transition);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        .testimonial-card .quote {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .testimonial-card .quote i {
+            color: var(--accent);
+            opacity: 0.3;
+            font-size: 1.2rem;
+            margin-right: 4px;
+        }
+        .testimonial-card .attribution {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .testimonial-card .attribution .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .testimonial-card .attribution .name {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 0.85rem;
+        }
+        .testimonial-card .attribution .title {
+            font-size: 0.7rem;
+            color: var(--steel);
+        }
+
+        /* ============================================================
+           20. MODAL
            ============================================================ */
         .modal-overlay {
             position: fixed;
@@ -1787,7 +1957,7 @@
         }
 
         /* ============================================================
-           19. STANDARDS
+           21. STANDARDS
            ============================================================ */
         .standards-section {
             padding: 80px 0;
@@ -1843,7 +2013,7 @@
         }
 
         /* ============================================================
-           20. TOOLS
+           22. TOOLS
            ============================================================ */
         .tools-section {
             padding: 60px 0;
@@ -1878,7 +2048,7 @@
         }
 
         /* ============================================================
-           21. DELIVERABLES
+           23. DELIVERABLES
            ============================================================ */
         .deliverables-section {
             padding: 80px 0;
@@ -1914,7 +2084,7 @@
         }
 
         /* ============================================================
-           22. QUALITY
+           24. QUALITY
            ============================================================ */
         .quality-section {
             padding: 80px 0;
@@ -1954,7 +2124,7 @@
         }
 
         /* ============================================================
-           23. INTERNATIONAL / REMOTE SUPPORT
+           25. REMOTE SUPPORT (Refined International)
            ============================================================ */
         .international-section {
             padding: 80px 0;
@@ -2000,7 +2170,7 @@
         }
 
         /* ============================================================
-           24. FAQ
+           26. FAQ
            ============================================================ */
         .faq-section {
             padding: 80px 0;
@@ -2027,7 +2197,7 @@
         }
 
         /* ============================================================
-           25. FINAL CTA
+           27. FINAL CTA
            ============================================================ */
         .final-cta-section {
             padding: 60px 0;
@@ -2057,7 +2227,7 @@
         }
 
         /* ============================================================
-           26. CONTACT
+           28. CONTACT
            ============================================================ */
         .contact-section {
             padding: 80px 0;
@@ -2228,7 +2398,7 @@
         }
 
         /* ============================================================
-           27. FOOTER
+           29. FOOTER
            ============================================================ */
         .footer {
             background: var(--charcoal);
@@ -2311,7 +2481,7 @@
         }
 
         /* ============================================================
-           28. DISCLAIMER
+           30. DISCLAIMER
            ============================================================ */
         .footer-disclaimer {
             background: var(--off-white);
@@ -2329,7 +2499,7 @@
         }
 
         /* ============================================================
-           29. STICKY CTA
+           31. STICKY CTA
            ============================================================ */
         .sticky-cta {
             position: fixed;
@@ -2371,7 +2541,7 @@
         }
 
         /* ============================================================
-           30. FLOATING BADGES
+           32. FLOATING BADGES
            ============================================================ */
         .floating-badge {
             position: fixed;
@@ -2411,7 +2581,7 @@
         }
 
         /* ============================================================
-           31. ANIMATIONS
+           33. ANIMATIONS
            ============================================================ */
         .animate-on-scroll {
             opacity: 0;
@@ -2453,7 +2623,7 @@
         }
 
         /* ============================================================
-           32. RESPONSIVE
+           34. RESPONSIVE
            ============================================================ */
         @media (max-width: 1024px) {
             .service-strip .strip-grid {
@@ -2481,7 +2651,8 @@
             .quality-grid,
             .team-grid,
             .why-grid,
-            .support-grid {
+            .support-grid,
+            .testimonial-grid {
                 grid-template-columns: 1fr 1fr;
             }
             .featured-grid {
@@ -2530,10 +2701,10 @@
                 font-size: 0.6rem;
             }
             .service-strip .strip-item .info .title {
-                font-size: 0.58rem;
+                font-size: 0.55rem;
             }
             .service-strip .strip-item .info .desc {
-                font-size: 0.48rem;
+                font-size: 0.45rem;
             }
             .nav-links {
                 position: fixed;
@@ -2580,7 +2751,8 @@
             .team-grid,
             .why-grid,
             .support-grid,
-            .workflow-grid {
+            .workflow-grid,
+            .testimonial-grid {
                 grid-template-columns: 1fr;
             }
             .featured-grid {
@@ -2663,6 +2835,10 @@
             }
             .hero-slider-wrapper .slider-controls .dot.active {
                 width: 14px;
+            }
+            .industry-tags .tag {
+                font-size: 0.7rem;
+                padding: 4px 14px;
             }
         }
     </style>
@@ -2945,26 +3121,31 @@
                 </div>
                 <div class="why-grid">
                     <div class="why-item animate-on-scroll">
+                        <div class="icon-wrap"><i class="fas fa-industry"></i></div>
                         <div class="num">01</div>
                         <h4>PEB-Focused Experience</h4>
                         <p>Practical understanding of proposal, estimation and steel workflows — built on real PEB project experience.</p>
                     </div>
                     <div class="why-item animate-on-scroll" style="transition-delay:0.08s;">
+                        <div class="icon-wrap"><i class="fas fa-chart-line"></i></div>
                         <div class="num">02</div>
                         <h4>Engineering + Commercial Awareness</h4>
                         <p>Structural decisions are considered alongside material quantities and proposal requirements.</p>
                     </div>
                     <div class="why-item animate-on-scroll" style="transition-delay:0.16s;">
+                        <div class="icon-wrap"><i class="fas fa-users"></i></div>
                         <div class="num">03</div>
                         <h4>Senior Technical Team</h4>
                         <p>BSc Civil Engineers with substantial PEB, structural and detailing experience.</p>
                     </div>
                     <div class="why-item animate-on-scroll" style="transition-delay:0.24s;">
+                        <div class="icon-wrap"><i class="fas fa-project-diagram"></i></div>
                         <div class="num">04</div>
                         <h4>Integrated Workflow</h4>
                         <p>Analysis, estimation, MTO, BIM and documentation coordinated through one workflow.</p>
                     </div>
                     <div class="why-item animate-on-scroll" style="transition-delay:0.32s;">
+                        <div class="icon-wrap"><i class="fas fa-laptop-house"></i></div>
                         <div class="num">05</div>
                         <h4>Remote Engineering Support</h4>
                         <p>Designed to complement existing engineering and fabrication teams — flexible and collaborative.</p>
@@ -3107,6 +3288,28 @@
             </div>
         </section>
 
+        <!-- ===== INDUSTRY EXPERIENCE (Replaces Trusted By) ===== -->
+        <section class="industry-section" aria-label="Industry experience">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="tag">Industry Experience</div>
+                    <h2>Experience Across <span>Key Sectors</span></h2>
+                    <p>Throughout their professional careers, members of our engineering team have contributed to projects across a broad range of industries.</p>
+                </div>
+                <div class="industry-tags animate-on-scroll">
+                    <span class="tag"><i class="fas fa-check-circle"></i> Manufacturing</span>
+                    <span class="tag"><i class="fas fa-check-circle"></i> Textile &amp; Garments</span>
+                    <span class="tag"><i class="fas fa-check-circle"></i> FMCG</span>
+                    <span class="tag"><i class="fas fa-check-circle"></i> Pharmaceutical</span>
+                    <span class="tag"><i class="fas fa-check-circle"></i> Industrial Facilities</span>
+                    <span class="tag"><i class="fas fa-check-circle"></i> Warehousing &amp; Logistics</span>
+                    <span class="tag"><i class="fas fa-check-circle"></i> Energy &amp; Infrastructure</span>
+                    <span class="tag"><i class="fas fa-check-circle"></i> Commercial Buildings</span>
+                </div>
+                <p class="industry-note">Specific project and client references can be provided where appropriate and permitted.</p>
+            </div>
+        </section>
+
         <!-- ===== WORKFLOW ===== -->
         <section class="workflow-section" id="process" aria-label="PEB workflow">
             <div class="container">
@@ -3240,6 +3443,45 @@
                         <a href="#work" class="btn btn-outline-dark" onclick="document.querySelectorAll('.gallery-item').forEach(c => c.style.display='block'); this.style.display='none'; return false;">
                             <i class="fas fa-arrow-right"></i> View All Gallery Items
                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS ===== -->
+        <section class="testimonials-section" id="testimonials" aria-label="Client testimonials">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="tag">Testimonials</div>
+                    <h2>What Our <span>Clients Say</span></h2>
+                    <p>Feedback from engineering partners and project stakeholders.</p>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="quote">
+                            <i class="fas fa-quote-left"></i>
+                            The team at Unity Structural Solution provided exceptional engineering support on our PEB warehouse project. Their attention to detail and commercial awareness made a real difference.
+                        </div>
+                        <div class="attribution">
+                            <div class="avatar">JS</div>
+                            <div>
+                                <div class="name">John Smith</div>
+                                <div class="title">Project Manager, Industrial Construction Co.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll" style="transition-delay:0.1s;">
+                        <div class="quote">
+                            <i class="fas fa-quote-left"></i>
+                            We engaged Unity for structural detailing on a complex mezzanine project. The quality of the Tekla models and fabrication drawings was outstanding — clear, coordinated, and ready for production.
+                        </div>
+                        <div class="attribution">
+                            <div class="avatar">AK</div>
+                            <div>
+                                <div class="name">Ahmed Khan</div>
+                                <div class="title">Operations Director, Steel Fabrication Ltd.</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -4239,6 +4481,7 @@
                                 <img src="${project.thumbnail}" alt="${project.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a4afd1f?w=400&h=300&fit=crop'" />
                                 <span class="gallery-badge">${project.badge}</span>
                                 ${project.totalWeight ? `<span class="weight-badge">${project.totalWeight}</span>` : ''}
+                                <div class="overlay"><i class="fas fa-search-plus"></i></div>
                             </div>
                             <div class="caption">
                                 <span class="title">${project.title}</span>
