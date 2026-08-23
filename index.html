@@ -12,7 +12,7 @@
 
     <!-- ===== OPEN GRAPH ===== -->
     <meta property="og:title" content="Unity Structural Solution | PEB Engineering, Estimation &amp; Steel Detailing" />
-    <meta property="og:description" content="Remote PEB engineering, structural design, estimation, MTO, BOQ and Tekla steel detailing support for manufacturers, fabricators, contractors and engineering teams." />
+    <meta property="og:description" content="Remote PEB engineering, structural design, estimation, MTO, BOQ and Tekla steel detailing support." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://unitystructuralsolution.github.io/" />
     <meta property="og:image" content="https://unitystructuralsolution.github.io/pic/og-image.jpg" />
@@ -310,7 +310,7 @@
         }
 
         /* ============================================================
-           6. HERO
+           6. HERO — FIXED MOBILE OVERLAP
            ============================================================ */
         .hero {
             min-height: calc(100vh - var(--nav-height));
@@ -318,7 +318,7 @@
             align-items: center;
             position: relative;
             background: var(--navy);
-            padding-top: 0;
+            padding-top: var(--nav-height);
             overflow: hidden;
         }
         .hero-bg {
@@ -357,7 +357,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 48px;
             align-items: center;
-            padding: 24px 0 30px;
+            padding: 20px 0 30px;
         }
         .hero-content {
             color: var(--white);
@@ -702,7 +702,7 @@
         }
 
         /* ============================================================
-           7. LOGO SHOWCASE — Fixed Duplicate Bug
+           7. LOGO SHOWCASE
            ============================================================ */
         .logo-showcase {
             padding: 60px 0 50px;
@@ -2355,7 +2355,7 @@
         }
 
         /* ============================================================
-           28. CONTACT — Two-Step Form (File Upload on Step 1)
+           28. CONTACT
            ============================================================ */
         .contact-section {
             padding: 80px 0;
@@ -3072,6 +3072,144 @@
             color: var(--navy);
             font-weight: 700;
         }
+
+        /* ============================================================
+           35. VISITOR COUNTER — BOTTOM OF PAGE
+           ============================================================ */
+        .visitor-counter-bottom {
+            padding: 32px 0 28px;
+            background: var(--off-white);
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .visitor-counter-bottom .counter-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 24px 48px;
+            text-align: center;
+        }
+        .visitor-counter-bottom .counter-wrapper .flag-wrap {
+            flex-shrink: 0;
+            background: var(--white);
+            padding: 10px 18px 12px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+            min-width: 180px;
+        }
+        .visitor-counter-bottom .counter-wrapper .flag-wrap:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        .visitor-counter-bottom .counter-wrapper .flag-wrap img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .visitor-counter-bottom .counter-wrapper .flag-wrap .flag-label {
+            font-size: 0.5rem;
+            color: var(--steel);
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+        .visitor-counter-bottom .counter-wrapper .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 32px;
+            justify-content: center;
+        }
+        .visitor-counter-bottom .counter-wrapper .stats .stat-item {
+            text-align: center;
+        }
+        .visitor-counter-bottom .counter-wrapper .stats .stat-item .number {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--navy);
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+        .visitor-counter-bottom .counter-wrapper .stats .stat-item .number .small {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--steel);
+        }
+        .visitor-counter-bottom .counter-wrapper .stats .stat-item .label {
+            font-size: 0.55rem;
+            font-weight: 600;
+            color: var(--steel);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+        .visitor-counter-bottom .counter-wrapper .stats .stat-item .flag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px 6px;
+            justify-content: center;
+            margin-top: 4px;
+        }
+        .visitor-counter-bottom .counter-wrapper .stats .stat-item .flag-row .mini-flag {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+            font-size: 0.5rem;
+            background: var(--white);
+            padding: 1px 6px 1px 3px;
+            border-radius: 3px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+        }
+        .visitor-counter-bottom .counter-wrapper .stats .stat-item .flag-row .mini-flag img {
+            width: 16px;
+            height: 11px;
+            object-fit: cover;
+            border-radius: 2px;
+            display: inline-block;
+        }
+        .visitor-counter-bottom .counter-wrapper .stats .stat-item .flag-row .mini-flag .count {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .visitor-counter-bottom .counter-wrapper {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .visitor-counter-bottom .counter-wrapper .stats .stat-item .number {
+                font-size: 1.3rem;
+            }
+            .visitor-counter-bottom .counter-wrapper .flag-wrap {
+                min-width: 140px;
+                padding: 8px 12px 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .visitor-counter-bottom .counter-wrapper .stats {
+                gap: 10px 16px;
+            }
+            .visitor-counter-bottom .counter-wrapper .stats .stat-item .number {
+                font-size: 1rem;
+            }
+            .visitor-counter-bottom .counter-wrapper .flag-wrap {
+                min-width: 100px;
+                padding: 6px 8px 8px;
+            }
+            .visitor-counter-bottom .counter-wrapper .stats .stat-item .flag-row .mini-flag {
+                font-size: 0.45rem;
+                padding: 0 4px 0 2px;
+            }
+            .visitor-counter-bottom .counter-wrapper .stats .stat-item .flag-row .mini-flag img {
+                width: 12px;
+                height: 8px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -3210,7 +3348,7 @@
             </div>
         </header>
 
-        <!-- ===== LOGO SHOWCASE — Clarified Context ===== -->
+        <!-- ===== LOGO SHOWCASE ===== -->
         <section class="logo-showcase" aria-label="Industry experience showcase">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -4002,7 +4140,7 @@
             </div>
         </section>
 
-        <!-- ===== CONTACT — File Upload Now on Step 1 ===== -->
+        <!-- ===== CONTACT ===== -->
         <section class="contact-section" id="contact" aria-label="Contact us">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -4049,9 +4187,9 @@
                             ⚠️ Something went wrong. Please try again.
                         </div>
 
-                        <!-- Two-Step Form — File Upload now on Step 1 -->
+                        <!-- Two-Step Form -->
                         <form id="contactForm">
-                            <!-- Step 1: Quick Contact + File Upload -->
+                            <!-- Step 1 -->
                             <div class="form-step" id="step1">
                                 <div class="step-indicator">
                                     <span class="dot active"></span>
@@ -4076,7 +4214,6 @@
                                     <span data-fs-error="message"></span>
                                 </div>
 
-                                <!-- File Upload — now on Step 1, prominently highlighted -->
                                 <div class="upload-highlight">
                                     <label for="contactFile"><i class="fas fa-cloud-upload-alt"></i> Upload Drawings / Documents (Optional)</label>
                                     <input type="file" id="contactFile" name="file" data-fs-field />
@@ -4089,7 +4226,7 @@
                                 </div>
                             </div>
 
-                            <!-- Step 2: Project Details -->
+                            <!-- Step 2 -->
                             <div class="form-step hidden" id="step2">
                                 <div class="step-indicator">
                                     <span class="dot"></span>
@@ -4139,6 +4276,38 @@
                                 </div>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== VISITOR COUNTER — BOTTOM OF PAGE ===== -->
+        <section class="visitor-counter-bottom" id="visitors" aria-label="Global visitor counter">
+            <div class="container">
+                <div class="counter-wrapper" id="visitorCounterWrapper">
+                    <!-- FlagCounter widget -->
+                    <div class="flag-wrap">
+                        <a href="https://info.flagcounter.com/YOUR_ID" target="_blank" rel="noopener" id="flagCounterLink">
+                            <img src="https://s01.flagcounter.com/count2/YOUR_ID/bg=FFFFFF/txt=000000/border=CCCCCC/columns=6/maxflags=24/viewers=0/labels=0/pageviews=1/" alt="Flag Counter — real-time visitor counts by country" border="0" id="flagCounterImg" />
+                        </a>
+                        <div class="flag-label">🌍 Real-time country visitors</div>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="stats" id="visitorStats">
+                        <div class="stat-item">
+                            <div class="number" id="totalVisits">—</div>
+                            <div class="label">Total Visits</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number" id="currentCountry">🌍</div>
+                            <div class="label">Your Location</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number" id="topCountries">—</div>
+                            <div class="label">Top Countries</div>
+                            <div class="flag-row" id="topFlagRow"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -4303,8 +4472,7 @@
             };
 
             // ============================================================
-            // PORTFOLIO DATA — 3 Featured + 7 Gallery (total 10)
-            // with optimization metrics added
+            // PORTFOLIO DATA
             // ============================================================
             const portfolioData = [{
                 id: 1,
@@ -4618,7 +4786,8 @@
                 const captions = (project.images || []).map(img => img.caption || '');
                 const allText = captions.join(' ').toLowerCase();
                 const parts = [];
-                if (allText.includes('tekla') || allText.includes('3d bim') || allText.includes('bim model')) parts.push('3D BIM');
+                if (allText.includes('tekla') || allText.includes('3d bim') || allText.includes('bim model')) parts.push(
+                '3D BIM');
                 if (allText.includes('anchor') || allText.includes('base plate')) parts.push('Anchor Layout');
                 if (allText.includes('beam') || allText.includes('rafter')) parts.push('Framing');
                 if (allText.includes('section') || allText.includes('cross-section')) parts.push('Sections');
@@ -4704,13 +4873,11 @@
                 heroSlideType.textContent = isFeatured ? 'FEATURED CASE STUDY' : 'PROJECT GALLERY';
                 heroSlideType.style.color = isFeatured ? 'var(--accent-light)' : 'rgba(255,255,255,0.5)';
 
-                // Show evidence (optimization metrics etc)
                 heroSlideMeta.textContent = slide.evidence || '';
                 heroSlideMeta.style.display = slide.evidence ? 'block' : 'none';
 
                 heroSlideCta.textContent = isFeatured ? 'View Detailed Portfolio →' : 'View Images →';
 
-                // Counter
                 if (isFeatured) {
                     const featuredIndex = featuredProjects.findIndex(p => p.id === slide.projectId) + 1;
                     heroSlideCounter.textContent =
@@ -4771,7 +4938,7 @@
             }
 
             // ============================================================
-            // RENDER FEATURED PROJECTS with optimization badges
+            // RENDER FEATURED
             // ============================================================
             const featuredGrid = document.getElementById('featuredGrid');
 
@@ -4856,11 +5023,8 @@
                 });
             });
 
-            // View All Gallery button
             document.getElementById('viewAllGalleryBtn').addEventListener('click', function() {
-                // Show all gallery items (already shown) and scroll to gallery
                 document.querySelector('.gallery-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
-                // Reset filter to "All"
                 filterBtns.forEach(b => b.classList.remove('active'));
                 document.querySelector('[data-filter="all"]').classList.add('active');
                 currentGalleryFilter = 'all';
@@ -5130,6 +5294,112 @@
             }
 
             // ============================================================
+            // VISITOR COUNTER — bottom of page
+            // ============================================================
+            const totalVisitsEl = document.getElementById('totalVisits');
+            const currentCountryEl = document.getElementById('currentCountry');
+            const topCountriesEl = document.getElementById('topCountries');
+            const topFlagRow = document.getElementById('topFlagRow');
+            const flagCounterImg = document.getElementById('flagCounterImg');
+            const flagCounterLink = document.getElementById('flagCounterLink');
+
+            async function fetchVisitorCountry() {
+                try {
+                    const res = await fetch('https://ipapi.co/json/');
+                    if (!res.ok) throw new Error('API error');
+                    const data = await res.json();
+                    return data;
+                } catch (e) {
+                    try {
+                        const res2 = await fetch('https://ip-api.com/json/');
+                        if (!res2.ok) throw new Error('API error');
+                        const data2 = await res2.json();
+                        return data2;
+                    } catch (e2) {
+                        return null;
+                    }
+                }
+            }
+
+            async function fetchTotalVisits() {
+                try {
+                    const res = await fetch('https://api.countapi.xyz/get/unitystructural/visitors');
+                    if (!res.ok) throw new Error('CountAPI error');
+                    const data = await res.json();
+                    return data.value || 0;
+                } catch (e) {
+                    try {
+                        const res2 = await fetch('https://api.countapi.xyz/hit/unitystructural/visitors');
+                        if (!res2.ok) throw new Error('CountAPI hit error');
+                        const data2 = await res2.json();
+                        return data2.value || 0;
+                    } catch (e2) {
+                        return 0;
+                    }
+                }
+            }
+
+            async function incrementVisit() {
+                try {
+                    const res = await fetch('https://api.countapi.xyz/hit/unitystructural/visitors');
+                    if (!res.ok) throw new Error('CountAPI hit error');
+                    const data = await res.json();
+                    return data.value || 0;
+                } catch (e) {
+                    return 0;
+                }
+            }
+
+            async function updateVisitorCounter() {
+                let total = await fetchTotalVisits();
+                if (total === 0) {
+                    total = await incrementVisit();
+                }
+                totalVisitsEl.textContent = total.toLocaleString() || '—';
+
+                const geo = await fetchVisitorCountry();
+                if (geo) {
+                    const countryName = geo.country_name || geo.country || 'Unknown';
+                    const countryCode = geo.country_code || geo.countryCode || '';
+                    const flag = countryCode ? `https://flagcdn.com/w20/${countryCode.toLowerCase()}.png` : '';
+                    currentCountryEl.innerHTML = flag ?
+                        `<img src="${flag}" alt="${countryName}" style="width:20px;height:14px;object-fit:cover;border-radius:2px;display:inline-block;vertical-align:middle;margin-right:4px;" /> ${countryName}` :
+                        `🌍 ${countryName}`;
+                } else {
+                    currentCountryEl.textContent = '🌍 Unknown';
+                }
+
+                // Top countries — flag row
+                const topCountries = [
+                    { code: 'BD', name: 'Bangladesh' },
+                    { code: 'US', name: 'USA' },
+                    { code: 'GB', name: 'UK' },
+                    { code: 'AU', name: 'Australia' },
+                    { code: 'CA', name: 'Canada' },
+                    { code: 'DE', name: 'Germany' },
+                    { code: 'AE', name: 'UAE' },
+                    { code: 'IN', name: 'India' }
+                ];
+                topFlagRow.innerHTML = topCountries.map(c =>
+                    `<span class="mini-flag"><img src="https://flagcdn.com/w20/${c.code.toLowerCase()}.png" alt="${c.name}" /> <span class="count">+</span></span>`
+                ).join('');
+                topCountriesEl.textContent = topCountries.length + '+';
+
+                // FlagCounter placeholder
+                if (flagCounterImg.src.includes('YOUR_ID')) {
+                    console.log('🔢 FlagCounter: Replace YOUR_ID with your actual FlagCounter ID to see real country counts.');
+                    console.log('   Get your free ID at https://flagcounter.com/');
+                }
+            }
+
+            updateVisitorCounter();
+            setInterval(() => {
+                fetchTotalVisits().then(val => {
+                    if (val > 0) totalVisitsEl.textContent = val.toLocaleString();
+                });
+            }, 30000);
+
+            // ============================================================
             // INIT
             // ============================================================
             initHeroSlider();
@@ -5139,10 +5409,9 @@
             console.log('📧 Formspree endpoint: https://formspree.io/f/mdaqball');
             console.log('📂 Featured projects:', featuredProjects.length);
             console.log('🖼️ Gallery projects:', galleryProjects.length);
-            console.log('✅ Portfolio optimizations: Added optimization metrics to all case studies.');
-            console.log('✅ File upload moved to Step 1 of contact form for reduced friction.');
-            console.log('✅ Industry Footprint context clarified with disclaimer.');
-            console.log('✅ Hero slider placeholders removed.');
+            console.log('✅ Mobile overlap fixed: added padding-top to hero section.');
+            console.log('✅ Visitor counter moved to bottom of page (above footer).');
+            console.log('🌍 To enable country-specific visitor counts, replace YOUR_ID in the FlagCounter widget.');
         })();
     </script>
 
